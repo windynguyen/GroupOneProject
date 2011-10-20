@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7dcfd669-00bd-4351-a5f5-6c83ae4d8513" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8001/MarkManagementService" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MarkManagementService.wsdl" MetadataType="Wsdl" ID="19262236-6cbe-44ca-a7ff-c63c20c4d08f" SourceId="1" SourceUrl="http://localhost:8001/MarkManagementService?wsdl=wsdl0" />
+    <MetadataFile FileName="ServiceContract.wsdl" MetadataType="Wsdl" ID="afb12f52-7bf7-4184-9031-7b4b48a77764" SourceId="1" SourceUrl="http://localhost:8001/MarkManagementService?wsdl" />
+    <MetadataFile FileName="MarkManagementService.disco" MetadataType="Disco" ID="be033b71-1bf2-4ad4-9efd-ea94d2aa62ce" SourceId="1" SourceUrl="http://localhost:8001/MarkManagementService?disco" />
+    <MetadataFile FileName="MarkManagementService.xsd" MetadataType="Schema" ID="628399fb-375b-46ad-8b42-36e8a611fde5" SourceId="1" SourceUrl="http://localhost:8001/MarkManagementService?xsd=xsd0" />
+    <MetadataFile FileName="MarkManagementService1.xsd" MetadataType="Schema" ID="71829e76-de6c-4606-ba39-1925af192d5d" SourceId="1" SourceUrl="http://localhost:8001/MarkManagementService?xsd=xsd2" />
+    <MetadataFile FileName="MarkManagementService2.xsd" MetadataType="Schema" ID="500eb00a-2773-4990-bdc9-15912c3cd2ee" SourceId="1" SourceUrl="http://localhost:8001/MarkManagementService?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
