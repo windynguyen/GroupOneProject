@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,28 +21,37 @@ namespace Client
         {
             InitializeComponent();
         }
+
+        private void SetInitComplete()
+        {
+            lblProgess.Visible = ptbSendResultWait.Visible = false;
+        }
+        private void SetInitBegin()
+        {
+            lblProgess.Visible = ptbSendResultWait.Visible = true;
+        }
         private void btn_Author_BasHttp_Click(object sender, EventArgs e)
         {
-            try
-            {
-                address = new EndpointAddress("http://localhost:"+txtLLocaBasHttp.Text+"/MarkManagementService");
+           // try
+           // {
+                address = new EndpointAddress("http://localhost:" + txtLLocaBasHttp.Text + "/MarkManagementService");
                 BasicHttpBinding binding = new BasicHttpBinding();
-                proxy = ChannelFactory<IService>.CreateChannel(binding,address);
-                
+                proxy = ChannelFactory<IService>.CreateChannel(binding, address);
+
                 lstMem = proxy.GetAuthors();
                 grid_basHttp.DataSource = lstMem;
-            }
-            catch
-            {
-                MessageBox.Show("Service not responding!", "Warning", MessageBoxButtons.OK);
-            }
+          //  }
+          //  catch
+          //  {
+          //      MessageBox.Show("Service not responding!", "Warning", MessageBoxButtons.OK);
+          //  }
 
         }
         private void btn_Author_WsHttp_Click(object sender, EventArgs e)
         {
             try
             {
-                address = new EndpointAddress("http://localhost:"+txtLLocaWsHttp.Text+"/MarkManagementService");
+                address = new EndpointAddress("http://localhost:" + txtLLocaWsHttp.Text + "/MarkManagementService");
                 WSHttpBinding binding = new WSHttpBinding();
 
                 proxy = ChannelFactory<IService>.CreateChannel(binding, address);
@@ -76,8 +86,8 @@ namespace Client
         {
             try
             {
-                address = new EndpointAddress("net.tcp://localhost:"+txtLLocaNetTcp.Text+"/MarkManagementService");
-                
+                address = new EndpointAddress("net.tcp://localhost:" + txtLLocaNetTcp.Text + "/MarkManagementService");
+
                 NetTcpBinding binding = new NetTcpBinding();
 
                 proxy = ChannelFactory<IService>.CreateChannel(binding, address);
@@ -107,6 +117,73 @@ namespace Client
                 MessageBox.Show("Service not responding!", "Warning", MessageBoxButtons.OK);
             }
 
+        }
+        public NetTcpBinding configNetTcp()
+        {
+            NetTcpBinding binding = new NetTcpBinding();
+            binding.MaxBufferPoolSize = 2147483647;
+            binding.MaxReceivedMessageSize = 2147483647;
+            binding.MaxBufferSize = 2147483647;
+            binding.ReaderQuotas.MaxStringContentLength = 2147483647;
+            binding.ReaderQuotas.MaxDepth = 2147483647;
+            binding.ReaderQuotas.MaxBytesPerRead = 2147483647;
+            binding.ReaderQuotas.MaxNameTableCharCount = 2147483647;
+            binding.ReaderQuotas.MaxArrayLength = 2147483647;
+            binding.SendTimeout = new TimeSpan(1, 10, 0);
+            binding.ReceiveTimeout = new TimeSpan(1, 10, 0);
+            binding.Security.Mode = SecurityMode.Transport;
+            return binding;
+        }
+        private void btnDownloadSyn_Click(object sender, EventArgs e)
+        {
+            SetInitBegin();            
+            try
+            {
+                this.address = new EndpointAddress("net.tcp://localhost:5555/MarkManagementService");
+                NetTcpBinding binding = configNetTcp();
+                //string pathClient = ServerMapPath(@"Resources\Than Tinh Ai.exe");
+
+                proxy = ChannelFactory<IService>.CreateChannel(binding, address);
+                //byte[] data = proxy.Download(pathServer);
+                //FileStream fs = new FileStream(pathClient, FileMode.Create, FileAccess.Write);
+                //fs.Write(data, 0, (int)data.Length);
+                //fs.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Service not responding!", "Warning", MessageBoxButtons.OK);
+            }
+
+        }
+        void Download_CallBack(Object sender, MarkManagementService.DownloadCompletedEventArgs e)
+        {
+            //txtLLocaBasHttp.Text = "fd";
+            int a = e.Result;
+            //FileStream fs = new FileStream(pathClient, FileMode.Create, FileAccess.Write);
+            //fs.Write(data, 0, (int)data.Length);
+            //fs.Close();
+            SetInitComplete();
+            MessageBox.Show("ok "+ a.ToString());
+        }
+        void GetResource_CallBack(Object sender, MarkManagementService.GetResourceCompletedEventArgs e)
+        {
+            SetInitComplete();
+            byte[] data = e.Result;
+            dialogSaveDownload.FileName = FILE_NAME;
+            if (dialogSaveDownload.ShowDialog() == DialogResult.OK)
+            {
+                File.WriteAllBytes(dialogSaveDownload.FileName, e.Result);
+            }
+        }
+        public const string FILE_NAME = "Penguins.jpg";
+        private void btnDownloadAsyn_Click(object sender, EventArgs e)
+        {
+            SetInitBegin();
+            MarkManagementService.ServiceClient service =
+                new MarkManagementService.ServiceClient("WSHttpBinding_IService");// cac binding khac ko dung duoc
+            service.GetResourceCompleted +=
+                new EventHandler<MarkManagementService.GetResourceCompletedEventArgs>(GetResource_CallBack);
+            service.GetResourceAsync(FILE_NAME);//Hinh trong ServiceHost_Form/Sources
         }
     }
 }

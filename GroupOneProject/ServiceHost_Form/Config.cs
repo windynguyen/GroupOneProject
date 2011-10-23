@@ -14,10 +14,9 @@ namespace ServiceHost_Form
 {
     class Config
     {
-        private static string NodePath = "//system.serviceModel//service";
         private const string ContractName = "ServiceLibrary.IService";
 
-        private static string ServerMapPath(string subPath)
+        public static string ServerMapPath(string subPath)
         {
             return Application.StartupPath.Replace(@"bin\Debug","") + subPath;
         }

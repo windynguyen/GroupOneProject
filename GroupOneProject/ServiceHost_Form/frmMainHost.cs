@@ -19,14 +19,17 @@ namespace ServiceHost_Form
         {
             InitializeComponent();
         }
-        private ServiceHost host;
+        //Tham khao: [http://www.codeproject.com/KB/WCF/HttpBinding.aspx]
+
+        private ServiceHost MainHost;
         private BindingSource EndpointSource = new BindingSource();
         public void StartService()
         {
             try
             {
-                host = new ServiceHost(typeof(MarkManagementService));
-                host.Open();
+                MarkManagementService.HostPath = Config.ServerMapPath(string.Empty);
+                this.MainHost = new ServiceHost(typeof(MarkManagementService));
+                this.MainHost.Open();
                 lblMessage.Text = "Service is starting";
                 lblMessage.ForeColor = Color.Green;
                 btnStart.Enabled = false;
@@ -36,8 +39,8 @@ namespace ServiceHost_Form
             {
                 MessageBox.Show(e.ToString(), "Error", MessageBoxButtons.OK);
             }
-
-            /*Uri baseAddress = new Uri("http://localhost:8001/MarkManagementService");
+            /*
+            Uri baseAddress = new Uri("http://localhost:8001/MarkManagementService");
             Type contractType = typeof(IService);
             Type instanceType = typeof(MarkManagementService);
             host = new ServiceHost(instanceType, baseAddress);
@@ -70,7 +73,7 @@ namespace ServiceHost_Form
         {
             try
             {
-                host.Close();
+                this.MainHost.Close();
                 lblMessage.Text = "Service closed";
                 lblMessage.ForeColor = Color.Red;
                 btnStart.Enabled = true;

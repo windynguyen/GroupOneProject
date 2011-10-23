@@ -52,6 +52,14 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.btn_Author_NetNPipe = new System.Windows.Forms.Button();
             this.grid_netNPipe = new System.Windows.Forms.DataGridView();
+            this.btnDownloadSyn = new System.Windows.Forms.Button();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.lblProgess = new System.Windows.Forms.Label();
+            this.ptbSendResultWait = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnDownloadAsyn = new System.Windows.Forms.Button();
+            this.dialogSaveDownload = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.grid_basHttp)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -62,6 +70,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.grid_WsDualHttp)).BeginInit();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_netNPipe)).BeginInit();
+            this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbSendResultWait)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Author_BasHttp
@@ -294,11 +304,86 @@
             this.grid_netNPipe.Size = new System.Drawing.Size(283, 137);
             this.grid_netNPipe.TabIndex = 4;
             // 
+            // btnDownloadSyn
+            // 
+            this.btnDownloadSyn.Location = new System.Drawing.Point(32, 90);
+            this.btnDownloadSyn.Name = "btnDownloadSyn";
+            this.btnDownloadSyn.Size = new System.Drawing.Size(75, 23);
+            this.btnDownloadSyn.TabIndex = 6;
+            this.btnDownloadSyn.Text = "Download";
+            this.btnDownloadSyn.UseVisualStyleBackColor = true;
+            this.btnDownloadSyn.Click += new System.EventHandler(this.btnDownloadSyn_Click);
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.lblProgess);
+            this.groupBox6.Controls.Add(this.ptbSendResultWait);
+            this.groupBox6.Controls.Add(this.label6);
+            this.groupBox6.Controls.Add(this.label5);
+            this.groupBox6.Controls.Add(this.btnDownloadAsyn);
+            this.groupBox6.Controls.Add(this.btnDownloadSyn);
+            this.groupBox6.Location = new System.Drawing.Point(607, 231);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(290, 194);
+            this.groupBox6.TabIndex = 6;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Asynchronous";
+            // 
+            // lblProgess
+            // 
+            this.lblProgess.AutoSize = true;
+            this.lblProgess.Location = new System.Drawing.Point(183, 120);
+            this.lblProgess.Margin = new System.Windows.Forms.Padding(0);
+            this.lblProgess.Name = "lblProgess";
+            this.lblProgess.Size = new System.Drawing.Size(76, 13);
+            this.lblProgess.TabIndex = 21;
+            this.lblProgess.Text = "Please wait!...";
+            this.lblProgess.Visible = false;
+            // 
+            // ptbSendResultWait
+            // 
+            this.ptbSendResultWait.Image = global::Client.Properties.Resources.loading_spinner_fast;
+            this.ptbSendResultWait.Location = new System.Drawing.Point(164, 119);
+            this.ptbSendResultWait.Name = "ptbSendResultWait";
+            this.ptbSendResultWait.Size = new System.Drawing.Size(16, 16);
+            this.ptbSendResultWait.TabIndex = 20;
+            this.ptbSendResultWait.TabStop = false;
+            this.ptbSendResultWait.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(34, 59);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(73, 13);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "synchronous";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(161, 59);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Asynchronous";
+            // 
+            // btnDownloadAsyn
+            // 
+            this.btnDownloadAsyn.Location = new System.Drawing.Point(164, 90);
+            this.btnDownloadAsyn.Name = "btnDownloadAsyn";
+            this.btnDownloadAsyn.Size = new System.Drawing.Size(75, 23);
+            this.btnDownloadAsyn.TabIndex = 7;
+            this.btnDownloadAsyn.Text = "Download";
+            this.btnDownloadAsyn.UseVisualStyleBackColor = true;
+            this.btnDownloadAsyn.Click += new System.EventHandler(this.btnDownloadAsyn_Click);
+            // 
             // frmMain_Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(906, 437);
+            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -322,6 +407,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.grid_WsDualHttp)).EndInit();
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grid_netNPipe)).EndInit();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbSendResultWait)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -353,6 +441,14 @@
         private System.Windows.Forms.TextBox txtLLocaNetTcp;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtLLocaBasHttp;
+        private System.Windows.Forms.Button btnDownloadSyn;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnDownloadAsyn;
+        private System.Windows.Forms.PictureBox ptbSendResultWait;
+        private System.Windows.Forms.Label lblProgess;
+        private System.Windows.Forms.SaveFileDialog dialogSaveDownload;
 
     }
 }

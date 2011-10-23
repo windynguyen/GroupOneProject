@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accessories.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="Endpoint.cs" />
     <Compile Include="frmMainHost.cs">
@@ -68,6 +69,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="App.config">
       <SubType>Designer</SubType>
@@ -87,6 +89,12 @@
       <Project>{F6CB6B38-4AC9-4452-B87B-0D376368C564}</Project>
       <Name>ServiceLibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sources\Penguins.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

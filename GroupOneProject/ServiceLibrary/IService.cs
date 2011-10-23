@@ -4,17 +4,20 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using System.Net.Security;
 
 namespace ServiceLibrary
 {
     //Interface Service: định nghĩa các hàm cung cấp cho client
-    [ServiceContract(Namespace = "http://myuri.org/Simple")]
+    [ServiceContract]
     public interface IService
     {
         [OperationContract]
         List<Member> GetAuthors();
-
-
+        [OperationContract]
+        int Download(string path);
+        [OperationContract]
+        byte[] GetResource(string resName);
     }
     [DataContract]
     public class Member

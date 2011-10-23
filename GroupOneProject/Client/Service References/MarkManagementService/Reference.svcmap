@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7dcfd669-00bd-4351-a5f5-6c83ae4d8513" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0489abb0-99b8-4bdb-a55b-aa02906068a3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
-    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
     <ExcludedTypes />
     <ImportXmlTypes>false</ImportXmlTypes>
@@ -18,15 +18,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8001/MarkManagementService" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:2000/MarkManagementService" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="MarkManagementService.wsdl" MetadataType="Wsdl" ID="19262236-6cbe-44ca-a7ff-c63c20c4d08f" SourceId="1" SourceUrl="http://localhost:8001/MarkManagementService?wsdl=wsdl0" />
-    <MetadataFile FileName="ServiceContract.wsdl" MetadataType="Wsdl" ID="afb12f52-7bf7-4184-9031-7b4b48a77764" SourceId="1" SourceUrl="http://localhost:8001/MarkManagementService?wsdl" />
-    <MetadataFile FileName="MarkManagementService.disco" MetadataType="Disco" ID="be033b71-1bf2-4ad4-9efd-ea94d2aa62ce" SourceId="1" SourceUrl="http://localhost:8001/MarkManagementService?disco" />
-    <MetadataFile FileName="MarkManagementService.xsd" MetadataType="Schema" ID="628399fb-375b-46ad-8b42-36e8a611fde5" SourceId="1" SourceUrl="http://localhost:8001/MarkManagementService?xsd=xsd0" />
-    <MetadataFile FileName="MarkManagementService1.xsd" MetadataType="Schema" ID="71829e76-de6c-4606-ba39-1925af192d5d" SourceId="1" SourceUrl="http://localhost:8001/MarkManagementService?xsd=xsd2" />
-    <MetadataFile FileName="MarkManagementService2.xsd" MetadataType="Schema" ID="500eb00a-2773-4990-bdc9-15912c3cd2ee" SourceId="1" SourceUrl="http://localhost:8001/MarkManagementService?xsd=xsd1" />
+    <MetadataFile FileName="MarkManagementService.xsd" MetadataType="Schema" ID="dd51b512-50c5-47db-baf7-d38c9b51f6bc" SourceId="1" SourceUrl="http://localhost:2000/MarkManagementService?xsd=xsd1" />
+    <MetadataFile FileName="MarkManagementService.wsdl" MetadataType="Wsdl" ID="f1ffb4f3-6ec3-4fd2-abf0-719104410931" SourceId="1" SourceUrl="http://localhost:2000/MarkManagementService?wsdl=wsdl0" />
+    <MetadataFile FileName="MarkManagementService1.xsd" MetadataType="Schema" ID="5a8b5bf6-7fa2-4463-a08a-c59d8582f8a8" SourceId="1" SourceUrl="http://localhost:2000/MarkManagementService?xsd=xsd0" />
+    <MetadataFile FileName="MarkManagementService2.xsd" MetadataType="Schema" ID="3f73dbc8-2a8b-49f8-ae94-7033fe8ede8e" SourceId="1" SourceUrl="http://localhost:2000/MarkManagementService?xsd=xsd2" />
+    <MetadataFile FileName="MarkManagementService1.wsdl" MetadataType="Wsdl" ID="41cca0a5-478d-4658-9004-84a93778bc0a" SourceId="1" SourceUrl="http://localhost:2000/MarkManagementService?wsdl" />
+    <MetadataFile FileName="MarkManagementService.disco" MetadataType="Disco" ID="a73e2c4d-7fe6-4204-ae11-d00eeabb5bd7" SourceId="1" SourceUrl="http://localhost:2000/MarkManagementService?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

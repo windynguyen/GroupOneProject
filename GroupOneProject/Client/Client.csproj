@@ -72,6 +72,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config">
       <SubType>Designer</SubType>
@@ -92,13 +93,13 @@
     <None Include="Service References\MarkManagementService\MarkManagementService.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\MarkManagementService\MarkManagementService1.wsdl" />
     <None Include="Service References\MarkManagementService\MarkManagementService1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\MarkManagementService\MarkManagementService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\MarkManagementService\ServiceContract.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -120,6 +121,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\loading-spinner-fast.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
