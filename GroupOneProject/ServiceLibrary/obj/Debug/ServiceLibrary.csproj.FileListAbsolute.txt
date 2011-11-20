@@ -8,3 +8,8 @@ C:\Users\Nittin\Dropbox\Open Workspace\WebService\GroupOneProject\ServiceLibrary
 C:\Users\Nittin\Dropbox\Open Workspace\WebService\GroupOneProject\ServiceLibrary\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Nittin\Dropbox\Open Workspace\WebService\GroupOneProject\ServiceLibrary\obj\Debug\ServiceLibrary.dll
 C:\Users\Nittin\Dropbox\Open Workspace\WebService\GroupOneProject\ServiceLibrary\obj\Debug\ServiceLibrary.pdb
+C:\Users\DMTHANH36-IT\Documents\My Dropbox\Open Workspace\WebService\GroupOneProject\ServiceLibrary\bin\Debug\ServiceLibrary.dll
+C:\Users\DMTHANH36-IT\Documents\My Dropbox\Open Workspace\WebService\GroupOneProject\ServiceLibrary\bin\Debug\ServiceLibrary.pdb
+C:\Users\DMTHANH36-IT\Documents\My Dropbox\Open Workspace\WebService\GroupOneProject\ServiceLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\DMTHANH36-IT\Documents\My Dropbox\Open Workspace\WebService\GroupOneProject\ServiceLibrary\obj\Debug\ServiceLibrary.dll
+C:\Users\DMTHANH36-IT\Documents\My Dropbox\Open Workspace\WebService\GroupOneProject\ServiceLibrary\obj\Debug\ServiceLibrary.pdb

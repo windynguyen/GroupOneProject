@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0489abb0-99b8-4bdb-a55b-aa02906068a3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:2000/GetMark_Service" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GetMark_Service.wsdl" MetadataType="Wsdl" ID="39b7bc60-96f3-4081-abd4-e3cbdcb6170e" SourceId="1" SourceUrl="http://localhost:2000/GetMark_Service?wsdl=wsdl0" />
+    <MetadataFile FileName="GetMark_Service1.wsdl" MetadataType="Wsdl" ID="d6918571-7ed8-41c8-902a-0f8b54dcc16f" SourceId="1" SourceUrl="http://localhost:2000/GetMark_Service?wsdl" />
+    <MetadataFile FileName="GetMark_Service.xsd" MetadataType="Schema" ID="af0f3455-6794-4008-815e-8221f14e5804" SourceId="1" SourceUrl="http://localhost:2000/GetMark_Service?xsd=xsd0" />
+    <MetadataFile FileName="GetMark_Service1.xsd" MetadataType="Schema" ID="b75ddd61-0930-42cd-b10d-851bf20abdfc" SourceId="1" SourceUrl="http://localhost:2000/GetMark_Service?xsd=xsd1" />
+    <MetadataFile FileName="GetMark_Service2.xsd" MetadataType="Schema" ID="d3b27bbd-73b4-4c35-9b20-0518a3fc65c6" SourceId="1" SourceUrl="http://localhost:2000/GetMark_Service?xsd=xsd2" />
+    <MetadataFile FileName="GetMark_Service.disco" MetadataType="Disco" ID="72c4ce4e-eb91-416d-8aa3-bd3aa8cea641" SourceId="1" SourceUrl="http://localhost:2000/GetMark_Service?disco" />
+    <MetadataFile FileName="GetMark_Service3.xsd" MetadataType="Schema" ID="6286aa1e-5299-45d8-add2-9623e22a2f2b" SourceId="1" SourceUrl="http://localhost:2000/GetMark_Service?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

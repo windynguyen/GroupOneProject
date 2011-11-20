@@ -27,8 +27,8 @@ namespace ServiceHost_Form
         {
             try
             {
-                MarkManagementService.HostPath = Config.ServerMapPath(string.Empty);
-                this.MainHost = new ServiceHost(typeof(MarkManagementService));
+                GetMark_Service.HostPath = Config.ServerMapPath(string.Empty);
+                this.MainHost = new ServiceHost(typeof(GetMark_Service));
                 this.MainHost.Open();
                 lblMessage.Text = "Service is starting";
                 lblMessage.ForeColor = Color.Green;

@@ -22,3 +22,15 @@ C:\Users\Nittin\Dropbox\Open Workspace\WebService\GroupOneProject\ServiceHost_Fo
 C:\Users\Nittin\Dropbox\Open Workspace\WebService\GroupOneProject\ServiceHost_Form\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\Nittin\Dropbox\Open Workspace\WebService\GroupOneProject\ServiceHost_Form\obj\x86\Debug\ServiceHost_Form.frmMainHost.resources
 D:\Dropbox\Dropbox\Open Workspace\WebService\GroupOneProject\ServiceHost_Form\obj\x86\Debug\ServiceHost_Form.frmMainHost.resources
+C:\Users\DMTHANH36-IT\Documents\My Dropbox\Open Workspace\WebService\GroupOneProject\ServiceHost_Form\bin\Debug\ServiceHost_Form.exe.config
+C:\Users\DMTHANH36-IT\Documents\My Dropbox\Open Workspace\WebService\GroupOneProject\ServiceHost_Form\obj\x86\Debug\ServiceHost_Form.exe
+C:\Users\DMTHANH36-IT\Documents\My Dropbox\Open Workspace\WebService\GroupOneProject\ServiceHost_Form\obj\x86\Debug\ServiceHost_Form.pdb
+C:\Users\DMTHANH36-IT\Documents\My Dropbox\Open Workspace\WebService\GroupOneProject\ServiceHost_Form\bin\Debug\ServiceHost_Form.exe
+C:\Users\DMTHANH36-IT\Documents\My Dropbox\Open Workspace\WebService\GroupOneProject\ServiceHost_Form\bin\Debug\ServiceHost_Form.pdb
+C:\Users\DMTHANH36-IT\Documents\My Dropbox\Open Workspace\WebService\GroupOneProject\ServiceHost_Form\bin\Debug\ServiceLibrary.dll
+C:\Users\DMTHANH36-IT\Documents\My Dropbox\Open Workspace\WebService\GroupOneProject\ServiceHost_Form\bin\Debug\ServiceLibrary.pdb
+C:\Users\DMTHANH36-IT\Documents\My Dropbox\Open Workspace\WebService\GroupOneProject\ServiceHost_Form\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\DMTHANH36-IT\Documents\My Dropbox\Open Workspace\WebService\GroupOneProject\ServiceHost_Form\obj\x86\Debug\ServiceHost_Form.frmMainHost.resources
+C:\Users\DMTHANH36-IT\Documents\My Dropbox\Open Workspace\WebService\GroupOneProject\ServiceHost_Form\obj\x86\Debug\ServiceHost_Form.Properties.Resources.resources
+C:\Users\DMTHANH36-IT\Documents\My Dropbox\Open Workspace\WebService\GroupOneProject\ServiceHost_Form\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\DMTHANH36-IT\Documents\My Dropbox\Open Workspace\WebService\GroupOneProject\ServiceHost_Form\obj\x86\Debug\GenerateResource.write.1.tlog

@@ -48,21 +48,58 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DangNhap.Designer.cs">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain_Client.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain_Client.Designer.cs">
       <DependentUpon>frmMain_Client.cs</DependentUpon>
     </Compile>
+    <Compile Include="GlobalVariable.cs" />
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\MarkManagementService\Reference.cs">
+    <Compile Include="Service References\GetMark_Service\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="StudentInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentInfo.Designer.cs">
+      <DependentUpon>StudentInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongKe.Designer.cs">
+      <DependentUpon>ThongKe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongTinCaNhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongTinCaNhan.Designer.cs">
+      <DependentUpon>ThongTinCaNhan.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DangNhap.resx">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain_Client.resx">
       <DependentUpon>frmMain_Client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -74,6 +111,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="StudentInfo.resx">
+      <DependentUpon>StudentInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongKe.resx">
+      <DependentUpon>ThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongTinCaNhan.resx">
+      <DependentUpon>ThongTinCaNhan.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
@@ -86,44 +132,57 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Service References\MarkManagementService\Client.MarkManagementService.Member.datasource">
+    <None Include="Service References\GetMark_Service\Client.GetMark_Service.KetQua.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\MarkManagementService\MarkManagementService.wsdl" />
-    <None Include="Service References\MarkManagementService\MarkManagementService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MarkManagementService\MarkManagementService1.wsdl" />
-    <None Include="Service References\MarkManagementService\MarkManagementService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MarkManagementService\MarkManagementService2.xsd">
-      <SubType>Designer</SubType>
+    <None Include="Service References\GetMark_Service\Client.GetMark_Service.Member.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\MarkManagementService\" />
+    <WCFMetadataStorage Include="Service References\GetMark_Service\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\MarkManagementService\MarkManagementService.disco" />
+    <None Include="Service References\GetMark_Service\Client.GetMark_Service.SinhVien.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GetMark_Service\Client.GetMark_Service.Statistic.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GetMark_Service\Client.GetMark_Service.SV_HK.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GetMark_Service\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\MarkManagementService\configuration91.svcinfo" />
+    <None Include="Service References\GetMark_Service\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\MarkManagementService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\MarkManagementService\Reference.svcmap">
+    <None Include="Service References\GetMark_Service\GetMark_Service.wsdl" />
+    <None Include="Service References\GetMark_Service\GetMark_Service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GetMark_Service\GetMark_Service1.wsdl" />
+    <None Include="Service References\GetMark_Service\GetMark_Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GetMark_Service\GetMark_Service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GetMark_Service\GetMark_Service3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GetMark_Service\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\loading-spinner-fast.gif" />
+    <None Include="Service References\GetMark_Service\GetMark_Service.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

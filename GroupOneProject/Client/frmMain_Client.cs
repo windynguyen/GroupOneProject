@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.ServiceModel;
-using Client.MarkManagementService;
+using Client.GetMark_Service;
 
 namespace Client
 {
@@ -34,7 +34,7 @@ namespace Client
         {
            // try
            // {
-                address = new EndpointAddress("http://localhost:" + txtLLocaBasHttp.Text + "/MarkManagementService");
+                address = new EndpointAddress("http://localhost:" + txtLLocaBasHttp.Text + "/GetMark_Service");
                 BasicHttpBinding binding = new BasicHttpBinding();
                 proxy = ChannelFactory<IService>.CreateChannel(binding, address);
 
@@ -51,7 +51,7 @@ namespace Client
         {
             try
             {
-                address = new EndpointAddress("http://localhost:" + txtLLocaWsHttp.Text + "/MarkManagementService");
+                address = new EndpointAddress("http://localhost:" + txtLLocaWsHttp.Text + "/GetMark_Service");
                 WSHttpBinding binding = new WSHttpBinding();
 
                 proxy = ChannelFactory<IService>.CreateChannel(binding, address);
@@ -68,7 +68,7 @@ namespace Client
         {
             try
             {
-                address = new EndpointAddress("http://localhost:" + txtLLocaWsDualHttp.Text + "/MarkManagementService");
+                address = new EndpointAddress("http://localhost:" + txtLLocaWsDualHttp.Text + "/GetMark_Service");
                 WSDualHttpBinding binding = new WSDualHttpBinding();
 
                 proxy = ChannelFactory<IService>.CreateChannel(binding, address);
@@ -86,7 +86,7 @@ namespace Client
         {
             try
             {
-                address = new EndpointAddress("net.tcp://localhost:" + txtLLocaNetTcp.Text + "/MarkManagementService");
+                address = new EndpointAddress("net.tcp://localhost:" + txtLLocaNetTcp.Text + "/GetMark_Service");
 
                 NetTcpBinding binding = new NetTcpBinding();
 
@@ -104,7 +104,7 @@ namespace Client
         {
             try
             {
-                address = new EndpointAddress("net.pipe://localhost/MarkManagementService");
+                address = new EndpointAddress("net.pipe://localhost/GetMark_Service");
 
                 NetNamedPipeBinding binding = new NetNamedPipeBinding();
 
@@ -139,7 +139,7 @@ namespace Client
             SetInitBegin();            
             try
             {
-                this.address = new EndpointAddress("net.tcp://localhost:5555/MarkManagementService");
+                this.address = new EndpointAddress("net.tcp://localhost:5555/GetMark_Service");
                 NetTcpBinding binding = configNetTcp();
                 //string pathClient = ServerMapPath(@"Resources\Than Tinh Ai.exe");
 
@@ -155,7 +155,7 @@ namespace Client
             }
 
         }
-        void Download_CallBack(Object sender, MarkManagementService.DownloadCompletedEventArgs e)
+        void Download_CallBack(Object sender, GetMark_Service.DownloadCompletedEventArgs e)
         {
             //txtLLocaBasHttp.Text = "fd";
             int a = e.Result;
@@ -165,7 +165,7 @@ namespace Client
             SetInitComplete();
             MessageBox.Show("ok "+ a.ToString());
         }
-        void GetResource_CallBack(Object sender, MarkManagementService.GetResourceCompletedEventArgs e)
+        void GetResource_CallBack(Object sender, GetMark_Service.GetResourceCompletedEventArgs e)
         {
             SetInitComplete();
             byte[] data = e.Result;
@@ -179,10 +179,10 @@ namespace Client
         private void btnDownloadAsyn_Click(object sender, EventArgs e)
         {
             SetInitBegin();
-            MarkManagementService.ServiceClient service =
-                new MarkManagementService.ServiceClient("WSHttpBinding_IService");// cac binding khac ko dung duoc
+            GetMark_Service.ServiceClient service =
+                new GetMark_Service.ServiceClient("WSHttpBinding_IService");// cac binding khac ko dung duoc
             service.GetResourceCompleted +=
-                new EventHandler<MarkManagementService.GetResourceCompletedEventArgs>(GetResource_CallBack);
+                new EventHandler<GetMark_Service.GetResourceCompletedEventArgs>(GetResource_CallBack);
             service.GetResourceAsync(FILE_NAME);//Hinh trong ServiceHost_Form/Sources
         }
     }
