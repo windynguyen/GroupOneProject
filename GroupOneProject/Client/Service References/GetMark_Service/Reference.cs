@@ -15,21 +15,33 @@ namespace Client.GetMark_Service {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Member", Namespace="http://schemas.datacontract.org/2004/07/ServiceLibrary")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Statistic_Mark", Namespace="http://schemas.datacontract.org/2004/07/ServiceLibrary")]
     [System.SerializableAttribute()]
-    public partial class Member : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Statistic_Mark : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CodeField;
+        private float Avg_markField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FullNameField;
+        private int Distance_5_8Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string _ClassField;
+        private int Distance_8_10Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int Less_than_5Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private float Max_markField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private float Min_markField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TotalField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -42,40 +54,92 @@ namespace Client.GetMark_Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Code {
+        public float Avg_mark {
             get {
-                return this.CodeField;
+                return this.Avg_markField;
             }
             set {
-                if ((object.ReferenceEquals(this.CodeField, value) != true)) {
-                    this.CodeField = value;
-                    this.RaisePropertyChanged("Code");
+                if ((this.Avg_markField.Equals(value) != true)) {
+                    this.Avg_markField = value;
+                    this.RaisePropertyChanged("Avg_mark");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FullName {
+        public int Distance_5_8 {
             get {
-                return this.FullNameField;
+                return this.Distance_5_8Field;
             }
             set {
-                if ((object.ReferenceEquals(this.FullNameField, value) != true)) {
-                    this.FullNameField = value;
-                    this.RaisePropertyChanged("FullName");
+                if ((this.Distance_5_8Field.Equals(value) != true)) {
+                    this.Distance_5_8Field = value;
+                    this.RaisePropertyChanged("Distance_5_8");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string _Class {
+        public int Distance_8_10 {
             get {
-                return this._ClassField;
+                return this.Distance_8_10Field;
             }
             set {
-                if ((object.ReferenceEquals(this._ClassField, value) != true)) {
-                    this._ClassField = value;
-                    this.RaisePropertyChanged("_Class");
+                if ((this.Distance_8_10Field.Equals(value) != true)) {
+                    this.Distance_8_10Field = value;
+                    this.RaisePropertyChanged("Distance_8_10");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Less_than_5 {
+            get {
+                return this.Less_than_5Field;
+            }
+            set {
+                if ((this.Less_than_5Field.Equals(value) != true)) {
+                    this.Less_than_5Field = value;
+                    this.RaisePropertyChanged("Less_than_5");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public float Max_mark {
+            get {
+                return this.Max_markField;
+            }
+            set {
+                if ((this.Max_markField.Equals(value) != true)) {
+                    this.Max_markField = value;
+                    this.RaisePropertyChanged("Max_mark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public float Min_mark {
+            get {
+                return this.Min_markField;
+            }
+            set {
+                if ((this.Min_markField.Equals(value) != true)) {
+                    this.Min_markField = value;
+                    this.RaisePropertyChanged("Min_mark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Total {
+            get {
+                return this.TotalField;
+            }
+            set {
+                if ((this.TotalField.Equals(value) != true)) {
+                    this.TotalField = value;
+                    this.RaisePropertyChanged("Total");
                 }
             }
         }
@@ -92,9 +156,9 @@ namespace Client.GetMark_Service {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SinhVien", Namespace="http://schemas.datacontract.org/2004/07/ServiceLibrary")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Student", Namespace="http://schemas.datacontract.org/2004/07/ServiceLibrary")]
     [System.SerializableAttribute()]
-    public partial class SinhVien : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Student : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -457,9 +521,195 @@ namespace Client.GetMark_Service {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="KetQua", Namespace="http://schemas.datacontract.org/2004/07/ServiceLibrary")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Member", Namespace="http://schemas.datacontract.org/2004/07/ServiceLibrary")]
     [System.SerializableAttribute()]
-    public partial class KetQua : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Member : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FullNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string _ClassField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Code {
+            get {
+                return this.CodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CodeField, value) != true)) {
+                    this.CodeField = value;
+                    this.RaisePropertyChanged("Code");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FullName {
+            get {
+                return this.FullNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FullNameField, value) != true)) {
+                    this.FullNameField = value;
+                    this.RaisePropertyChanged("FullName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string _Class {
+            get {
+                return this._ClassField;
+            }
+            set {
+                if ((object.ReferenceEquals(this._ClassField, value) != true)) {
+                    this._ClassField = value;
+                    this.RaisePropertyChanged("_Class");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Subject", Namespace="http://schemas.datacontract.org/2004/07/ServiceLibrary")]
+    [System.SerializableAttribute()]
+    public partial class Subject : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Code_subField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Name_subField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SemesterField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SoTCField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SotietField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Code_sub {
+            get {
+                return this.Code_subField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Code_subField, value) != true)) {
+                    this.Code_subField = value;
+                    this.RaisePropertyChanged("Code_sub");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name_sub {
+            get {
+                return this.Name_subField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Name_subField, value) != true)) {
+                    this.Name_subField = value;
+                    this.RaisePropertyChanged("Name_sub");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Semester {
+            get {
+                return this.SemesterField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SemesterField, value) != true)) {
+                    this.SemesterField = value;
+                    this.RaisePropertyChanged("Semester");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SoTC {
+            get {
+                return this.SoTCField;
+            }
+            set {
+                if ((this.SoTCField.Equals(value) != true)) {
+                    this.SoTCField = value;
+                    this.RaisePropertyChanged("SoTC");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Sotiet {
+            get {
+                return this.SotietField;
+            }
+            set {
+                if ((this.SotietField.Equals(value) != true)) {
+                    this.SotietField = value;
+                    this.RaisePropertyChanged("Sotiet");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Mark", Namespace="http://schemas.datacontract.org/2004/07/ServiceLibrary")]
+    [System.SerializableAttribute()]
+    public partial class Mark : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -478,6 +728,12 @@ namespace Client.GetMark_Service {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private float DiemThiField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string GiangvienField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HockyField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string LoaiField;
@@ -573,6 +829,32 @@ namespace Client.GetMark_Service {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Giangvien {
+            get {
+                return this.GiangvienField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GiangvienField, value) != true)) {
+                    this.GiangvienField = value;
+                    this.RaisePropertyChanged("Giangvien");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Hocky {
+            get {
+                return this.HockyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HockyField, value) != true)) {
+                    this.HockyField = value;
+                    this.RaisePropertyChanged("Hocky");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Loai {
             get {
                 return this.LoaiField;
@@ -662,9 +944,9 @@ namespace Client.GetMark_Service {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SV_HK", Namespace="http://schemas.datacontract.org/2004/07/ServiceLibrary")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Student_Semester", Namespace="http://schemas.datacontract.org/2004/07/ServiceLibrary")]
     [System.SerializableAttribute()]
-    public partial class SV_HK : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Student_Semester : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -771,9 +1053,9 @@ namespace Client.GetMark_Service {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Statistic", Namespace="http://schemas.datacontract.org/2004/07/ServiceLibrary")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Statistic_Student", Namespace="http://schemas.datacontract.org/2004/07/ServiceLibrary")]
     [System.SerializableAttribute()]
-    public partial class Statistic : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Statistic_Student : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -958,9 +1240,323 @@ namespace Client.GetMark_Service {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Lecturer", Namespace="http://schemas.datacontract.org/2004/07/ServiceLibrary")]
+    [System.SerializableAttribute()]
+    public partial class Lecturer : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="List_Stu_Class", Namespace="http://schemas.datacontract.org/2004/07/ServiceLibrary")]
+    [System.SerializableAttribute()]
+    public partial class List_Stu_Class : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private float DTB_h10Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private float DTB_h4Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DTB_hchuField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private float DiemKTField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private float DiemThiField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HotenField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LoaiField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MssvField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool TinhtrangField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public float DTB_h10 {
+            get {
+                return this.DTB_h10Field;
+            }
+            set {
+                if ((this.DTB_h10Field.Equals(value) != true)) {
+                    this.DTB_h10Field = value;
+                    this.RaisePropertyChanged("DTB_h10");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public float DTB_h4 {
+            get {
+                return this.DTB_h4Field;
+            }
+            set {
+                if ((this.DTB_h4Field.Equals(value) != true)) {
+                    this.DTB_h4Field = value;
+                    this.RaisePropertyChanged("DTB_h4");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DTB_hchu {
+            get {
+                return this.DTB_hchuField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DTB_hchuField, value) != true)) {
+                    this.DTB_hchuField = value;
+                    this.RaisePropertyChanged("DTB_hchu");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public float DiemKT {
+            get {
+                return this.DiemKTField;
+            }
+            set {
+                if ((this.DiemKTField.Equals(value) != true)) {
+                    this.DiemKTField = value;
+                    this.RaisePropertyChanged("DiemKT");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public float DiemThi {
+            get {
+                return this.DiemThiField;
+            }
+            set {
+                if ((this.DiemThiField.Equals(value) != true)) {
+                    this.DiemThiField = value;
+                    this.RaisePropertyChanged("DiemThi");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Hoten {
+            get {
+                return this.HotenField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HotenField, value) != true)) {
+                    this.HotenField = value;
+                    this.RaisePropertyChanged("Hoten");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Loai {
+            get {
+                return this.LoaiField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LoaiField, value) != true)) {
+                    this.LoaiField = value;
+                    this.RaisePropertyChanged("Loai");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Mssv {
+            get {
+                return this.MssvField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MssvField, value) != true)) {
+                    this.MssvField = value;
+                    this.RaisePropertyChanged("Mssv");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Tinhtrang {
+            get {
+                return this.TinhtrangField;
+            }
+            set {
+                if ((this.TinhtrangField.Equals(value) != true)) {
+                    this.TinhtrangField = value;
+                    this.RaisePropertyChanged("Tinhtrang");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="GetMark_Service.IService")]
     public interface IService {
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Statistic_Mark_Less", ReplyAction="http://tempuri.org/IService/Statistic_Mark_LessResponse")]
+        int Statistic_Mark_Less(string code_lecturer, string code_subject, string semester, float mark);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Statistic_Mark_Less", ReplyAction="http://tempuri.org/IService/Statistic_Mark_LessResponse")]
+        System.IAsyncResult BeginStatistic_Mark_Less(string code_lecturer, string code_subject, string semester, float mark, System.AsyncCallback callback, object asyncState);
+        
+        int EndStatistic_Mark_Less(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Statistic_Mark_Greater", ReplyAction="http://tempuri.org/IService/Statistic_Mark_GreaterResponse")]
+        int Statistic_Mark_Greater(string code_lecturer, string code_subject, string semester, float mark);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Statistic_Mark_Greater", ReplyAction="http://tempuri.org/IService/Statistic_Mark_GreaterResponse")]
+        System.IAsyncResult BeginStatistic_Mark_Greater(string code_lecturer, string code_subject, string semester, float mark, System.AsyncCallback callback, object asyncState);
+        
+        int EndStatistic_Mark_Greater(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Statistic_Mark_General", ReplyAction="http://tempuri.org/IService/Statistic_Mark_GeneralResponse")]
+        Client.GetMark_Service.Statistic_Mark Statistic_Mark_General(string code_lecturer, string code_subject, string semester);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Statistic_Mark_General", ReplyAction="http://tempuri.org/IService/Statistic_Mark_GeneralResponse")]
+        System.IAsyncResult BeginStatistic_Mark_General(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState);
+        
+        Client.GetMark_Service.Statistic_Mark EndStatistic_Mark_General(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Student_Min_Mark", ReplyAction="http://tempuri.org/IService/Get_Student_Min_MarkResponse")]
+        Client.GetMark_Service.Student Get_Student_Min_Mark(string code_lecturer, string code_subject, string semester);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Student_Min_Mark", ReplyAction="http://tempuri.org/IService/Get_Student_Min_MarkResponse")]
+        System.IAsyncResult BeginGet_Student_Min_Mark(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState);
+        
+        Client.GetMark_Service.Student EndGet_Student_Min_Mark(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Student_Max_Mark", ReplyAction="http://tempuri.org/IService/Get_Student_Max_MarkResponse")]
+        Client.GetMark_Service.Student Get_Student_Max_Mark(string code_lecturer, string code_subject, string semester);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Student_Max_Mark", ReplyAction="http://tempuri.org/IService/Get_Student_Max_MarkResponse")]
+        System.IAsyncResult BeginGet_Student_Max_Mark(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState);
+        
+        Client.GetMark_Service.Student EndGet_Student_Max_Mark(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Student_Min_Avg", ReplyAction="http://tempuri.org/IService/Get_Student_Min_AvgResponse")]
+        Client.GetMark_Service.Student Get_Student_Min_Avg(string code_lecturer, string code_subject, string semester);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Student_Min_Avg", ReplyAction="http://tempuri.org/IService/Get_Student_Min_AvgResponse")]
+        System.IAsyncResult BeginGet_Student_Min_Avg(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState);
+        
+        Client.GetMark_Service.Student EndGet_Student_Min_Avg(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Student_Max_Avg", ReplyAction="http://tempuri.org/IService/Get_Student_Max_AvgResponse")]
+        Client.GetMark_Service.Student Get_Student_Max_Avg(string code_lecturer, string code_subject, string semester);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Student_Max_Avg", ReplyAction="http://tempuri.org/IService/Get_Student_Max_AvgResponse")]
+        System.IAsyncResult BeginGet_Student_Max_Avg(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState);
+        
+        Client.GetMark_Service.Student EndGet_Student_Max_Avg(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Max_Avg", ReplyAction="http://tempuri.org/IService/Get_Max_AvgResponse")]
+        float Get_Max_Avg(string code_lecturer, string code_subject, string semester);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Max_Avg", ReplyAction="http://tempuri.org/IService/Get_Max_AvgResponse")]
+        System.IAsyncResult BeginGet_Max_Avg(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState);
+        
+        float EndGet_Max_Avg(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Min_Avg", ReplyAction="http://tempuri.org/IService/Get_Min_AvgResponse")]
+        float Get_Min_Avg(string code_lecturer, string code_subject, string semester);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Min_Avg", ReplyAction="http://tempuri.org/IService/Get_Min_AvgResponse")]
+        System.IAsyncResult BeginGet_Min_Avg(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState);
+        
+        float EndGet_Min_Avg(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Avg_Avg", ReplyAction="http://tempuri.org/IService/Get_Avg_AvgResponse")]
+        float Get_Avg_Avg(string code_lecturer, string code_subject, string semester);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Avg_Avg", ReplyAction="http://tempuri.org/IService/Get_Avg_AvgResponse")]
+        System.IAsyncResult BeginGet_Avg_Avg(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState);
+        
+        float EndGet_Avg_Avg(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Statistic_Avg_Equal", ReplyAction="http://tempuri.org/IService/Statistic_Avg_EqualResponse")]
+        int Statistic_Avg_Equal(string code_lecturer, string code_subject, string semester, float mark);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Statistic_Avg_Equal", ReplyAction="http://tempuri.org/IService/Statistic_Avg_EqualResponse")]
+        System.IAsyncResult BeginStatistic_Avg_Equal(string code_lecturer, string code_subject, string semester, float mark, System.AsyncCallback callback, object asyncState);
+        
+        int EndStatistic_Avg_Equal(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Statistic_Avg_Distance", ReplyAction="http://tempuri.org/IService/Statistic_Avg_DistanceResponse")]
+        int Statistic_Avg_Distance(string code_lecturer, string code_subject, string semester, float from, float to);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Statistic_Avg_Distance", ReplyAction="http://tempuri.org/IService/Statistic_Avg_DistanceResponse")]
+        System.IAsyncResult BeginStatistic_Avg_Distance(string code_lecturer, string code_subject, string semester, float from, float to, System.AsyncCallback callback, object asyncState);
+        
+        int EndStatistic_Avg_Distance(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Statistic_Avg_Less", ReplyAction="http://tempuri.org/IService/Statistic_Avg_LessResponse")]
+        int Statistic_Avg_Less(string code_lecturer, string code_subject, string semester, float mark);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Statistic_Avg_Less", ReplyAction="http://tempuri.org/IService/Statistic_Avg_LessResponse")]
+        System.IAsyncResult BeginStatistic_Avg_Less(string code_lecturer, string code_subject, string semester, float mark, System.AsyncCallback callback, object asyncState);
+        
+        int EndStatistic_Avg_Less(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Statistic_Avg_Greater", ReplyAction="http://tempuri.org/IService/Statistic_Avg_GreaterResponse")]
+        int Statistic_Avg_Greater(string code_lecturer, string code_subject, string semester, float mark);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Statistic_Avg_Greater", ReplyAction="http://tempuri.org/IService/Statistic_Avg_GreaterResponse")]
+        System.IAsyncResult BeginStatistic_Avg_Greater(string code_lecturer, string code_subject, string semester, float mark, System.AsyncCallback callback, object asyncState);
+        
+        int EndStatistic_Avg_Greater(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/GetAuthors", ReplyAction="http://tempuri.org/IService/GetAuthorsResponse")]
         Client.GetMark_Service.Member[] GetAuthors();
@@ -994,57 +1590,467 @@ namespace Client.GetMark_Service {
         
         bool EndCheckLogin(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/GetInfoSV", ReplyAction="http://tempuri.org/IService/GetInfoSVResponse")]
-        Client.GetMark_Service.SinhVien GetInfoSV(string MSSV);
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/ChangePassword", ReplyAction="http://tempuri.org/IService/ChangePasswordResponse")]
+        bool ChangePassword(string username, string old_password, string new_password, int mode);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/GetInfoSV", ReplyAction="http://tempuri.org/IService/GetInfoSVResponse")]
-        System.IAsyncResult BeginGetInfoSV(string MSSV, System.AsyncCallback callback, object asyncState);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/ChangePassword", ReplyAction="http://tempuri.org/IService/ChangePasswordResponse")]
+        System.IAsyncResult BeginChangePassword(string username, string old_password, string new_password, int mode, System.AsyncCallback callback, object asyncState);
         
-        Client.GetMark_Service.SinhVien EndGetInfoSV(System.IAsyncResult result);
+        bool EndChangePassword(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/UpdateInfoSV", ReplyAction="http://tempuri.org/IService/UpdateInfoSVResponse")]
-        bool UpdateInfoSV(Client.GetMark_Service.SinhVien SV);
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/List_Semester", ReplyAction="http://tempuri.org/IService/List_SemesterResponse")]
+        string[] List_Semester();
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/UpdateInfoSV", ReplyAction="http://tempuri.org/IService/UpdateInfoSVResponse")]
-        System.IAsyncResult BeginUpdateInfoSV(Client.GetMark_Service.SinhVien SV, System.AsyncCallback callback, object asyncState);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/List_Semester", ReplyAction="http://tempuri.org/IService/List_SemesterResponse")]
+        System.IAsyncResult BeginList_Semester(System.AsyncCallback callback, object asyncState);
         
-        bool EndUpdateInfoSV(System.IAsyncResult result);
+        string[] EndList_Semester(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/List_HK", ReplyAction="http://tempuri.org/IService/List_HKResponse")]
-        string[] List_HK();
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/List_Subject", ReplyAction="http://tempuri.org/IService/List_SubjectResponse")]
+        Client.GetMark_Service.Subject[] List_Subject();
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/List_HK", ReplyAction="http://tempuri.org/IService/List_HKResponse")]
-        System.IAsyncResult BeginList_HK(System.AsyncCallback callback, object asyncState);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/List_Subject", ReplyAction="http://tempuri.org/IService/List_SubjectResponse")]
+        System.IAsyncResult BeginList_Subject(System.AsyncCallback callback, object asyncState);
         
-        string[] EndList_HK(System.IAsyncResult result);
+        Client.GetMark_Service.Subject[] EndList_Subject(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/KetQua_HK", ReplyAction="http://tempuri.org/IService/KetQua_HKResponse")]
-        Client.GetMark_Service.KetQua[] KetQua_HK(string MSSV, string HK);
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Info_Stu", ReplyAction="http://tempuri.org/IService/Get_Info_StuResponse")]
+        Client.GetMark_Service.Student Get_Info_Stu(string code_student);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/KetQua_HK", ReplyAction="http://tempuri.org/IService/KetQua_HKResponse")]
-        System.IAsyncResult BeginKetQua_HK(string MSSV, string HK, System.AsyncCallback callback, object asyncState);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Info_Stu", ReplyAction="http://tempuri.org/IService/Get_Info_StuResponse")]
+        System.IAsyncResult BeginGet_Info_Stu(string code_student, System.AsyncCallback callback, object asyncState);
         
-        Client.GetMark_Service.KetQua[] EndKetQua_HK(System.IAsyncResult result);
+        Client.GetMark_Service.Student EndGet_Info_Stu(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/InfoSV_HK", ReplyAction="http://tempuri.org/IService/InfoSV_HKResponse")]
-        Client.GetMark_Service.SV_HK InfoSV_HK(string MSSV, string HK);
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Update_Info_Stu", ReplyAction="http://tempuri.org/IService/Update_Info_StuResponse")]
+        bool Update_Info_Stu(Client.GetMark_Service.Student Stu);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/InfoSV_HK", ReplyAction="http://tempuri.org/IService/InfoSV_HKResponse")]
-        System.IAsyncResult BeginInfoSV_HK(string MSSV, string HK, System.AsyncCallback callback, object asyncState);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Update_Info_Stu", ReplyAction="http://tempuri.org/IService/Update_Info_StuResponse")]
+        System.IAsyncResult BeginUpdate_Info_Stu(Client.GetMark_Service.Student Stu, System.AsyncCallback callback, object asyncState);
         
-        Client.GetMark_Service.SV_HK EndInfoSV_HK(System.IAsyncResult result);
+        bool EndUpdate_Info_Stu(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Info_Statistic", ReplyAction="http://tempuri.org/IService/Info_StatisticResponse")]
-        Client.GetMark_Service.Statistic Info_Statistic(string MSSV);
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Mark_Subject_Single", ReplyAction="http://tempuri.org/IService/Mark_Subject_SingleResponse")]
+        Client.GetMark_Service.Mark Mark_Subject_Single(string code_student, string code_subject);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Info_Statistic", ReplyAction="http://tempuri.org/IService/Info_StatisticResponse")]
-        System.IAsyncResult BeginInfo_Statistic(string MSSV, System.AsyncCallback callback, object asyncState);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Mark_Subject_Single", ReplyAction="http://tempuri.org/IService/Mark_Subject_SingleResponse")]
+        System.IAsyncResult BeginMark_Subject_Single(string code_student, string code_subject, System.AsyncCallback callback, object asyncState);
         
-        Client.GetMark_Service.Statistic EndInfo_Statistic(System.IAsyncResult result);
+        Client.GetMark_Service.Mark EndMark_Subject_Single(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Mark_Subject_All", ReplyAction="http://tempuri.org/IService/Mark_Subject_AllResponse")]
+        Client.GetMark_Service.Mark[] Mark_Subject_All(string code_student);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Mark_Subject_All", ReplyAction="http://tempuri.org/IService/Mark_Subject_AllResponse")]
+        System.IAsyncResult BeginMark_Subject_All(string code_student, System.AsyncCallback callback, object asyncState);
+        
+        Client.GetMark_Service.Mark[] EndMark_Subject_All(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Mark_Semester", ReplyAction="http://tempuri.org/IService/Get_Mark_SemesterResponse")]
+        Client.GetMark_Service.Mark[] Get_Mark_Semester(string code_student, string semester);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Mark_Semester", ReplyAction="http://tempuri.org/IService/Get_Mark_SemesterResponse")]
+        System.IAsyncResult BeginGet_Mark_Semester(string code_student, string semester, System.AsyncCallback callback, object asyncState);
+        
+        Client.GetMark_Service.Mark[] EndGet_Mark_Semester(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Info_Stu_Sem_Only", ReplyAction="http://tempuri.org/IService/Info_Stu_Sem_OnlyResponse")]
+        Client.GetMark_Service.Student_Semester Info_Stu_Sem_Only(string code_student, string semester);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Info_Stu_Sem_Only", ReplyAction="http://tempuri.org/IService/Info_Stu_Sem_OnlyResponse")]
+        System.IAsyncResult BeginInfo_Stu_Sem_Only(string code_student, string semester, System.AsyncCallback callback, object asyncState);
+        
+        Client.GetMark_Service.Student_Semester EndInfo_Stu_Sem_Only(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Info_Stu_Sem_All", ReplyAction="http://tempuri.org/IService/Info_Stu_Sem_AllResponse")]
+        Client.GetMark_Service.Student_Semester[] Info_Stu_Sem_All(string code_student);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Info_Stu_Sem_All", ReplyAction="http://tempuri.org/IService/Info_Stu_Sem_AllResponse")]
+        System.IAsyncResult BeginInfo_Stu_Sem_All(string code_student, System.AsyncCallback callback, object asyncState);
+        
+        Client.GetMark_Service.Student_Semester[] EndInfo_Stu_Sem_All(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Avg_Semester", ReplyAction="http://tempuri.org/IService/Get_Avg_SemesterResponse")]
+        float Get_Avg_Semester(string code_student, string semester);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Avg_Semester", ReplyAction="http://tempuri.org/IService/Get_Avg_SemesterResponse")]
+        System.IAsyncResult BeginGet_Avg_Semester(string code_student, string semester, System.AsyncCallback callback, object asyncState);
+        
+        float EndGet_Avg_Semester(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Avg_Cumulative", ReplyAction="http://tempuri.org/IService/Get_Avg_CumulativeResponse")]
+        float Get_Avg_Cumulative(string code_student, string semester);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Avg_Cumulative", ReplyAction="http://tempuri.org/IService/Get_Avg_CumulativeResponse")]
+        System.IAsyncResult BeginGet_Avg_Cumulative(string code_student, string semester, System.AsyncCallback callback, object asyncState);
+        
+        float EndGet_Avg_Cumulative(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Info_Statistic_Stu_General", ReplyAction="http://tempuri.org/IService/Info_Statistic_Stu_GeneralResponse")]
+        Client.GetMark_Service.Statistic_Student Info_Statistic_Stu_General(string code_student);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Info_Statistic_Stu_General", ReplyAction="http://tempuri.org/IService/Info_Statistic_Stu_GeneralResponse")]
+        System.IAsyncResult BeginInfo_Statistic_Stu_General(string code_student, System.AsyncCallback callback, object asyncState);
+        
+        Client.GetMark_Service.Statistic_Student EndInfo_Statistic_Stu_General(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Info_Lec", ReplyAction="http://tempuri.org/IService/Get_Info_LecResponse")]
+        Client.GetMark_Service.Lecturer Get_Info_Lec(string code_lecturer);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Info_Lec", ReplyAction="http://tempuri.org/IService/Get_Info_LecResponse")]
+        System.IAsyncResult BeginGet_Info_Lec(string code_lecturer, System.AsyncCallback callback, object asyncState);
+        
+        Client.GetMark_Service.Lecturer EndGet_Info_Lec(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Update_Info_Lec", ReplyAction="http://tempuri.org/IService/Update_Info_LecResponse")]
+        bool Update_Info_Lec(Client.GetMark_Service.Lecturer lec);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Update_Info_Lec", ReplyAction="http://tempuri.org/IService/Update_Info_LecResponse")]
+        System.IAsyncResult BeginUpdate_Info_Lec(Client.GetMark_Service.Lecturer lec, System.AsyncCallback callback, object asyncState);
+        
+        bool EndUpdate_Info_Lec(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Lec_Sub_All", ReplyAction="http://tempuri.org/IService/Lec_Sub_AllResponse")]
+        Client.GetMark_Service.Subject[] Lec_Sub_All(string code_lecturer);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Lec_Sub_All", ReplyAction="http://tempuri.org/IService/Lec_Sub_AllResponse")]
+        System.IAsyncResult BeginLec_Sub_All(string code_lecturer, System.AsyncCallback callback, object asyncState);
+        
+        Client.GetMark_Service.Subject[] EndLec_Sub_All(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Lec_Sub_Single", ReplyAction="http://tempuri.org/IService/Lec_Sub_SingleResponse")]
+        Client.GetMark_Service.Subject[] Lec_Sub_Single(string code_lecturer, string semester);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Lec_Sub_Single", ReplyAction="http://tempuri.org/IService/Lec_Sub_SingleResponse")]
+        System.IAsyncResult BeginLec_Sub_Single(string code_lecturer, string semester, System.AsyncCallback callback, object asyncState);
+        
+        Client.GetMark_Service.Subject[] EndLec_Sub_Single(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/List_Class", ReplyAction="http://tempuri.org/IService/List_ClassResponse")]
+        Client.GetMark_Service.List_Stu_Class[] List_Class(string code_lecturer, string code_subject, string semester);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/List_Class", ReplyAction="http://tempuri.org/IService/List_ClassResponse")]
+        System.IAsyncResult BeginList_Class(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState);
+        
+        Client.GetMark_Service.List_Stu_Class[] EndList_Class(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Min_Mark", ReplyAction="http://tempuri.org/IService/Get_Min_MarkResponse")]
+        float Get_Min_Mark(string code_lecturer, string code_subject, string semester);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Min_Mark", ReplyAction="http://tempuri.org/IService/Get_Min_MarkResponse")]
+        System.IAsyncResult BeginGet_Min_Mark(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState);
+        
+        float EndGet_Min_Mark(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Max_Mark", ReplyAction="http://tempuri.org/IService/Get_Max_MarkResponse")]
+        float Get_Max_Mark(string code_lecturer, string code_subject, string semester);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Max_Mark", ReplyAction="http://tempuri.org/IService/Get_Max_MarkResponse")]
+        System.IAsyncResult BeginGet_Max_Mark(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState);
+        
+        float EndGet_Max_Mark(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Avg_Mark", ReplyAction="http://tempuri.org/IService/Get_Avg_MarkResponse")]
+        float Get_Avg_Mark(string code_lecturer, string code_subject, string semester);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Avg_Mark", ReplyAction="http://tempuri.org/IService/Get_Avg_MarkResponse")]
+        System.IAsyncResult BeginGet_Avg_Mark(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState);
+        
+        float EndGet_Avg_Mark(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Class_Stu_Total", ReplyAction="http://tempuri.org/IService/Class_Stu_TotalResponse")]
+        int Class_Stu_Total(string code_lecturer, string code_subject, string semester);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Class_Stu_Total", ReplyAction="http://tempuri.org/IService/Class_Stu_TotalResponse")]
+        System.IAsyncResult BeginClass_Stu_Total(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState);
+        
+        int EndClass_Stu_Total(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Statistic_Mark_Equal", ReplyAction="http://tempuri.org/IService/Statistic_Mark_EqualResponse")]
+        int Statistic_Mark_Equal(string code_lecturer, string code_subject, string semester, float mark);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Statistic_Mark_Equal", ReplyAction="http://tempuri.org/IService/Statistic_Mark_EqualResponse")]
+        System.IAsyncResult BeginStatistic_Mark_Equal(string code_lecturer, string code_subject, string semester, float mark, System.AsyncCallback callback, object asyncState);
+        
+        int EndStatistic_Mark_Equal(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Statistic_Mark_Distance", ReplyAction="http://tempuri.org/IService/Statistic_Mark_DistanceResponse")]
+        int Statistic_Mark_Distance(string code_lecturer, string code_subject, string semester, float from, float to);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Statistic_Mark_Distance", ReplyAction="http://tempuri.org/IService/Statistic_Mark_DistanceResponse")]
+        System.IAsyncResult BeginStatistic_Mark_Distance(string code_lecturer, string code_subject, string semester, float from, float to, System.AsyncCallback callback, object asyncState);
+        
+        int EndStatistic_Mark_Distance(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IServiceChannel : Client.GetMark_Service.IService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Statistic_Mark_LessCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Statistic_Mark_LessCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public int Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Statistic_Mark_GreaterCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Statistic_Mark_GreaterCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public int Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Statistic_Mark_GeneralCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Statistic_Mark_GeneralCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Client.GetMark_Service.Statistic_Mark Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Client.GetMark_Service.Statistic_Mark)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Get_Student_Min_MarkCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Get_Student_Min_MarkCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Client.GetMark_Service.Student Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Client.GetMark_Service.Student)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Get_Student_Max_MarkCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Get_Student_Max_MarkCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Client.GetMark_Service.Student Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Client.GetMark_Service.Student)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Get_Student_Min_AvgCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Get_Student_Min_AvgCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Client.GetMark_Service.Student Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Client.GetMark_Service.Student)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Get_Student_Max_AvgCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Get_Student_Max_AvgCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Client.GetMark_Service.Student Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Client.GetMark_Service.Student)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Get_Max_AvgCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Get_Max_AvgCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public float Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((float)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Get_Min_AvgCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Get_Min_AvgCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public float Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((float)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Get_Avg_AvgCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Get_Avg_AvgCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public float Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((float)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Statistic_Avg_EqualCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Statistic_Avg_EqualCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public int Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Statistic_Avg_DistanceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Statistic_Avg_DistanceCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public int Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Statistic_Avg_LessCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Statistic_Avg_LessCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public int Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Statistic_Avg_GreaterCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Statistic_Avg_GreaterCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public int Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1125,30 +2131,11 @@ namespace Client.GetMark_Service {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class GetInfoSVCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class ChangePasswordCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        public GetInfoSVCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public Client.GetMark_Service.SinhVien Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((Client.GetMark_Service.SinhVien)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class UpdateInfoSVCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public UpdateInfoSVCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        public ChangePasswordCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -1163,11 +2150,11 @@ namespace Client.GetMark_Service {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class List_HKCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class List_SemesterCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        public List_HKCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        public List_SemesterCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -1182,57 +2169,418 @@ namespace Client.GetMark_Service {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class KetQua_HKCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class List_SubjectCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        public KetQua_HKCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        public List_SubjectCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
         
-        public Client.GetMark_Service.KetQua[] Result {
+        public Client.GetMark_Service.Subject[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((Client.GetMark_Service.KetQua[])(this.results[0]));
+                return ((Client.GetMark_Service.Subject[])(this.results[0]));
             }
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class InfoSV_HKCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class Get_Info_StuCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        public InfoSV_HKCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        public Get_Info_StuCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
         
-        public Client.GetMark_Service.SV_HK Result {
+        public Client.GetMark_Service.Student Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((Client.GetMark_Service.SV_HK)(this.results[0]));
+                return ((Client.GetMark_Service.Student)(this.results[0]));
             }
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class Info_StatisticCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class Update_Info_StuCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        public Info_StatisticCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        public Update_Info_StuCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
         
-        public Client.GetMark_Service.Statistic Result {
+        public bool Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((Client.GetMark_Service.Statistic)(this.results[0]));
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Mark_Subject_SingleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Mark_Subject_SingleCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Client.GetMark_Service.Mark Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Client.GetMark_Service.Mark)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Mark_Subject_AllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Mark_Subject_AllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Client.GetMark_Service.Mark[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Client.GetMark_Service.Mark[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Get_Mark_SemesterCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Get_Mark_SemesterCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Client.GetMark_Service.Mark[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Client.GetMark_Service.Mark[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Info_Stu_Sem_OnlyCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Info_Stu_Sem_OnlyCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Client.GetMark_Service.Student_Semester Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Client.GetMark_Service.Student_Semester)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Info_Stu_Sem_AllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Info_Stu_Sem_AllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Client.GetMark_Service.Student_Semester[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Client.GetMark_Service.Student_Semester[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Get_Avg_SemesterCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Get_Avg_SemesterCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public float Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((float)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Get_Avg_CumulativeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Get_Avg_CumulativeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public float Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((float)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Info_Statistic_Stu_GeneralCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Info_Statistic_Stu_GeneralCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Client.GetMark_Service.Statistic_Student Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Client.GetMark_Service.Statistic_Student)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Get_Info_LecCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Get_Info_LecCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Client.GetMark_Service.Lecturer Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Client.GetMark_Service.Lecturer)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Update_Info_LecCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Update_Info_LecCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Lec_Sub_AllCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Lec_Sub_AllCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Client.GetMark_Service.Subject[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Client.GetMark_Service.Subject[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Lec_Sub_SingleCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Lec_Sub_SingleCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Client.GetMark_Service.Subject[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Client.GetMark_Service.Subject[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class List_ClassCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public List_ClassCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Client.GetMark_Service.List_Stu_Class[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Client.GetMark_Service.List_Stu_Class[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Get_Min_MarkCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Get_Min_MarkCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public float Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((float)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Get_Max_MarkCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Get_Max_MarkCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public float Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((float)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Get_Avg_MarkCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Get_Avg_MarkCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public float Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((float)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Class_Stu_TotalCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Class_Stu_TotalCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public int Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Statistic_Mark_EqualCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Statistic_Mark_EqualCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public int Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Statistic_Mark_DistanceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Statistic_Mark_DistanceCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public int Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
             }
         }
     }
@@ -1240,6 +2588,90 @@ namespace Client.GetMark_Service {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class ServiceClient : System.ServiceModel.ClientBase<Client.GetMark_Service.IService>, Client.GetMark_Service.IService {
+        
+        private BeginOperationDelegate onBeginStatistic_Mark_LessDelegate;
+        
+        private EndOperationDelegate onEndStatistic_Mark_LessDelegate;
+        
+        private System.Threading.SendOrPostCallback onStatistic_Mark_LessCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginStatistic_Mark_GreaterDelegate;
+        
+        private EndOperationDelegate onEndStatistic_Mark_GreaterDelegate;
+        
+        private System.Threading.SendOrPostCallback onStatistic_Mark_GreaterCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginStatistic_Mark_GeneralDelegate;
+        
+        private EndOperationDelegate onEndStatistic_Mark_GeneralDelegate;
+        
+        private System.Threading.SendOrPostCallback onStatistic_Mark_GeneralCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGet_Student_Min_MarkDelegate;
+        
+        private EndOperationDelegate onEndGet_Student_Min_MarkDelegate;
+        
+        private System.Threading.SendOrPostCallback onGet_Student_Min_MarkCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGet_Student_Max_MarkDelegate;
+        
+        private EndOperationDelegate onEndGet_Student_Max_MarkDelegate;
+        
+        private System.Threading.SendOrPostCallback onGet_Student_Max_MarkCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGet_Student_Min_AvgDelegate;
+        
+        private EndOperationDelegate onEndGet_Student_Min_AvgDelegate;
+        
+        private System.Threading.SendOrPostCallback onGet_Student_Min_AvgCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGet_Student_Max_AvgDelegate;
+        
+        private EndOperationDelegate onEndGet_Student_Max_AvgDelegate;
+        
+        private System.Threading.SendOrPostCallback onGet_Student_Max_AvgCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGet_Max_AvgDelegate;
+        
+        private EndOperationDelegate onEndGet_Max_AvgDelegate;
+        
+        private System.Threading.SendOrPostCallback onGet_Max_AvgCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGet_Min_AvgDelegate;
+        
+        private EndOperationDelegate onEndGet_Min_AvgDelegate;
+        
+        private System.Threading.SendOrPostCallback onGet_Min_AvgCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGet_Avg_AvgDelegate;
+        
+        private EndOperationDelegate onEndGet_Avg_AvgDelegate;
+        
+        private System.Threading.SendOrPostCallback onGet_Avg_AvgCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginStatistic_Avg_EqualDelegate;
+        
+        private EndOperationDelegate onEndStatistic_Avg_EqualDelegate;
+        
+        private System.Threading.SendOrPostCallback onStatistic_Avg_EqualCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginStatistic_Avg_DistanceDelegate;
+        
+        private EndOperationDelegate onEndStatistic_Avg_DistanceDelegate;
+        
+        private System.Threading.SendOrPostCallback onStatistic_Avg_DistanceCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginStatistic_Avg_LessDelegate;
+        
+        private EndOperationDelegate onEndStatistic_Avg_LessDelegate;
+        
+        private System.Threading.SendOrPostCallback onStatistic_Avg_LessCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginStatistic_Avg_GreaterDelegate;
+        
+        private EndOperationDelegate onEndStatistic_Avg_GreaterDelegate;
+        
+        private System.Threading.SendOrPostCallback onStatistic_Avg_GreaterCompletedDelegate;
         
         private BeginOperationDelegate onBeginGetAuthorsDelegate;
         
@@ -1265,41 +2697,149 @@ namespace Client.GetMark_Service {
         
         private System.Threading.SendOrPostCallback onCheckLoginCompletedDelegate;
         
-        private BeginOperationDelegate onBeginGetInfoSVDelegate;
+        private BeginOperationDelegate onBeginChangePasswordDelegate;
         
-        private EndOperationDelegate onEndGetInfoSVDelegate;
+        private EndOperationDelegate onEndChangePasswordDelegate;
         
-        private System.Threading.SendOrPostCallback onGetInfoSVCompletedDelegate;
+        private System.Threading.SendOrPostCallback onChangePasswordCompletedDelegate;
         
-        private BeginOperationDelegate onBeginUpdateInfoSVDelegate;
+        private BeginOperationDelegate onBeginList_SemesterDelegate;
         
-        private EndOperationDelegate onEndUpdateInfoSVDelegate;
+        private EndOperationDelegate onEndList_SemesterDelegate;
         
-        private System.Threading.SendOrPostCallback onUpdateInfoSVCompletedDelegate;
+        private System.Threading.SendOrPostCallback onList_SemesterCompletedDelegate;
         
-        private BeginOperationDelegate onBeginList_HKDelegate;
+        private BeginOperationDelegate onBeginList_SubjectDelegate;
         
-        private EndOperationDelegate onEndList_HKDelegate;
+        private EndOperationDelegate onEndList_SubjectDelegate;
         
-        private System.Threading.SendOrPostCallback onList_HKCompletedDelegate;
+        private System.Threading.SendOrPostCallback onList_SubjectCompletedDelegate;
         
-        private BeginOperationDelegate onBeginKetQua_HKDelegate;
+        private BeginOperationDelegate onBeginGet_Info_StuDelegate;
         
-        private EndOperationDelegate onEndKetQua_HKDelegate;
+        private EndOperationDelegate onEndGet_Info_StuDelegate;
         
-        private System.Threading.SendOrPostCallback onKetQua_HKCompletedDelegate;
+        private System.Threading.SendOrPostCallback onGet_Info_StuCompletedDelegate;
         
-        private BeginOperationDelegate onBeginInfoSV_HKDelegate;
+        private BeginOperationDelegate onBeginUpdate_Info_StuDelegate;
         
-        private EndOperationDelegate onEndInfoSV_HKDelegate;
+        private EndOperationDelegate onEndUpdate_Info_StuDelegate;
         
-        private System.Threading.SendOrPostCallback onInfoSV_HKCompletedDelegate;
+        private System.Threading.SendOrPostCallback onUpdate_Info_StuCompletedDelegate;
         
-        private BeginOperationDelegate onBeginInfo_StatisticDelegate;
+        private BeginOperationDelegate onBeginMark_Subject_SingleDelegate;
         
-        private EndOperationDelegate onEndInfo_StatisticDelegate;
+        private EndOperationDelegate onEndMark_Subject_SingleDelegate;
         
-        private System.Threading.SendOrPostCallback onInfo_StatisticCompletedDelegate;
+        private System.Threading.SendOrPostCallback onMark_Subject_SingleCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginMark_Subject_AllDelegate;
+        
+        private EndOperationDelegate onEndMark_Subject_AllDelegate;
+        
+        private System.Threading.SendOrPostCallback onMark_Subject_AllCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGet_Mark_SemesterDelegate;
+        
+        private EndOperationDelegate onEndGet_Mark_SemesterDelegate;
+        
+        private System.Threading.SendOrPostCallback onGet_Mark_SemesterCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginInfo_Stu_Sem_OnlyDelegate;
+        
+        private EndOperationDelegate onEndInfo_Stu_Sem_OnlyDelegate;
+        
+        private System.Threading.SendOrPostCallback onInfo_Stu_Sem_OnlyCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginInfo_Stu_Sem_AllDelegate;
+        
+        private EndOperationDelegate onEndInfo_Stu_Sem_AllDelegate;
+        
+        private System.Threading.SendOrPostCallback onInfo_Stu_Sem_AllCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGet_Avg_SemesterDelegate;
+        
+        private EndOperationDelegate onEndGet_Avg_SemesterDelegate;
+        
+        private System.Threading.SendOrPostCallback onGet_Avg_SemesterCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGet_Avg_CumulativeDelegate;
+        
+        private EndOperationDelegate onEndGet_Avg_CumulativeDelegate;
+        
+        private System.Threading.SendOrPostCallback onGet_Avg_CumulativeCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginInfo_Statistic_Stu_GeneralDelegate;
+        
+        private EndOperationDelegate onEndInfo_Statistic_Stu_GeneralDelegate;
+        
+        private System.Threading.SendOrPostCallback onInfo_Statistic_Stu_GeneralCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGet_Info_LecDelegate;
+        
+        private EndOperationDelegate onEndGet_Info_LecDelegate;
+        
+        private System.Threading.SendOrPostCallback onGet_Info_LecCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginUpdate_Info_LecDelegate;
+        
+        private EndOperationDelegate onEndUpdate_Info_LecDelegate;
+        
+        private System.Threading.SendOrPostCallback onUpdate_Info_LecCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginLec_Sub_AllDelegate;
+        
+        private EndOperationDelegate onEndLec_Sub_AllDelegate;
+        
+        private System.Threading.SendOrPostCallback onLec_Sub_AllCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginLec_Sub_SingleDelegate;
+        
+        private EndOperationDelegate onEndLec_Sub_SingleDelegate;
+        
+        private System.Threading.SendOrPostCallback onLec_Sub_SingleCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginList_ClassDelegate;
+        
+        private EndOperationDelegate onEndList_ClassDelegate;
+        
+        private System.Threading.SendOrPostCallback onList_ClassCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGet_Min_MarkDelegate;
+        
+        private EndOperationDelegate onEndGet_Min_MarkDelegate;
+        
+        private System.Threading.SendOrPostCallback onGet_Min_MarkCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGet_Max_MarkDelegate;
+        
+        private EndOperationDelegate onEndGet_Max_MarkDelegate;
+        
+        private System.Threading.SendOrPostCallback onGet_Max_MarkCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGet_Avg_MarkDelegate;
+        
+        private EndOperationDelegate onEndGet_Avg_MarkDelegate;
+        
+        private System.Threading.SendOrPostCallback onGet_Avg_MarkCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginClass_Stu_TotalDelegate;
+        
+        private EndOperationDelegate onEndClass_Stu_TotalDelegate;
+        
+        private System.Threading.SendOrPostCallback onClass_Stu_TotalCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginStatistic_Mark_EqualDelegate;
+        
+        private EndOperationDelegate onEndStatistic_Mark_EqualDelegate;
+        
+        private System.Threading.SendOrPostCallback onStatistic_Mark_EqualCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginStatistic_Mark_DistanceDelegate;
+        
+        private EndOperationDelegate onEndStatistic_Mark_DistanceDelegate;
+        
+        private System.Threading.SendOrPostCallback onStatistic_Mark_DistanceCompletedDelegate;
         
         public ServiceClient() {
         }
@@ -1320,6 +2860,34 @@ namespace Client.GetMark_Service {
                 base(binding, remoteAddress) {
         }
         
+        public event System.EventHandler<Statistic_Mark_LessCompletedEventArgs> Statistic_Mark_LessCompleted;
+        
+        public event System.EventHandler<Statistic_Mark_GreaterCompletedEventArgs> Statistic_Mark_GreaterCompleted;
+        
+        public event System.EventHandler<Statistic_Mark_GeneralCompletedEventArgs> Statistic_Mark_GeneralCompleted;
+        
+        public event System.EventHandler<Get_Student_Min_MarkCompletedEventArgs> Get_Student_Min_MarkCompleted;
+        
+        public event System.EventHandler<Get_Student_Max_MarkCompletedEventArgs> Get_Student_Max_MarkCompleted;
+        
+        public event System.EventHandler<Get_Student_Min_AvgCompletedEventArgs> Get_Student_Min_AvgCompleted;
+        
+        public event System.EventHandler<Get_Student_Max_AvgCompletedEventArgs> Get_Student_Max_AvgCompleted;
+        
+        public event System.EventHandler<Get_Max_AvgCompletedEventArgs> Get_Max_AvgCompleted;
+        
+        public event System.EventHandler<Get_Min_AvgCompletedEventArgs> Get_Min_AvgCompleted;
+        
+        public event System.EventHandler<Get_Avg_AvgCompletedEventArgs> Get_Avg_AvgCompleted;
+        
+        public event System.EventHandler<Statistic_Avg_EqualCompletedEventArgs> Statistic_Avg_EqualCompleted;
+        
+        public event System.EventHandler<Statistic_Avg_DistanceCompletedEventArgs> Statistic_Avg_DistanceCompleted;
+        
+        public event System.EventHandler<Statistic_Avg_LessCompletedEventArgs> Statistic_Avg_LessCompleted;
+        
+        public event System.EventHandler<Statistic_Avg_GreaterCompletedEventArgs> Statistic_Avg_GreaterCompleted;
+        
         public event System.EventHandler<GetAuthorsCompletedEventArgs> GetAuthorsCompleted;
         
         public event System.EventHandler<DownloadCompletedEventArgs> DownloadCompleted;
@@ -1328,17 +2896,823 @@ namespace Client.GetMark_Service {
         
         public event System.EventHandler<CheckLoginCompletedEventArgs> CheckLoginCompleted;
         
-        public event System.EventHandler<GetInfoSVCompletedEventArgs> GetInfoSVCompleted;
+        public event System.EventHandler<ChangePasswordCompletedEventArgs> ChangePasswordCompleted;
         
-        public event System.EventHandler<UpdateInfoSVCompletedEventArgs> UpdateInfoSVCompleted;
+        public event System.EventHandler<List_SemesterCompletedEventArgs> List_SemesterCompleted;
         
-        public event System.EventHandler<List_HKCompletedEventArgs> List_HKCompleted;
+        public event System.EventHandler<List_SubjectCompletedEventArgs> List_SubjectCompleted;
         
-        public event System.EventHandler<KetQua_HKCompletedEventArgs> KetQua_HKCompleted;
+        public event System.EventHandler<Get_Info_StuCompletedEventArgs> Get_Info_StuCompleted;
         
-        public event System.EventHandler<InfoSV_HKCompletedEventArgs> InfoSV_HKCompleted;
+        public event System.EventHandler<Update_Info_StuCompletedEventArgs> Update_Info_StuCompleted;
         
-        public event System.EventHandler<Info_StatisticCompletedEventArgs> Info_StatisticCompleted;
+        public event System.EventHandler<Mark_Subject_SingleCompletedEventArgs> Mark_Subject_SingleCompleted;
+        
+        public event System.EventHandler<Mark_Subject_AllCompletedEventArgs> Mark_Subject_AllCompleted;
+        
+        public event System.EventHandler<Get_Mark_SemesterCompletedEventArgs> Get_Mark_SemesterCompleted;
+        
+        public event System.EventHandler<Info_Stu_Sem_OnlyCompletedEventArgs> Info_Stu_Sem_OnlyCompleted;
+        
+        public event System.EventHandler<Info_Stu_Sem_AllCompletedEventArgs> Info_Stu_Sem_AllCompleted;
+        
+        public event System.EventHandler<Get_Avg_SemesterCompletedEventArgs> Get_Avg_SemesterCompleted;
+        
+        public event System.EventHandler<Get_Avg_CumulativeCompletedEventArgs> Get_Avg_CumulativeCompleted;
+        
+        public event System.EventHandler<Info_Statistic_Stu_GeneralCompletedEventArgs> Info_Statistic_Stu_GeneralCompleted;
+        
+        public event System.EventHandler<Get_Info_LecCompletedEventArgs> Get_Info_LecCompleted;
+        
+        public event System.EventHandler<Update_Info_LecCompletedEventArgs> Update_Info_LecCompleted;
+        
+        public event System.EventHandler<Lec_Sub_AllCompletedEventArgs> Lec_Sub_AllCompleted;
+        
+        public event System.EventHandler<Lec_Sub_SingleCompletedEventArgs> Lec_Sub_SingleCompleted;
+        
+        public event System.EventHandler<List_ClassCompletedEventArgs> List_ClassCompleted;
+        
+        public event System.EventHandler<Get_Min_MarkCompletedEventArgs> Get_Min_MarkCompleted;
+        
+        public event System.EventHandler<Get_Max_MarkCompletedEventArgs> Get_Max_MarkCompleted;
+        
+        public event System.EventHandler<Get_Avg_MarkCompletedEventArgs> Get_Avg_MarkCompleted;
+        
+        public event System.EventHandler<Class_Stu_TotalCompletedEventArgs> Class_Stu_TotalCompleted;
+        
+        public event System.EventHandler<Statistic_Mark_EqualCompletedEventArgs> Statistic_Mark_EqualCompleted;
+        
+        public event System.EventHandler<Statistic_Mark_DistanceCompletedEventArgs> Statistic_Mark_DistanceCompleted;
+        
+        public int Statistic_Mark_Less(string code_lecturer, string code_subject, string semester, float mark) {
+            return base.Channel.Statistic_Mark_Less(code_lecturer, code_subject, semester, mark);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginStatistic_Mark_Less(string code_lecturer, string code_subject, string semester, float mark, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginStatistic_Mark_Less(code_lecturer, code_subject, semester, mark, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public int EndStatistic_Mark_Less(System.IAsyncResult result) {
+            return base.Channel.EndStatistic_Mark_Less(result);
+        }
+        
+        private System.IAsyncResult OnBeginStatistic_Mark_Less(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_lecturer = ((string)(inValues[0]));
+            string code_subject = ((string)(inValues[1]));
+            string semester = ((string)(inValues[2]));
+            float mark = ((float)(inValues[3]));
+            return this.BeginStatistic_Mark_Less(code_lecturer, code_subject, semester, mark, callback, asyncState);
+        }
+        
+        private object[] OnEndStatistic_Mark_Less(System.IAsyncResult result) {
+            int retVal = this.EndStatistic_Mark_Less(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnStatistic_Mark_LessCompleted(object state) {
+            if ((this.Statistic_Mark_LessCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Statistic_Mark_LessCompleted(this, new Statistic_Mark_LessCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Statistic_Mark_LessAsync(string code_lecturer, string code_subject, string semester, float mark) {
+            this.Statistic_Mark_LessAsync(code_lecturer, code_subject, semester, mark, null);
+        }
+        
+        public void Statistic_Mark_LessAsync(string code_lecturer, string code_subject, string semester, float mark, object userState) {
+            if ((this.onBeginStatistic_Mark_LessDelegate == null)) {
+                this.onBeginStatistic_Mark_LessDelegate = new BeginOperationDelegate(this.OnBeginStatistic_Mark_Less);
+            }
+            if ((this.onEndStatistic_Mark_LessDelegate == null)) {
+                this.onEndStatistic_Mark_LessDelegate = new EndOperationDelegate(this.OnEndStatistic_Mark_Less);
+            }
+            if ((this.onStatistic_Mark_LessCompletedDelegate == null)) {
+                this.onStatistic_Mark_LessCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnStatistic_Mark_LessCompleted);
+            }
+            base.InvokeAsync(this.onBeginStatistic_Mark_LessDelegate, new object[] {
+                        code_lecturer,
+                        code_subject,
+                        semester,
+                        mark}, this.onEndStatistic_Mark_LessDelegate, this.onStatistic_Mark_LessCompletedDelegate, userState);
+        }
+        
+        public int Statistic_Mark_Greater(string code_lecturer, string code_subject, string semester, float mark) {
+            return base.Channel.Statistic_Mark_Greater(code_lecturer, code_subject, semester, mark);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginStatistic_Mark_Greater(string code_lecturer, string code_subject, string semester, float mark, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginStatistic_Mark_Greater(code_lecturer, code_subject, semester, mark, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public int EndStatistic_Mark_Greater(System.IAsyncResult result) {
+            return base.Channel.EndStatistic_Mark_Greater(result);
+        }
+        
+        private System.IAsyncResult OnBeginStatistic_Mark_Greater(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_lecturer = ((string)(inValues[0]));
+            string code_subject = ((string)(inValues[1]));
+            string semester = ((string)(inValues[2]));
+            float mark = ((float)(inValues[3]));
+            return this.BeginStatistic_Mark_Greater(code_lecturer, code_subject, semester, mark, callback, asyncState);
+        }
+        
+        private object[] OnEndStatistic_Mark_Greater(System.IAsyncResult result) {
+            int retVal = this.EndStatistic_Mark_Greater(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnStatistic_Mark_GreaterCompleted(object state) {
+            if ((this.Statistic_Mark_GreaterCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Statistic_Mark_GreaterCompleted(this, new Statistic_Mark_GreaterCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Statistic_Mark_GreaterAsync(string code_lecturer, string code_subject, string semester, float mark) {
+            this.Statistic_Mark_GreaterAsync(code_lecturer, code_subject, semester, mark, null);
+        }
+        
+        public void Statistic_Mark_GreaterAsync(string code_lecturer, string code_subject, string semester, float mark, object userState) {
+            if ((this.onBeginStatistic_Mark_GreaterDelegate == null)) {
+                this.onBeginStatistic_Mark_GreaterDelegate = new BeginOperationDelegate(this.OnBeginStatistic_Mark_Greater);
+            }
+            if ((this.onEndStatistic_Mark_GreaterDelegate == null)) {
+                this.onEndStatistic_Mark_GreaterDelegate = new EndOperationDelegate(this.OnEndStatistic_Mark_Greater);
+            }
+            if ((this.onStatistic_Mark_GreaterCompletedDelegate == null)) {
+                this.onStatistic_Mark_GreaterCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnStatistic_Mark_GreaterCompleted);
+            }
+            base.InvokeAsync(this.onBeginStatistic_Mark_GreaterDelegate, new object[] {
+                        code_lecturer,
+                        code_subject,
+                        semester,
+                        mark}, this.onEndStatistic_Mark_GreaterDelegate, this.onStatistic_Mark_GreaterCompletedDelegate, userState);
+        }
+        
+        public Client.GetMark_Service.Statistic_Mark Statistic_Mark_General(string code_lecturer, string code_subject, string semester) {
+            return base.Channel.Statistic_Mark_General(code_lecturer, code_subject, semester);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginStatistic_Mark_General(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginStatistic_Mark_General(code_lecturer, code_subject, semester, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public Client.GetMark_Service.Statistic_Mark EndStatistic_Mark_General(System.IAsyncResult result) {
+            return base.Channel.EndStatistic_Mark_General(result);
+        }
+        
+        private System.IAsyncResult OnBeginStatistic_Mark_General(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_lecturer = ((string)(inValues[0]));
+            string code_subject = ((string)(inValues[1]));
+            string semester = ((string)(inValues[2]));
+            return this.BeginStatistic_Mark_General(code_lecturer, code_subject, semester, callback, asyncState);
+        }
+        
+        private object[] OnEndStatistic_Mark_General(System.IAsyncResult result) {
+            Client.GetMark_Service.Statistic_Mark retVal = this.EndStatistic_Mark_General(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnStatistic_Mark_GeneralCompleted(object state) {
+            if ((this.Statistic_Mark_GeneralCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Statistic_Mark_GeneralCompleted(this, new Statistic_Mark_GeneralCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Statistic_Mark_GeneralAsync(string code_lecturer, string code_subject, string semester) {
+            this.Statistic_Mark_GeneralAsync(code_lecturer, code_subject, semester, null);
+        }
+        
+        public void Statistic_Mark_GeneralAsync(string code_lecturer, string code_subject, string semester, object userState) {
+            if ((this.onBeginStatistic_Mark_GeneralDelegate == null)) {
+                this.onBeginStatistic_Mark_GeneralDelegate = new BeginOperationDelegate(this.OnBeginStatistic_Mark_General);
+            }
+            if ((this.onEndStatistic_Mark_GeneralDelegate == null)) {
+                this.onEndStatistic_Mark_GeneralDelegate = new EndOperationDelegate(this.OnEndStatistic_Mark_General);
+            }
+            if ((this.onStatistic_Mark_GeneralCompletedDelegate == null)) {
+                this.onStatistic_Mark_GeneralCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnStatistic_Mark_GeneralCompleted);
+            }
+            base.InvokeAsync(this.onBeginStatistic_Mark_GeneralDelegate, new object[] {
+                        code_lecturer,
+                        code_subject,
+                        semester}, this.onEndStatistic_Mark_GeneralDelegate, this.onStatistic_Mark_GeneralCompletedDelegate, userState);
+        }
+        
+        public Client.GetMark_Service.Student Get_Student_Min_Mark(string code_lecturer, string code_subject, string semester) {
+            return base.Channel.Get_Student_Min_Mark(code_lecturer, code_subject, semester);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGet_Student_Min_Mark(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGet_Student_Min_Mark(code_lecturer, code_subject, semester, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public Client.GetMark_Service.Student EndGet_Student_Min_Mark(System.IAsyncResult result) {
+            return base.Channel.EndGet_Student_Min_Mark(result);
+        }
+        
+        private System.IAsyncResult OnBeginGet_Student_Min_Mark(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_lecturer = ((string)(inValues[0]));
+            string code_subject = ((string)(inValues[1]));
+            string semester = ((string)(inValues[2]));
+            return this.BeginGet_Student_Min_Mark(code_lecturer, code_subject, semester, callback, asyncState);
+        }
+        
+        private object[] OnEndGet_Student_Min_Mark(System.IAsyncResult result) {
+            Client.GetMark_Service.Student retVal = this.EndGet_Student_Min_Mark(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGet_Student_Min_MarkCompleted(object state) {
+            if ((this.Get_Student_Min_MarkCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Get_Student_Min_MarkCompleted(this, new Get_Student_Min_MarkCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Get_Student_Min_MarkAsync(string code_lecturer, string code_subject, string semester) {
+            this.Get_Student_Min_MarkAsync(code_lecturer, code_subject, semester, null);
+        }
+        
+        public void Get_Student_Min_MarkAsync(string code_lecturer, string code_subject, string semester, object userState) {
+            if ((this.onBeginGet_Student_Min_MarkDelegate == null)) {
+                this.onBeginGet_Student_Min_MarkDelegate = new BeginOperationDelegate(this.OnBeginGet_Student_Min_Mark);
+            }
+            if ((this.onEndGet_Student_Min_MarkDelegate == null)) {
+                this.onEndGet_Student_Min_MarkDelegate = new EndOperationDelegate(this.OnEndGet_Student_Min_Mark);
+            }
+            if ((this.onGet_Student_Min_MarkCompletedDelegate == null)) {
+                this.onGet_Student_Min_MarkCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGet_Student_Min_MarkCompleted);
+            }
+            base.InvokeAsync(this.onBeginGet_Student_Min_MarkDelegate, new object[] {
+                        code_lecturer,
+                        code_subject,
+                        semester}, this.onEndGet_Student_Min_MarkDelegate, this.onGet_Student_Min_MarkCompletedDelegate, userState);
+        }
+        
+        public Client.GetMark_Service.Student Get_Student_Max_Mark(string code_lecturer, string code_subject, string semester) {
+            return base.Channel.Get_Student_Max_Mark(code_lecturer, code_subject, semester);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGet_Student_Max_Mark(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGet_Student_Max_Mark(code_lecturer, code_subject, semester, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public Client.GetMark_Service.Student EndGet_Student_Max_Mark(System.IAsyncResult result) {
+            return base.Channel.EndGet_Student_Max_Mark(result);
+        }
+        
+        private System.IAsyncResult OnBeginGet_Student_Max_Mark(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_lecturer = ((string)(inValues[0]));
+            string code_subject = ((string)(inValues[1]));
+            string semester = ((string)(inValues[2]));
+            return this.BeginGet_Student_Max_Mark(code_lecturer, code_subject, semester, callback, asyncState);
+        }
+        
+        private object[] OnEndGet_Student_Max_Mark(System.IAsyncResult result) {
+            Client.GetMark_Service.Student retVal = this.EndGet_Student_Max_Mark(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGet_Student_Max_MarkCompleted(object state) {
+            if ((this.Get_Student_Max_MarkCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Get_Student_Max_MarkCompleted(this, new Get_Student_Max_MarkCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Get_Student_Max_MarkAsync(string code_lecturer, string code_subject, string semester) {
+            this.Get_Student_Max_MarkAsync(code_lecturer, code_subject, semester, null);
+        }
+        
+        public void Get_Student_Max_MarkAsync(string code_lecturer, string code_subject, string semester, object userState) {
+            if ((this.onBeginGet_Student_Max_MarkDelegate == null)) {
+                this.onBeginGet_Student_Max_MarkDelegate = new BeginOperationDelegate(this.OnBeginGet_Student_Max_Mark);
+            }
+            if ((this.onEndGet_Student_Max_MarkDelegate == null)) {
+                this.onEndGet_Student_Max_MarkDelegate = new EndOperationDelegate(this.OnEndGet_Student_Max_Mark);
+            }
+            if ((this.onGet_Student_Max_MarkCompletedDelegate == null)) {
+                this.onGet_Student_Max_MarkCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGet_Student_Max_MarkCompleted);
+            }
+            base.InvokeAsync(this.onBeginGet_Student_Max_MarkDelegate, new object[] {
+                        code_lecturer,
+                        code_subject,
+                        semester}, this.onEndGet_Student_Max_MarkDelegate, this.onGet_Student_Max_MarkCompletedDelegate, userState);
+        }
+        
+        public Client.GetMark_Service.Student Get_Student_Min_Avg(string code_lecturer, string code_subject, string semester) {
+            return base.Channel.Get_Student_Min_Avg(code_lecturer, code_subject, semester);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGet_Student_Min_Avg(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGet_Student_Min_Avg(code_lecturer, code_subject, semester, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public Client.GetMark_Service.Student EndGet_Student_Min_Avg(System.IAsyncResult result) {
+            return base.Channel.EndGet_Student_Min_Avg(result);
+        }
+        
+        private System.IAsyncResult OnBeginGet_Student_Min_Avg(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_lecturer = ((string)(inValues[0]));
+            string code_subject = ((string)(inValues[1]));
+            string semester = ((string)(inValues[2]));
+            return this.BeginGet_Student_Min_Avg(code_lecturer, code_subject, semester, callback, asyncState);
+        }
+        
+        private object[] OnEndGet_Student_Min_Avg(System.IAsyncResult result) {
+            Client.GetMark_Service.Student retVal = this.EndGet_Student_Min_Avg(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGet_Student_Min_AvgCompleted(object state) {
+            if ((this.Get_Student_Min_AvgCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Get_Student_Min_AvgCompleted(this, new Get_Student_Min_AvgCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Get_Student_Min_AvgAsync(string code_lecturer, string code_subject, string semester) {
+            this.Get_Student_Min_AvgAsync(code_lecturer, code_subject, semester, null);
+        }
+        
+        public void Get_Student_Min_AvgAsync(string code_lecturer, string code_subject, string semester, object userState) {
+            if ((this.onBeginGet_Student_Min_AvgDelegate == null)) {
+                this.onBeginGet_Student_Min_AvgDelegate = new BeginOperationDelegate(this.OnBeginGet_Student_Min_Avg);
+            }
+            if ((this.onEndGet_Student_Min_AvgDelegate == null)) {
+                this.onEndGet_Student_Min_AvgDelegate = new EndOperationDelegate(this.OnEndGet_Student_Min_Avg);
+            }
+            if ((this.onGet_Student_Min_AvgCompletedDelegate == null)) {
+                this.onGet_Student_Min_AvgCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGet_Student_Min_AvgCompleted);
+            }
+            base.InvokeAsync(this.onBeginGet_Student_Min_AvgDelegate, new object[] {
+                        code_lecturer,
+                        code_subject,
+                        semester}, this.onEndGet_Student_Min_AvgDelegate, this.onGet_Student_Min_AvgCompletedDelegate, userState);
+        }
+        
+        public Client.GetMark_Service.Student Get_Student_Max_Avg(string code_lecturer, string code_subject, string semester) {
+            return base.Channel.Get_Student_Max_Avg(code_lecturer, code_subject, semester);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGet_Student_Max_Avg(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGet_Student_Max_Avg(code_lecturer, code_subject, semester, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public Client.GetMark_Service.Student EndGet_Student_Max_Avg(System.IAsyncResult result) {
+            return base.Channel.EndGet_Student_Max_Avg(result);
+        }
+        
+        private System.IAsyncResult OnBeginGet_Student_Max_Avg(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_lecturer = ((string)(inValues[0]));
+            string code_subject = ((string)(inValues[1]));
+            string semester = ((string)(inValues[2]));
+            return this.BeginGet_Student_Max_Avg(code_lecturer, code_subject, semester, callback, asyncState);
+        }
+        
+        private object[] OnEndGet_Student_Max_Avg(System.IAsyncResult result) {
+            Client.GetMark_Service.Student retVal = this.EndGet_Student_Max_Avg(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGet_Student_Max_AvgCompleted(object state) {
+            if ((this.Get_Student_Max_AvgCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Get_Student_Max_AvgCompleted(this, new Get_Student_Max_AvgCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Get_Student_Max_AvgAsync(string code_lecturer, string code_subject, string semester) {
+            this.Get_Student_Max_AvgAsync(code_lecturer, code_subject, semester, null);
+        }
+        
+        public void Get_Student_Max_AvgAsync(string code_lecturer, string code_subject, string semester, object userState) {
+            if ((this.onBeginGet_Student_Max_AvgDelegate == null)) {
+                this.onBeginGet_Student_Max_AvgDelegate = new BeginOperationDelegate(this.OnBeginGet_Student_Max_Avg);
+            }
+            if ((this.onEndGet_Student_Max_AvgDelegate == null)) {
+                this.onEndGet_Student_Max_AvgDelegate = new EndOperationDelegate(this.OnEndGet_Student_Max_Avg);
+            }
+            if ((this.onGet_Student_Max_AvgCompletedDelegate == null)) {
+                this.onGet_Student_Max_AvgCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGet_Student_Max_AvgCompleted);
+            }
+            base.InvokeAsync(this.onBeginGet_Student_Max_AvgDelegate, new object[] {
+                        code_lecturer,
+                        code_subject,
+                        semester}, this.onEndGet_Student_Max_AvgDelegate, this.onGet_Student_Max_AvgCompletedDelegate, userState);
+        }
+        
+        public float Get_Max_Avg(string code_lecturer, string code_subject, string semester) {
+            return base.Channel.Get_Max_Avg(code_lecturer, code_subject, semester);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGet_Max_Avg(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGet_Max_Avg(code_lecturer, code_subject, semester, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public float EndGet_Max_Avg(System.IAsyncResult result) {
+            return base.Channel.EndGet_Max_Avg(result);
+        }
+        
+        private System.IAsyncResult OnBeginGet_Max_Avg(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_lecturer = ((string)(inValues[0]));
+            string code_subject = ((string)(inValues[1]));
+            string semester = ((string)(inValues[2]));
+            return this.BeginGet_Max_Avg(code_lecturer, code_subject, semester, callback, asyncState);
+        }
+        
+        private object[] OnEndGet_Max_Avg(System.IAsyncResult result) {
+            float retVal = this.EndGet_Max_Avg(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGet_Max_AvgCompleted(object state) {
+            if ((this.Get_Max_AvgCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Get_Max_AvgCompleted(this, new Get_Max_AvgCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Get_Max_AvgAsync(string code_lecturer, string code_subject, string semester) {
+            this.Get_Max_AvgAsync(code_lecturer, code_subject, semester, null);
+        }
+        
+        public void Get_Max_AvgAsync(string code_lecturer, string code_subject, string semester, object userState) {
+            if ((this.onBeginGet_Max_AvgDelegate == null)) {
+                this.onBeginGet_Max_AvgDelegate = new BeginOperationDelegate(this.OnBeginGet_Max_Avg);
+            }
+            if ((this.onEndGet_Max_AvgDelegate == null)) {
+                this.onEndGet_Max_AvgDelegate = new EndOperationDelegate(this.OnEndGet_Max_Avg);
+            }
+            if ((this.onGet_Max_AvgCompletedDelegate == null)) {
+                this.onGet_Max_AvgCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGet_Max_AvgCompleted);
+            }
+            base.InvokeAsync(this.onBeginGet_Max_AvgDelegate, new object[] {
+                        code_lecturer,
+                        code_subject,
+                        semester}, this.onEndGet_Max_AvgDelegate, this.onGet_Max_AvgCompletedDelegate, userState);
+        }
+        
+        public float Get_Min_Avg(string code_lecturer, string code_subject, string semester) {
+            return base.Channel.Get_Min_Avg(code_lecturer, code_subject, semester);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGet_Min_Avg(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGet_Min_Avg(code_lecturer, code_subject, semester, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public float EndGet_Min_Avg(System.IAsyncResult result) {
+            return base.Channel.EndGet_Min_Avg(result);
+        }
+        
+        private System.IAsyncResult OnBeginGet_Min_Avg(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_lecturer = ((string)(inValues[0]));
+            string code_subject = ((string)(inValues[1]));
+            string semester = ((string)(inValues[2]));
+            return this.BeginGet_Min_Avg(code_lecturer, code_subject, semester, callback, asyncState);
+        }
+        
+        private object[] OnEndGet_Min_Avg(System.IAsyncResult result) {
+            float retVal = this.EndGet_Min_Avg(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGet_Min_AvgCompleted(object state) {
+            if ((this.Get_Min_AvgCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Get_Min_AvgCompleted(this, new Get_Min_AvgCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Get_Min_AvgAsync(string code_lecturer, string code_subject, string semester) {
+            this.Get_Min_AvgAsync(code_lecturer, code_subject, semester, null);
+        }
+        
+        public void Get_Min_AvgAsync(string code_lecturer, string code_subject, string semester, object userState) {
+            if ((this.onBeginGet_Min_AvgDelegate == null)) {
+                this.onBeginGet_Min_AvgDelegate = new BeginOperationDelegate(this.OnBeginGet_Min_Avg);
+            }
+            if ((this.onEndGet_Min_AvgDelegate == null)) {
+                this.onEndGet_Min_AvgDelegate = new EndOperationDelegate(this.OnEndGet_Min_Avg);
+            }
+            if ((this.onGet_Min_AvgCompletedDelegate == null)) {
+                this.onGet_Min_AvgCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGet_Min_AvgCompleted);
+            }
+            base.InvokeAsync(this.onBeginGet_Min_AvgDelegate, new object[] {
+                        code_lecturer,
+                        code_subject,
+                        semester}, this.onEndGet_Min_AvgDelegate, this.onGet_Min_AvgCompletedDelegate, userState);
+        }
+        
+        public float Get_Avg_Avg(string code_lecturer, string code_subject, string semester) {
+            return base.Channel.Get_Avg_Avg(code_lecturer, code_subject, semester);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGet_Avg_Avg(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGet_Avg_Avg(code_lecturer, code_subject, semester, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public float EndGet_Avg_Avg(System.IAsyncResult result) {
+            return base.Channel.EndGet_Avg_Avg(result);
+        }
+        
+        private System.IAsyncResult OnBeginGet_Avg_Avg(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_lecturer = ((string)(inValues[0]));
+            string code_subject = ((string)(inValues[1]));
+            string semester = ((string)(inValues[2]));
+            return this.BeginGet_Avg_Avg(code_lecturer, code_subject, semester, callback, asyncState);
+        }
+        
+        private object[] OnEndGet_Avg_Avg(System.IAsyncResult result) {
+            float retVal = this.EndGet_Avg_Avg(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGet_Avg_AvgCompleted(object state) {
+            if ((this.Get_Avg_AvgCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Get_Avg_AvgCompleted(this, new Get_Avg_AvgCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Get_Avg_AvgAsync(string code_lecturer, string code_subject, string semester) {
+            this.Get_Avg_AvgAsync(code_lecturer, code_subject, semester, null);
+        }
+        
+        public void Get_Avg_AvgAsync(string code_lecturer, string code_subject, string semester, object userState) {
+            if ((this.onBeginGet_Avg_AvgDelegate == null)) {
+                this.onBeginGet_Avg_AvgDelegate = new BeginOperationDelegate(this.OnBeginGet_Avg_Avg);
+            }
+            if ((this.onEndGet_Avg_AvgDelegate == null)) {
+                this.onEndGet_Avg_AvgDelegate = new EndOperationDelegate(this.OnEndGet_Avg_Avg);
+            }
+            if ((this.onGet_Avg_AvgCompletedDelegate == null)) {
+                this.onGet_Avg_AvgCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGet_Avg_AvgCompleted);
+            }
+            base.InvokeAsync(this.onBeginGet_Avg_AvgDelegate, new object[] {
+                        code_lecturer,
+                        code_subject,
+                        semester}, this.onEndGet_Avg_AvgDelegate, this.onGet_Avg_AvgCompletedDelegate, userState);
+        }
+        
+        public int Statistic_Avg_Equal(string code_lecturer, string code_subject, string semester, float mark) {
+            return base.Channel.Statistic_Avg_Equal(code_lecturer, code_subject, semester, mark);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginStatistic_Avg_Equal(string code_lecturer, string code_subject, string semester, float mark, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginStatistic_Avg_Equal(code_lecturer, code_subject, semester, mark, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public int EndStatistic_Avg_Equal(System.IAsyncResult result) {
+            return base.Channel.EndStatistic_Avg_Equal(result);
+        }
+        
+        private System.IAsyncResult OnBeginStatistic_Avg_Equal(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_lecturer = ((string)(inValues[0]));
+            string code_subject = ((string)(inValues[1]));
+            string semester = ((string)(inValues[2]));
+            float mark = ((float)(inValues[3]));
+            return this.BeginStatistic_Avg_Equal(code_lecturer, code_subject, semester, mark, callback, asyncState);
+        }
+        
+        private object[] OnEndStatistic_Avg_Equal(System.IAsyncResult result) {
+            int retVal = this.EndStatistic_Avg_Equal(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnStatistic_Avg_EqualCompleted(object state) {
+            if ((this.Statistic_Avg_EqualCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Statistic_Avg_EqualCompleted(this, new Statistic_Avg_EqualCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Statistic_Avg_EqualAsync(string code_lecturer, string code_subject, string semester, float mark) {
+            this.Statistic_Avg_EqualAsync(code_lecturer, code_subject, semester, mark, null);
+        }
+        
+        public void Statistic_Avg_EqualAsync(string code_lecturer, string code_subject, string semester, float mark, object userState) {
+            if ((this.onBeginStatistic_Avg_EqualDelegate == null)) {
+                this.onBeginStatistic_Avg_EqualDelegate = new BeginOperationDelegate(this.OnBeginStatistic_Avg_Equal);
+            }
+            if ((this.onEndStatistic_Avg_EqualDelegate == null)) {
+                this.onEndStatistic_Avg_EqualDelegate = new EndOperationDelegate(this.OnEndStatistic_Avg_Equal);
+            }
+            if ((this.onStatistic_Avg_EqualCompletedDelegate == null)) {
+                this.onStatistic_Avg_EqualCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnStatistic_Avg_EqualCompleted);
+            }
+            base.InvokeAsync(this.onBeginStatistic_Avg_EqualDelegate, new object[] {
+                        code_lecturer,
+                        code_subject,
+                        semester,
+                        mark}, this.onEndStatistic_Avg_EqualDelegate, this.onStatistic_Avg_EqualCompletedDelegate, userState);
+        }
+        
+        public int Statistic_Avg_Distance(string code_lecturer, string code_subject, string semester, float from, float to) {
+            return base.Channel.Statistic_Avg_Distance(code_lecturer, code_subject, semester, from, to);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginStatistic_Avg_Distance(string code_lecturer, string code_subject, string semester, float from, float to, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginStatistic_Avg_Distance(code_lecturer, code_subject, semester, from, to, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public int EndStatistic_Avg_Distance(System.IAsyncResult result) {
+            return base.Channel.EndStatistic_Avg_Distance(result);
+        }
+        
+        private System.IAsyncResult OnBeginStatistic_Avg_Distance(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_lecturer = ((string)(inValues[0]));
+            string code_subject = ((string)(inValues[1]));
+            string semester = ((string)(inValues[2]));
+            float from = ((float)(inValues[3]));
+            float to = ((float)(inValues[4]));
+            return this.BeginStatistic_Avg_Distance(code_lecturer, code_subject, semester, from, to, callback, asyncState);
+        }
+        
+        private object[] OnEndStatistic_Avg_Distance(System.IAsyncResult result) {
+            int retVal = this.EndStatistic_Avg_Distance(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnStatistic_Avg_DistanceCompleted(object state) {
+            if ((this.Statistic_Avg_DistanceCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Statistic_Avg_DistanceCompleted(this, new Statistic_Avg_DistanceCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Statistic_Avg_DistanceAsync(string code_lecturer, string code_subject, string semester, float from, float to) {
+            this.Statistic_Avg_DistanceAsync(code_lecturer, code_subject, semester, from, to, null);
+        }
+        
+        public void Statistic_Avg_DistanceAsync(string code_lecturer, string code_subject, string semester, float from, float to, object userState) {
+            if ((this.onBeginStatistic_Avg_DistanceDelegate == null)) {
+                this.onBeginStatistic_Avg_DistanceDelegate = new BeginOperationDelegate(this.OnBeginStatistic_Avg_Distance);
+            }
+            if ((this.onEndStatistic_Avg_DistanceDelegate == null)) {
+                this.onEndStatistic_Avg_DistanceDelegate = new EndOperationDelegate(this.OnEndStatistic_Avg_Distance);
+            }
+            if ((this.onStatistic_Avg_DistanceCompletedDelegate == null)) {
+                this.onStatistic_Avg_DistanceCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnStatistic_Avg_DistanceCompleted);
+            }
+            base.InvokeAsync(this.onBeginStatistic_Avg_DistanceDelegate, new object[] {
+                        code_lecturer,
+                        code_subject,
+                        semester,
+                        from,
+                        to}, this.onEndStatistic_Avg_DistanceDelegate, this.onStatistic_Avg_DistanceCompletedDelegate, userState);
+        }
+        
+        public int Statistic_Avg_Less(string code_lecturer, string code_subject, string semester, float mark) {
+            return base.Channel.Statistic_Avg_Less(code_lecturer, code_subject, semester, mark);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginStatistic_Avg_Less(string code_lecturer, string code_subject, string semester, float mark, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginStatistic_Avg_Less(code_lecturer, code_subject, semester, mark, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public int EndStatistic_Avg_Less(System.IAsyncResult result) {
+            return base.Channel.EndStatistic_Avg_Less(result);
+        }
+        
+        private System.IAsyncResult OnBeginStatistic_Avg_Less(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_lecturer = ((string)(inValues[0]));
+            string code_subject = ((string)(inValues[1]));
+            string semester = ((string)(inValues[2]));
+            float mark = ((float)(inValues[3]));
+            return this.BeginStatistic_Avg_Less(code_lecturer, code_subject, semester, mark, callback, asyncState);
+        }
+        
+        private object[] OnEndStatistic_Avg_Less(System.IAsyncResult result) {
+            int retVal = this.EndStatistic_Avg_Less(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnStatistic_Avg_LessCompleted(object state) {
+            if ((this.Statistic_Avg_LessCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Statistic_Avg_LessCompleted(this, new Statistic_Avg_LessCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Statistic_Avg_LessAsync(string code_lecturer, string code_subject, string semester, float mark) {
+            this.Statistic_Avg_LessAsync(code_lecturer, code_subject, semester, mark, null);
+        }
+        
+        public void Statistic_Avg_LessAsync(string code_lecturer, string code_subject, string semester, float mark, object userState) {
+            if ((this.onBeginStatistic_Avg_LessDelegate == null)) {
+                this.onBeginStatistic_Avg_LessDelegate = new BeginOperationDelegate(this.OnBeginStatistic_Avg_Less);
+            }
+            if ((this.onEndStatistic_Avg_LessDelegate == null)) {
+                this.onEndStatistic_Avg_LessDelegate = new EndOperationDelegate(this.OnEndStatistic_Avg_Less);
+            }
+            if ((this.onStatistic_Avg_LessCompletedDelegate == null)) {
+                this.onStatistic_Avg_LessCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnStatistic_Avg_LessCompleted);
+            }
+            base.InvokeAsync(this.onBeginStatistic_Avg_LessDelegate, new object[] {
+                        code_lecturer,
+                        code_subject,
+                        semester,
+                        mark}, this.onEndStatistic_Avg_LessDelegate, this.onStatistic_Avg_LessCompletedDelegate, userState);
+        }
+        
+        public int Statistic_Avg_Greater(string code_lecturer, string code_subject, string semester, float mark) {
+            return base.Channel.Statistic_Avg_Greater(code_lecturer, code_subject, semester, mark);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginStatistic_Avg_Greater(string code_lecturer, string code_subject, string semester, float mark, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginStatistic_Avg_Greater(code_lecturer, code_subject, semester, mark, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public int EndStatistic_Avg_Greater(System.IAsyncResult result) {
+            return base.Channel.EndStatistic_Avg_Greater(result);
+        }
+        
+        private System.IAsyncResult OnBeginStatistic_Avg_Greater(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_lecturer = ((string)(inValues[0]));
+            string code_subject = ((string)(inValues[1]));
+            string semester = ((string)(inValues[2]));
+            float mark = ((float)(inValues[3]));
+            return this.BeginStatistic_Avg_Greater(code_lecturer, code_subject, semester, mark, callback, asyncState);
+        }
+        
+        private object[] OnEndStatistic_Avg_Greater(System.IAsyncResult result) {
+            int retVal = this.EndStatistic_Avg_Greater(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnStatistic_Avg_GreaterCompleted(object state) {
+            if ((this.Statistic_Avg_GreaterCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Statistic_Avg_GreaterCompleted(this, new Statistic_Avg_GreaterCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Statistic_Avg_GreaterAsync(string code_lecturer, string code_subject, string semester, float mark) {
+            this.Statistic_Avg_GreaterAsync(code_lecturer, code_subject, semester, mark, null);
+        }
+        
+        public void Statistic_Avg_GreaterAsync(string code_lecturer, string code_subject, string semester, float mark, object userState) {
+            if ((this.onBeginStatistic_Avg_GreaterDelegate == null)) {
+                this.onBeginStatistic_Avg_GreaterDelegate = new BeginOperationDelegate(this.OnBeginStatistic_Avg_Greater);
+            }
+            if ((this.onEndStatistic_Avg_GreaterDelegate == null)) {
+                this.onEndStatistic_Avg_GreaterDelegate = new EndOperationDelegate(this.OnEndStatistic_Avg_Greater);
+            }
+            if ((this.onStatistic_Avg_GreaterCompletedDelegate == null)) {
+                this.onStatistic_Avg_GreaterCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnStatistic_Avg_GreaterCompleted);
+            }
+            base.InvokeAsync(this.onBeginStatistic_Avg_GreaterDelegate, new object[] {
+                        code_lecturer,
+                        code_subject,
+                        semester,
+                        mark}, this.onEndStatistic_Avg_GreaterDelegate, this.onStatistic_Avg_GreaterCompletedDelegate, userState);
+        }
         
         public Client.GetMark_Service.Member[] GetAuthors() {
             return base.Channel.GetAuthors();
@@ -1542,306 +3916,1252 @@ namespace Client.GetMark_Service {
                         mode}, this.onEndCheckLoginDelegate, this.onCheckLoginCompletedDelegate, userState);
         }
         
-        public Client.GetMark_Service.SinhVien GetInfoSV(string MSSV) {
-            return base.Channel.GetInfoSV(MSSV);
+        public bool ChangePassword(string username, string old_password, string new_password, int mode) {
+            return base.Channel.ChangePassword(username, old_password, new_password, mode);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGetInfoSV(string MSSV, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetInfoSV(MSSV, callback, asyncState);
+        public System.IAsyncResult BeginChangePassword(string username, string old_password, string new_password, int mode, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginChangePassword(username, old_password, new_password, mode, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public Client.GetMark_Service.SinhVien EndGetInfoSV(System.IAsyncResult result) {
-            return base.Channel.EndGetInfoSV(result);
+        public bool EndChangePassword(System.IAsyncResult result) {
+            return base.Channel.EndChangePassword(result);
         }
         
-        private System.IAsyncResult OnBeginGetInfoSV(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            string MSSV = ((string)(inValues[0]));
-            return this.BeginGetInfoSV(MSSV, callback, asyncState);
+        private System.IAsyncResult OnBeginChangePassword(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string username = ((string)(inValues[0]));
+            string old_password = ((string)(inValues[1]));
+            string new_password = ((string)(inValues[2]));
+            int mode = ((int)(inValues[3]));
+            return this.BeginChangePassword(username, old_password, new_password, mode, callback, asyncState);
         }
         
-        private object[] OnEndGetInfoSV(System.IAsyncResult result) {
-            Client.GetMark_Service.SinhVien retVal = this.EndGetInfoSV(result);
+        private object[] OnEndChangePassword(System.IAsyncResult result) {
+            bool retVal = this.EndChangePassword(result);
             return new object[] {
                     retVal};
         }
         
-        private void OnGetInfoSVCompleted(object state) {
-            if ((this.GetInfoSVCompleted != null)) {
+        private void OnChangePasswordCompleted(object state) {
+            if ((this.ChangePasswordCompleted != null)) {
                 InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.GetInfoSVCompleted(this, new GetInfoSVCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+                this.ChangePasswordCompleted(this, new ChangePasswordCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
             }
         }
         
-        public void GetInfoSVAsync(string MSSV) {
-            this.GetInfoSVAsync(MSSV, null);
+        public void ChangePasswordAsync(string username, string old_password, string new_password, int mode) {
+            this.ChangePasswordAsync(username, old_password, new_password, mode, null);
         }
         
-        public void GetInfoSVAsync(string MSSV, object userState) {
-            if ((this.onBeginGetInfoSVDelegate == null)) {
-                this.onBeginGetInfoSVDelegate = new BeginOperationDelegate(this.OnBeginGetInfoSV);
+        public void ChangePasswordAsync(string username, string old_password, string new_password, int mode, object userState) {
+            if ((this.onBeginChangePasswordDelegate == null)) {
+                this.onBeginChangePasswordDelegate = new BeginOperationDelegate(this.OnBeginChangePassword);
             }
-            if ((this.onEndGetInfoSVDelegate == null)) {
-                this.onEndGetInfoSVDelegate = new EndOperationDelegate(this.OnEndGetInfoSV);
+            if ((this.onEndChangePasswordDelegate == null)) {
+                this.onEndChangePasswordDelegate = new EndOperationDelegate(this.OnEndChangePassword);
             }
-            if ((this.onGetInfoSVCompletedDelegate == null)) {
-                this.onGetInfoSVCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetInfoSVCompleted);
+            if ((this.onChangePasswordCompletedDelegate == null)) {
+                this.onChangePasswordCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnChangePasswordCompleted);
             }
-            base.InvokeAsync(this.onBeginGetInfoSVDelegate, new object[] {
-                        MSSV}, this.onEndGetInfoSVDelegate, this.onGetInfoSVCompletedDelegate, userState);
+            base.InvokeAsync(this.onBeginChangePasswordDelegate, new object[] {
+                        username,
+                        old_password,
+                        new_password,
+                        mode}, this.onEndChangePasswordDelegate, this.onChangePasswordCompletedDelegate, userState);
         }
         
-        public bool UpdateInfoSV(Client.GetMark_Service.SinhVien SV) {
-            return base.Channel.UpdateInfoSV(SV);
+        public string[] List_Semester() {
+            return base.Channel.List_Semester();
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginUpdateInfoSV(Client.GetMark_Service.SinhVien SV, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginUpdateInfoSV(SV, callback, asyncState);
+        public System.IAsyncResult BeginList_Semester(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginList_Semester(callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public bool EndUpdateInfoSV(System.IAsyncResult result) {
-            return base.Channel.EndUpdateInfoSV(result);
+        public string[] EndList_Semester(System.IAsyncResult result) {
+            return base.Channel.EndList_Semester(result);
         }
         
-        private System.IAsyncResult OnBeginUpdateInfoSV(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            Client.GetMark_Service.SinhVien SV = ((Client.GetMark_Service.SinhVien)(inValues[0]));
-            return this.BeginUpdateInfoSV(SV, callback, asyncState);
+        private System.IAsyncResult OnBeginList_Semester(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginList_Semester(callback, asyncState);
         }
         
-        private object[] OnEndUpdateInfoSV(System.IAsyncResult result) {
-            bool retVal = this.EndUpdateInfoSV(result);
+        private object[] OnEndList_Semester(System.IAsyncResult result) {
+            string[] retVal = this.EndList_Semester(result);
             return new object[] {
                     retVal};
         }
         
-        private void OnUpdateInfoSVCompleted(object state) {
-            if ((this.UpdateInfoSVCompleted != null)) {
+        private void OnList_SemesterCompleted(object state) {
+            if ((this.List_SemesterCompleted != null)) {
                 InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.UpdateInfoSVCompleted(this, new UpdateInfoSVCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+                this.List_SemesterCompleted(this, new List_SemesterCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
             }
         }
         
-        public void UpdateInfoSVAsync(Client.GetMark_Service.SinhVien SV) {
-            this.UpdateInfoSVAsync(SV, null);
+        public void List_SemesterAsync() {
+            this.List_SemesterAsync(null);
         }
         
-        public void UpdateInfoSVAsync(Client.GetMark_Service.SinhVien SV, object userState) {
-            if ((this.onBeginUpdateInfoSVDelegate == null)) {
-                this.onBeginUpdateInfoSVDelegate = new BeginOperationDelegate(this.OnBeginUpdateInfoSV);
+        public void List_SemesterAsync(object userState) {
+            if ((this.onBeginList_SemesterDelegate == null)) {
+                this.onBeginList_SemesterDelegate = new BeginOperationDelegate(this.OnBeginList_Semester);
             }
-            if ((this.onEndUpdateInfoSVDelegate == null)) {
-                this.onEndUpdateInfoSVDelegate = new EndOperationDelegate(this.OnEndUpdateInfoSV);
+            if ((this.onEndList_SemesterDelegate == null)) {
+                this.onEndList_SemesterDelegate = new EndOperationDelegate(this.OnEndList_Semester);
             }
-            if ((this.onUpdateInfoSVCompletedDelegate == null)) {
-                this.onUpdateInfoSVCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnUpdateInfoSVCompleted);
+            if ((this.onList_SemesterCompletedDelegate == null)) {
+                this.onList_SemesterCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnList_SemesterCompleted);
             }
-            base.InvokeAsync(this.onBeginUpdateInfoSVDelegate, new object[] {
-                        SV}, this.onEndUpdateInfoSVDelegate, this.onUpdateInfoSVCompletedDelegate, userState);
+            base.InvokeAsync(this.onBeginList_SemesterDelegate, null, this.onEndList_SemesterDelegate, this.onList_SemesterCompletedDelegate, userState);
         }
         
-        public string[] List_HK() {
-            return base.Channel.List_HK();
+        public Client.GetMark_Service.Subject[] List_Subject() {
+            return base.Channel.List_Subject();
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginList_HK(System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginList_HK(callback, asyncState);
+        public System.IAsyncResult BeginList_Subject(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginList_Subject(callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public string[] EndList_HK(System.IAsyncResult result) {
-            return base.Channel.EndList_HK(result);
+        public Client.GetMark_Service.Subject[] EndList_Subject(System.IAsyncResult result) {
+            return base.Channel.EndList_Subject(result);
         }
         
-        private System.IAsyncResult OnBeginList_HK(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            return this.BeginList_HK(callback, asyncState);
+        private System.IAsyncResult OnBeginList_Subject(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginList_Subject(callback, asyncState);
         }
         
-        private object[] OnEndList_HK(System.IAsyncResult result) {
-            string[] retVal = this.EndList_HK(result);
+        private object[] OnEndList_Subject(System.IAsyncResult result) {
+            Client.GetMark_Service.Subject[] retVal = this.EndList_Subject(result);
             return new object[] {
                     retVal};
         }
         
-        private void OnList_HKCompleted(object state) {
-            if ((this.List_HKCompleted != null)) {
+        private void OnList_SubjectCompleted(object state) {
+            if ((this.List_SubjectCompleted != null)) {
                 InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.List_HKCompleted(this, new List_HKCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+                this.List_SubjectCompleted(this, new List_SubjectCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
             }
         }
         
-        public void List_HKAsync() {
-            this.List_HKAsync(null);
+        public void List_SubjectAsync() {
+            this.List_SubjectAsync(null);
         }
         
-        public void List_HKAsync(object userState) {
-            if ((this.onBeginList_HKDelegate == null)) {
-                this.onBeginList_HKDelegate = new BeginOperationDelegate(this.OnBeginList_HK);
+        public void List_SubjectAsync(object userState) {
+            if ((this.onBeginList_SubjectDelegate == null)) {
+                this.onBeginList_SubjectDelegate = new BeginOperationDelegate(this.OnBeginList_Subject);
             }
-            if ((this.onEndList_HKDelegate == null)) {
-                this.onEndList_HKDelegate = new EndOperationDelegate(this.OnEndList_HK);
+            if ((this.onEndList_SubjectDelegate == null)) {
+                this.onEndList_SubjectDelegate = new EndOperationDelegate(this.OnEndList_Subject);
             }
-            if ((this.onList_HKCompletedDelegate == null)) {
-                this.onList_HKCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnList_HKCompleted);
+            if ((this.onList_SubjectCompletedDelegate == null)) {
+                this.onList_SubjectCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnList_SubjectCompleted);
             }
-            base.InvokeAsync(this.onBeginList_HKDelegate, null, this.onEndList_HKDelegate, this.onList_HKCompletedDelegate, userState);
+            base.InvokeAsync(this.onBeginList_SubjectDelegate, null, this.onEndList_SubjectDelegate, this.onList_SubjectCompletedDelegate, userState);
         }
         
-        public Client.GetMark_Service.KetQua[] KetQua_HK(string MSSV, string HK) {
-            return base.Channel.KetQua_HK(MSSV, HK);
+        public Client.GetMark_Service.Student Get_Info_Stu(string code_student) {
+            return base.Channel.Get_Info_Stu(code_student);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginKetQua_HK(string MSSV, string HK, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginKetQua_HK(MSSV, HK, callback, asyncState);
+        public System.IAsyncResult BeginGet_Info_Stu(string code_student, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGet_Info_Stu(code_student, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public Client.GetMark_Service.KetQua[] EndKetQua_HK(System.IAsyncResult result) {
-            return base.Channel.EndKetQua_HK(result);
+        public Client.GetMark_Service.Student EndGet_Info_Stu(System.IAsyncResult result) {
+            return base.Channel.EndGet_Info_Stu(result);
         }
         
-        private System.IAsyncResult OnBeginKetQua_HK(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            string MSSV = ((string)(inValues[0]));
-            string HK = ((string)(inValues[1]));
-            return this.BeginKetQua_HK(MSSV, HK, callback, asyncState);
+        private System.IAsyncResult OnBeginGet_Info_Stu(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_student = ((string)(inValues[0]));
+            return this.BeginGet_Info_Stu(code_student, callback, asyncState);
         }
         
-        private object[] OnEndKetQua_HK(System.IAsyncResult result) {
-            Client.GetMark_Service.KetQua[] retVal = this.EndKetQua_HK(result);
+        private object[] OnEndGet_Info_Stu(System.IAsyncResult result) {
+            Client.GetMark_Service.Student retVal = this.EndGet_Info_Stu(result);
             return new object[] {
                     retVal};
         }
         
-        private void OnKetQua_HKCompleted(object state) {
-            if ((this.KetQua_HKCompleted != null)) {
+        private void OnGet_Info_StuCompleted(object state) {
+            if ((this.Get_Info_StuCompleted != null)) {
                 InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.KetQua_HKCompleted(this, new KetQua_HKCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+                this.Get_Info_StuCompleted(this, new Get_Info_StuCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
             }
         }
         
-        public void KetQua_HKAsync(string MSSV, string HK) {
-            this.KetQua_HKAsync(MSSV, HK, null);
+        public void Get_Info_StuAsync(string code_student) {
+            this.Get_Info_StuAsync(code_student, null);
         }
         
-        public void KetQua_HKAsync(string MSSV, string HK, object userState) {
-            if ((this.onBeginKetQua_HKDelegate == null)) {
-                this.onBeginKetQua_HKDelegate = new BeginOperationDelegate(this.OnBeginKetQua_HK);
+        public void Get_Info_StuAsync(string code_student, object userState) {
+            if ((this.onBeginGet_Info_StuDelegate == null)) {
+                this.onBeginGet_Info_StuDelegate = new BeginOperationDelegate(this.OnBeginGet_Info_Stu);
             }
-            if ((this.onEndKetQua_HKDelegate == null)) {
-                this.onEndKetQua_HKDelegate = new EndOperationDelegate(this.OnEndKetQua_HK);
+            if ((this.onEndGet_Info_StuDelegate == null)) {
+                this.onEndGet_Info_StuDelegate = new EndOperationDelegate(this.OnEndGet_Info_Stu);
             }
-            if ((this.onKetQua_HKCompletedDelegate == null)) {
-                this.onKetQua_HKCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnKetQua_HKCompleted);
+            if ((this.onGet_Info_StuCompletedDelegate == null)) {
+                this.onGet_Info_StuCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGet_Info_StuCompleted);
             }
-            base.InvokeAsync(this.onBeginKetQua_HKDelegate, new object[] {
-                        MSSV,
-                        HK}, this.onEndKetQua_HKDelegate, this.onKetQua_HKCompletedDelegate, userState);
+            base.InvokeAsync(this.onBeginGet_Info_StuDelegate, new object[] {
+                        code_student}, this.onEndGet_Info_StuDelegate, this.onGet_Info_StuCompletedDelegate, userState);
         }
         
-        public Client.GetMark_Service.SV_HK InfoSV_HK(string MSSV, string HK) {
-            return base.Channel.InfoSV_HK(MSSV, HK);
+        public bool Update_Info_Stu(Client.GetMark_Service.Student Stu) {
+            return base.Channel.Update_Info_Stu(Stu);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginInfoSV_HK(string MSSV, string HK, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginInfoSV_HK(MSSV, HK, callback, asyncState);
+        public System.IAsyncResult BeginUpdate_Info_Stu(Client.GetMark_Service.Student Stu, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginUpdate_Info_Stu(Stu, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public Client.GetMark_Service.SV_HK EndInfoSV_HK(System.IAsyncResult result) {
-            return base.Channel.EndInfoSV_HK(result);
+        public bool EndUpdate_Info_Stu(System.IAsyncResult result) {
+            return base.Channel.EndUpdate_Info_Stu(result);
         }
         
-        private System.IAsyncResult OnBeginInfoSV_HK(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            string MSSV = ((string)(inValues[0]));
-            string HK = ((string)(inValues[1]));
-            return this.BeginInfoSV_HK(MSSV, HK, callback, asyncState);
+        private System.IAsyncResult OnBeginUpdate_Info_Stu(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            Client.GetMark_Service.Student Stu = ((Client.GetMark_Service.Student)(inValues[0]));
+            return this.BeginUpdate_Info_Stu(Stu, callback, asyncState);
         }
         
-        private object[] OnEndInfoSV_HK(System.IAsyncResult result) {
-            Client.GetMark_Service.SV_HK retVal = this.EndInfoSV_HK(result);
+        private object[] OnEndUpdate_Info_Stu(System.IAsyncResult result) {
+            bool retVal = this.EndUpdate_Info_Stu(result);
             return new object[] {
                     retVal};
         }
         
-        private void OnInfoSV_HKCompleted(object state) {
-            if ((this.InfoSV_HKCompleted != null)) {
+        private void OnUpdate_Info_StuCompleted(object state) {
+            if ((this.Update_Info_StuCompleted != null)) {
                 InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.InfoSV_HKCompleted(this, new InfoSV_HKCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+                this.Update_Info_StuCompleted(this, new Update_Info_StuCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
             }
         }
         
-        public void InfoSV_HKAsync(string MSSV, string HK) {
-            this.InfoSV_HKAsync(MSSV, HK, null);
+        public void Update_Info_StuAsync(Client.GetMark_Service.Student Stu) {
+            this.Update_Info_StuAsync(Stu, null);
         }
         
-        public void InfoSV_HKAsync(string MSSV, string HK, object userState) {
-            if ((this.onBeginInfoSV_HKDelegate == null)) {
-                this.onBeginInfoSV_HKDelegate = new BeginOperationDelegate(this.OnBeginInfoSV_HK);
+        public void Update_Info_StuAsync(Client.GetMark_Service.Student Stu, object userState) {
+            if ((this.onBeginUpdate_Info_StuDelegate == null)) {
+                this.onBeginUpdate_Info_StuDelegate = new BeginOperationDelegate(this.OnBeginUpdate_Info_Stu);
             }
-            if ((this.onEndInfoSV_HKDelegate == null)) {
-                this.onEndInfoSV_HKDelegate = new EndOperationDelegate(this.OnEndInfoSV_HK);
+            if ((this.onEndUpdate_Info_StuDelegate == null)) {
+                this.onEndUpdate_Info_StuDelegate = new EndOperationDelegate(this.OnEndUpdate_Info_Stu);
             }
-            if ((this.onInfoSV_HKCompletedDelegate == null)) {
-                this.onInfoSV_HKCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnInfoSV_HKCompleted);
+            if ((this.onUpdate_Info_StuCompletedDelegate == null)) {
+                this.onUpdate_Info_StuCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnUpdate_Info_StuCompleted);
             }
-            base.InvokeAsync(this.onBeginInfoSV_HKDelegate, new object[] {
-                        MSSV,
-                        HK}, this.onEndInfoSV_HKDelegate, this.onInfoSV_HKCompletedDelegate, userState);
+            base.InvokeAsync(this.onBeginUpdate_Info_StuDelegate, new object[] {
+                        Stu}, this.onEndUpdate_Info_StuDelegate, this.onUpdate_Info_StuCompletedDelegate, userState);
         }
         
-        public Client.GetMark_Service.Statistic Info_Statistic(string MSSV) {
-            return base.Channel.Info_Statistic(MSSV);
+        public Client.GetMark_Service.Mark Mark_Subject_Single(string code_student, string code_subject) {
+            return base.Channel.Mark_Subject_Single(code_student, code_subject);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginInfo_Statistic(string MSSV, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginInfo_Statistic(MSSV, callback, asyncState);
+        public System.IAsyncResult BeginMark_Subject_Single(string code_student, string code_subject, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginMark_Subject_Single(code_student, code_subject, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public Client.GetMark_Service.Statistic EndInfo_Statistic(System.IAsyncResult result) {
-            return base.Channel.EndInfo_Statistic(result);
+        public Client.GetMark_Service.Mark EndMark_Subject_Single(System.IAsyncResult result) {
+            return base.Channel.EndMark_Subject_Single(result);
         }
         
-        private System.IAsyncResult OnBeginInfo_Statistic(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            string MSSV = ((string)(inValues[0]));
-            return this.BeginInfo_Statistic(MSSV, callback, asyncState);
+        private System.IAsyncResult OnBeginMark_Subject_Single(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_student = ((string)(inValues[0]));
+            string code_subject = ((string)(inValues[1]));
+            return this.BeginMark_Subject_Single(code_student, code_subject, callback, asyncState);
         }
         
-        private object[] OnEndInfo_Statistic(System.IAsyncResult result) {
-            Client.GetMark_Service.Statistic retVal = this.EndInfo_Statistic(result);
+        private object[] OnEndMark_Subject_Single(System.IAsyncResult result) {
+            Client.GetMark_Service.Mark retVal = this.EndMark_Subject_Single(result);
             return new object[] {
                     retVal};
         }
         
-        private void OnInfo_StatisticCompleted(object state) {
-            if ((this.Info_StatisticCompleted != null)) {
+        private void OnMark_Subject_SingleCompleted(object state) {
+            if ((this.Mark_Subject_SingleCompleted != null)) {
                 InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.Info_StatisticCompleted(this, new Info_StatisticCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+                this.Mark_Subject_SingleCompleted(this, new Mark_Subject_SingleCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
             }
         }
         
-        public void Info_StatisticAsync(string MSSV) {
-            this.Info_StatisticAsync(MSSV, null);
+        public void Mark_Subject_SingleAsync(string code_student, string code_subject) {
+            this.Mark_Subject_SingleAsync(code_student, code_subject, null);
         }
         
-        public void Info_StatisticAsync(string MSSV, object userState) {
-            if ((this.onBeginInfo_StatisticDelegate == null)) {
-                this.onBeginInfo_StatisticDelegate = new BeginOperationDelegate(this.OnBeginInfo_Statistic);
+        public void Mark_Subject_SingleAsync(string code_student, string code_subject, object userState) {
+            if ((this.onBeginMark_Subject_SingleDelegate == null)) {
+                this.onBeginMark_Subject_SingleDelegate = new BeginOperationDelegate(this.OnBeginMark_Subject_Single);
             }
-            if ((this.onEndInfo_StatisticDelegate == null)) {
-                this.onEndInfo_StatisticDelegate = new EndOperationDelegate(this.OnEndInfo_Statistic);
+            if ((this.onEndMark_Subject_SingleDelegate == null)) {
+                this.onEndMark_Subject_SingleDelegate = new EndOperationDelegate(this.OnEndMark_Subject_Single);
             }
-            if ((this.onInfo_StatisticCompletedDelegate == null)) {
-                this.onInfo_StatisticCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnInfo_StatisticCompleted);
+            if ((this.onMark_Subject_SingleCompletedDelegate == null)) {
+                this.onMark_Subject_SingleCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnMark_Subject_SingleCompleted);
             }
-            base.InvokeAsync(this.onBeginInfo_StatisticDelegate, new object[] {
-                        MSSV}, this.onEndInfo_StatisticDelegate, this.onInfo_StatisticCompletedDelegate, userState);
+            base.InvokeAsync(this.onBeginMark_Subject_SingleDelegate, new object[] {
+                        code_student,
+                        code_subject}, this.onEndMark_Subject_SingleDelegate, this.onMark_Subject_SingleCompletedDelegate, userState);
+        }
+        
+        public Client.GetMark_Service.Mark[] Mark_Subject_All(string code_student) {
+            return base.Channel.Mark_Subject_All(code_student);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginMark_Subject_All(string code_student, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginMark_Subject_All(code_student, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public Client.GetMark_Service.Mark[] EndMark_Subject_All(System.IAsyncResult result) {
+            return base.Channel.EndMark_Subject_All(result);
+        }
+        
+        private System.IAsyncResult OnBeginMark_Subject_All(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_student = ((string)(inValues[0]));
+            return this.BeginMark_Subject_All(code_student, callback, asyncState);
+        }
+        
+        private object[] OnEndMark_Subject_All(System.IAsyncResult result) {
+            Client.GetMark_Service.Mark[] retVal = this.EndMark_Subject_All(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnMark_Subject_AllCompleted(object state) {
+            if ((this.Mark_Subject_AllCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Mark_Subject_AllCompleted(this, new Mark_Subject_AllCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Mark_Subject_AllAsync(string code_student) {
+            this.Mark_Subject_AllAsync(code_student, null);
+        }
+        
+        public void Mark_Subject_AllAsync(string code_student, object userState) {
+            if ((this.onBeginMark_Subject_AllDelegate == null)) {
+                this.onBeginMark_Subject_AllDelegate = new BeginOperationDelegate(this.OnBeginMark_Subject_All);
+            }
+            if ((this.onEndMark_Subject_AllDelegate == null)) {
+                this.onEndMark_Subject_AllDelegate = new EndOperationDelegate(this.OnEndMark_Subject_All);
+            }
+            if ((this.onMark_Subject_AllCompletedDelegate == null)) {
+                this.onMark_Subject_AllCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnMark_Subject_AllCompleted);
+            }
+            base.InvokeAsync(this.onBeginMark_Subject_AllDelegate, new object[] {
+                        code_student}, this.onEndMark_Subject_AllDelegate, this.onMark_Subject_AllCompletedDelegate, userState);
+        }
+        
+        public Client.GetMark_Service.Mark[] Get_Mark_Semester(string code_student, string semester) {
+            return base.Channel.Get_Mark_Semester(code_student, semester);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGet_Mark_Semester(string code_student, string semester, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGet_Mark_Semester(code_student, semester, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public Client.GetMark_Service.Mark[] EndGet_Mark_Semester(System.IAsyncResult result) {
+            return base.Channel.EndGet_Mark_Semester(result);
+        }
+        
+        private System.IAsyncResult OnBeginGet_Mark_Semester(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_student = ((string)(inValues[0]));
+            string semester = ((string)(inValues[1]));
+            return this.BeginGet_Mark_Semester(code_student, semester, callback, asyncState);
+        }
+        
+        private object[] OnEndGet_Mark_Semester(System.IAsyncResult result) {
+            Client.GetMark_Service.Mark[] retVal = this.EndGet_Mark_Semester(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGet_Mark_SemesterCompleted(object state) {
+            if ((this.Get_Mark_SemesterCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Get_Mark_SemesterCompleted(this, new Get_Mark_SemesterCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Get_Mark_SemesterAsync(string code_student, string semester) {
+            this.Get_Mark_SemesterAsync(code_student, semester, null);
+        }
+        
+        public void Get_Mark_SemesterAsync(string code_student, string semester, object userState) {
+            if ((this.onBeginGet_Mark_SemesterDelegate == null)) {
+                this.onBeginGet_Mark_SemesterDelegate = new BeginOperationDelegate(this.OnBeginGet_Mark_Semester);
+            }
+            if ((this.onEndGet_Mark_SemesterDelegate == null)) {
+                this.onEndGet_Mark_SemesterDelegate = new EndOperationDelegate(this.OnEndGet_Mark_Semester);
+            }
+            if ((this.onGet_Mark_SemesterCompletedDelegate == null)) {
+                this.onGet_Mark_SemesterCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGet_Mark_SemesterCompleted);
+            }
+            base.InvokeAsync(this.onBeginGet_Mark_SemesterDelegate, new object[] {
+                        code_student,
+                        semester}, this.onEndGet_Mark_SemesterDelegate, this.onGet_Mark_SemesterCompletedDelegate, userState);
+        }
+        
+        public Client.GetMark_Service.Student_Semester Info_Stu_Sem_Only(string code_student, string semester) {
+            return base.Channel.Info_Stu_Sem_Only(code_student, semester);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginInfo_Stu_Sem_Only(string code_student, string semester, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginInfo_Stu_Sem_Only(code_student, semester, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public Client.GetMark_Service.Student_Semester EndInfo_Stu_Sem_Only(System.IAsyncResult result) {
+            return base.Channel.EndInfo_Stu_Sem_Only(result);
+        }
+        
+        private System.IAsyncResult OnBeginInfo_Stu_Sem_Only(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_student = ((string)(inValues[0]));
+            string semester = ((string)(inValues[1]));
+            return this.BeginInfo_Stu_Sem_Only(code_student, semester, callback, asyncState);
+        }
+        
+        private object[] OnEndInfo_Stu_Sem_Only(System.IAsyncResult result) {
+            Client.GetMark_Service.Student_Semester retVal = this.EndInfo_Stu_Sem_Only(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnInfo_Stu_Sem_OnlyCompleted(object state) {
+            if ((this.Info_Stu_Sem_OnlyCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Info_Stu_Sem_OnlyCompleted(this, new Info_Stu_Sem_OnlyCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Info_Stu_Sem_OnlyAsync(string code_student, string semester) {
+            this.Info_Stu_Sem_OnlyAsync(code_student, semester, null);
+        }
+        
+        public void Info_Stu_Sem_OnlyAsync(string code_student, string semester, object userState) {
+            if ((this.onBeginInfo_Stu_Sem_OnlyDelegate == null)) {
+                this.onBeginInfo_Stu_Sem_OnlyDelegate = new BeginOperationDelegate(this.OnBeginInfo_Stu_Sem_Only);
+            }
+            if ((this.onEndInfo_Stu_Sem_OnlyDelegate == null)) {
+                this.onEndInfo_Stu_Sem_OnlyDelegate = new EndOperationDelegate(this.OnEndInfo_Stu_Sem_Only);
+            }
+            if ((this.onInfo_Stu_Sem_OnlyCompletedDelegate == null)) {
+                this.onInfo_Stu_Sem_OnlyCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnInfo_Stu_Sem_OnlyCompleted);
+            }
+            base.InvokeAsync(this.onBeginInfo_Stu_Sem_OnlyDelegate, new object[] {
+                        code_student,
+                        semester}, this.onEndInfo_Stu_Sem_OnlyDelegate, this.onInfo_Stu_Sem_OnlyCompletedDelegate, userState);
+        }
+        
+        public Client.GetMark_Service.Student_Semester[] Info_Stu_Sem_All(string code_student) {
+            return base.Channel.Info_Stu_Sem_All(code_student);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginInfo_Stu_Sem_All(string code_student, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginInfo_Stu_Sem_All(code_student, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public Client.GetMark_Service.Student_Semester[] EndInfo_Stu_Sem_All(System.IAsyncResult result) {
+            return base.Channel.EndInfo_Stu_Sem_All(result);
+        }
+        
+        private System.IAsyncResult OnBeginInfo_Stu_Sem_All(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_student = ((string)(inValues[0]));
+            return this.BeginInfo_Stu_Sem_All(code_student, callback, asyncState);
+        }
+        
+        private object[] OnEndInfo_Stu_Sem_All(System.IAsyncResult result) {
+            Client.GetMark_Service.Student_Semester[] retVal = this.EndInfo_Stu_Sem_All(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnInfo_Stu_Sem_AllCompleted(object state) {
+            if ((this.Info_Stu_Sem_AllCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Info_Stu_Sem_AllCompleted(this, new Info_Stu_Sem_AllCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Info_Stu_Sem_AllAsync(string code_student) {
+            this.Info_Stu_Sem_AllAsync(code_student, null);
+        }
+        
+        public void Info_Stu_Sem_AllAsync(string code_student, object userState) {
+            if ((this.onBeginInfo_Stu_Sem_AllDelegate == null)) {
+                this.onBeginInfo_Stu_Sem_AllDelegate = new BeginOperationDelegate(this.OnBeginInfo_Stu_Sem_All);
+            }
+            if ((this.onEndInfo_Stu_Sem_AllDelegate == null)) {
+                this.onEndInfo_Stu_Sem_AllDelegate = new EndOperationDelegate(this.OnEndInfo_Stu_Sem_All);
+            }
+            if ((this.onInfo_Stu_Sem_AllCompletedDelegate == null)) {
+                this.onInfo_Stu_Sem_AllCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnInfo_Stu_Sem_AllCompleted);
+            }
+            base.InvokeAsync(this.onBeginInfo_Stu_Sem_AllDelegate, new object[] {
+                        code_student}, this.onEndInfo_Stu_Sem_AllDelegate, this.onInfo_Stu_Sem_AllCompletedDelegate, userState);
+        }
+        
+        public float Get_Avg_Semester(string code_student, string semester) {
+            return base.Channel.Get_Avg_Semester(code_student, semester);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGet_Avg_Semester(string code_student, string semester, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGet_Avg_Semester(code_student, semester, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public float EndGet_Avg_Semester(System.IAsyncResult result) {
+            return base.Channel.EndGet_Avg_Semester(result);
+        }
+        
+        private System.IAsyncResult OnBeginGet_Avg_Semester(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_student = ((string)(inValues[0]));
+            string semester = ((string)(inValues[1]));
+            return this.BeginGet_Avg_Semester(code_student, semester, callback, asyncState);
+        }
+        
+        private object[] OnEndGet_Avg_Semester(System.IAsyncResult result) {
+            float retVal = this.EndGet_Avg_Semester(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGet_Avg_SemesterCompleted(object state) {
+            if ((this.Get_Avg_SemesterCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Get_Avg_SemesterCompleted(this, new Get_Avg_SemesterCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Get_Avg_SemesterAsync(string code_student, string semester) {
+            this.Get_Avg_SemesterAsync(code_student, semester, null);
+        }
+        
+        public void Get_Avg_SemesterAsync(string code_student, string semester, object userState) {
+            if ((this.onBeginGet_Avg_SemesterDelegate == null)) {
+                this.onBeginGet_Avg_SemesterDelegate = new BeginOperationDelegate(this.OnBeginGet_Avg_Semester);
+            }
+            if ((this.onEndGet_Avg_SemesterDelegate == null)) {
+                this.onEndGet_Avg_SemesterDelegate = new EndOperationDelegate(this.OnEndGet_Avg_Semester);
+            }
+            if ((this.onGet_Avg_SemesterCompletedDelegate == null)) {
+                this.onGet_Avg_SemesterCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGet_Avg_SemesterCompleted);
+            }
+            base.InvokeAsync(this.onBeginGet_Avg_SemesterDelegate, new object[] {
+                        code_student,
+                        semester}, this.onEndGet_Avg_SemesterDelegate, this.onGet_Avg_SemesterCompletedDelegate, userState);
+        }
+        
+        public float Get_Avg_Cumulative(string code_student, string semester) {
+            return base.Channel.Get_Avg_Cumulative(code_student, semester);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGet_Avg_Cumulative(string code_student, string semester, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGet_Avg_Cumulative(code_student, semester, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public float EndGet_Avg_Cumulative(System.IAsyncResult result) {
+            return base.Channel.EndGet_Avg_Cumulative(result);
+        }
+        
+        private System.IAsyncResult OnBeginGet_Avg_Cumulative(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_student = ((string)(inValues[0]));
+            string semester = ((string)(inValues[1]));
+            return this.BeginGet_Avg_Cumulative(code_student, semester, callback, asyncState);
+        }
+        
+        private object[] OnEndGet_Avg_Cumulative(System.IAsyncResult result) {
+            float retVal = this.EndGet_Avg_Cumulative(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGet_Avg_CumulativeCompleted(object state) {
+            if ((this.Get_Avg_CumulativeCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Get_Avg_CumulativeCompleted(this, new Get_Avg_CumulativeCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Get_Avg_CumulativeAsync(string code_student, string semester) {
+            this.Get_Avg_CumulativeAsync(code_student, semester, null);
+        }
+        
+        public void Get_Avg_CumulativeAsync(string code_student, string semester, object userState) {
+            if ((this.onBeginGet_Avg_CumulativeDelegate == null)) {
+                this.onBeginGet_Avg_CumulativeDelegate = new BeginOperationDelegate(this.OnBeginGet_Avg_Cumulative);
+            }
+            if ((this.onEndGet_Avg_CumulativeDelegate == null)) {
+                this.onEndGet_Avg_CumulativeDelegate = new EndOperationDelegate(this.OnEndGet_Avg_Cumulative);
+            }
+            if ((this.onGet_Avg_CumulativeCompletedDelegate == null)) {
+                this.onGet_Avg_CumulativeCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGet_Avg_CumulativeCompleted);
+            }
+            base.InvokeAsync(this.onBeginGet_Avg_CumulativeDelegate, new object[] {
+                        code_student,
+                        semester}, this.onEndGet_Avg_CumulativeDelegate, this.onGet_Avg_CumulativeCompletedDelegate, userState);
+        }
+        
+        public Client.GetMark_Service.Statistic_Student Info_Statistic_Stu_General(string code_student) {
+            return base.Channel.Info_Statistic_Stu_General(code_student);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginInfo_Statistic_Stu_General(string code_student, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginInfo_Statistic_Stu_General(code_student, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public Client.GetMark_Service.Statistic_Student EndInfo_Statistic_Stu_General(System.IAsyncResult result) {
+            return base.Channel.EndInfo_Statistic_Stu_General(result);
+        }
+        
+        private System.IAsyncResult OnBeginInfo_Statistic_Stu_General(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_student = ((string)(inValues[0]));
+            return this.BeginInfo_Statistic_Stu_General(code_student, callback, asyncState);
+        }
+        
+        private object[] OnEndInfo_Statistic_Stu_General(System.IAsyncResult result) {
+            Client.GetMark_Service.Statistic_Student retVal = this.EndInfo_Statistic_Stu_General(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnInfo_Statistic_Stu_GeneralCompleted(object state) {
+            if ((this.Info_Statistic_Stu_GeneralCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Info_Statistic_Stu_GeneralCompleted(this, new Info_Statistic_Stu_GeneralCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Info_Statistic_Stu_GeneralAsync(string code_student) {
+            this.Info_Statistic_Stu_GeneralAsync(code_student, null);
+        }
+        
+        public void Info_Statistic_Stu_GeneralAsync(string code_student, object userState) {
+            if ((this.onBeginInfo_Statistic_Stu_GeneralDelegate == null)) {
+                this.onBeginInfo_Statistic_Stu_GeneralDelegate = new BeginOperationDelegate(this.OnBeginInfo_Statistic_Stu_General);
+            }
+            if ((this.onEndInfo_Statistic_Stu_GeneralDelegate == null)) {
+                this.onEndInfo_Statistic_Stu_GeneralDelegate = new EndOperationDelegate(this.OnEndInfo_Statistic_Stu_General);
+            }
+            if ((this.onInfo_Statistic_Stu_GeneralCompletedDelegate == null)) {
+                this.onInfo_Statistic_Stu_GeneralCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnInfo_Statistic_Stu_GeneralCompleted);
+            }
+            base.InvokeAsync(this.onBeginInfo_Statistic_Stu_GeneralDelegate, new object[] {
+                        code_student}, this.onEndInfo_Statistic_Stu_GeneralDelegate, this.onInfo_Statistic_Stu_GeneralCompletedDelegate, userState);
+        }
+        
+        public Client.GetMark_Service.Lecturer Get_Info_Lec(string code_lecturer) {
+            return base.Channel.Get_Info_Lec(code_lecturer);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGet_Info_Lec(string code_lecturer, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGet_Info_Lec(code_lecturer, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public Client.GetMark_Service.Lecturer EndGet_Info_Lec(System.IAsyncResult result) {
+            return base.Channel.EndGet_Info_Lec(result);
+        }
+        
+        private System.IAsyncResult OnBeginGet_Info_Lec(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_lecturer = ((string)(inValues[0]));
+            return this.BeginGet_Info_Lec(code_lecturer, callback, asyncState);
+        }
+        
+        private object[] OnEndGet_Info_Lec(System.IAsyncResult result) {
+            Client.GetMark_Service.Lecturer retVal = this.EndGet_Info_Lec(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGet_Info_LecCompleted(object state) {
+            if ((this.Get_Info_LecCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Get_Info_LecCompleted(this, new Get_Info_LecCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Get_Info_LecAsync(string code_lecturer) {
+            this.Get_Info_LecAsync(code_lecturer, null);
+        }
+        
+        public void Get_Info_LecAsync(string code_lecturer, object userState) {
+            if ((this.onBeginGet_Info_LecDelegate == null)) {
+                this.onBeginGet_Info_LecDelegate = new BeginOperationDelegate(this.OnBeginGet_Info_Lec);
+            }
+            if ((this.onEndGet_Info_LecDelegate == null)) {
+                this.onEndGet_Info_LecDelegate = new EndOperationDelegate(this.OnEndGet_Info_Lec);
+            }
+            if ((this.onGet_Info_LecCompletedDelegate == null)) {
+                this.onGet_Info_LecCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGet_Info_LecCompleted);
+            }
+            base.InvokeAsync(this.onBeginGet_Info_LecDelegate, new object[] {
+                        code_lecturer}, this.onEndGet_Info_LecDelegate, this.onGet_Info_LecCompletedDelegate, userState);
+        }
+        
+        public bool Update_Info_Lec(Client.GetMark_Service.Lecturer lec) {
+            return base.Channel.Update_Info_Lec(lec);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginUpdate_Info_Lec(Client.GetMark_Service.Lecturer lec, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginUpdate_Info_Lec(lec, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndUpdate_Info_Lec(System.IAsyncResult result) {
+            return base.Channel.EndUpdate_Info_Lec(result);
+        }
+        
+        private System.IAsyncResult OnBeginUpdate_Info_Lec(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            Client.GetMark_Service.Lecturer lec = ((Client.GetMark_Service.Lecturer)(inValues[0]));
+            return this.BeginUpdate_Info_Lec(lec, callback, asyncState);
+        }
+        
+        private object[] OnEndUpdate_Info_Lec(System.IAsyncResult result) {
+            bool retVal = this.EndUpdate_Info_Lec(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnUpdate_Info_LecCompleted(object state) {
+            if ((this.Update_Info_LecCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Update_Info_LecCompleted(this, new Update_Info_LecCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Update_Info_LecAsync(Client.GetMark_Service.Lecturer lec) {
+            this.Update_Info_LecAsync(lec, null);
+        }
+        
+        public void Update_Info_LecAsync(Client.GetMark_Service.Lecturer lec, object userState) {
+            if ((this.onBeginUpdate_Info_LecDelegate == null)) {
+                this.onBeginUpdate_Info_LecDelegate = new BeginOperationDelegate(this.OnBeginUpdate_Info_Lec);
+            }
+            if ((this.onEndUpdate_Info_LecDelegate == null)) {
+                this.onEndUpdate_Info_LecDelegate = new EndOperationDelegate(this.OnEndUpdate_Info_Lec);
+            }
+            if ((this.onUpdate_Info_LecCompletedDelegate == null)) {
+                this.onUpdate_Info_LecCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnUpdate_Info_LecCompleted);
+            }
+            base.InvokeAsync(this.onBeginUpdate_Info_LecDelegate, new object[] {
+                        lec}, this.onEndUpdate_Info_LecDelegate, this.onUpdate_Info_LecCompletedDelegate, userState);
+        }
+        
+        public Client.GetMark_Service.Subject[] Lec_Sub_All(string code_lecturer) {
+            return base.Channel.Lec_Sub_All(code_lecturer);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginLec_Sub_All(string code_lecturer, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginLec_Sub_All(code_lecturer, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public Client.GetMark_Service.Subject[] EndLec_Sub_All(System.IAsyncResult result) {
+            return base.Channel.EndLec_Sub_All(result);
+        }
+        
+        private System.IAsyncResult OnBeginLec_Sub_All(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_lecturer = ((string)(inValues[0]));
+            return this.BeginLec_Sub_All(code_lecturer, callback, asyncState);
+        }
+        
+        private object[] OnEndLec_Sub_All(System.IAsyncResult result) {
+            Client.GetMark_Service.Subject[] retVal = this.EndLec_Sub_All(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnLec_Sub_AllCompleted(object state) {
+            if ((this.Lec_Sub_AllCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Lec_Sub_AllCompleted(this, new Lec_Sub_AllCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Lec_Sub_AllAsync(string code_lecturer) {
+            this.Lec_Sub_AllAsync(code_lecturer, null);
+        }
+        
+        public void Lec_Sub_AllAsync(string code_lecturer, object userState) {
+            if ((this.onBeginLec_Sub_AllDelegate == null)) {
+                this.onBeginLec_Sub_AllDelegate = new BeginOperationDelegate(this.OnBeginLec_Sub_All);
+            }
+            if ((this.onEndLec_Sub_AllDelegate == null)) {
+                this.onEndLec_Sub_AllDelegate = new EndOperationDelegate(this.OnEndLec_Sub_All);
+            }
+            if ((this.onLec_Sub_AllCompletedDelegate == null)) {
+                this.onLec_Sub_AllCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnLec_Sub_AllCompleted);
+            }
+            base.InvokeAsync(this.onBeginLec_Sub_AllDelegate, new object[] {
+                        code_lecturer}, this.onEndLec_Sub_AllDelegate, this.onLec_Sub_AllCompletedDelegate, userState);
+        }
+        
+        public Client.GetMark_Service.Subject[] Lec_Sub_Single(string code_lecturer, string semester) {
+            return base.Channel.Lec_Sub_Single(code_lecturer, semester);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginLec_Sub_Single(string code_lecturer, string semester, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginLec_Sub_Single(code_lecturer, semester, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public Client.GetMark_Service.Subject[] EndLec_Sub_Single(System.IAsyncResult result) {
+            return base.Channel.EndLec_Sub_Single(result);
+        }
+        
+        private System.IAsyncResult OnBeginLec_Sub_Single(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_lecturer = ((string)(inValues[0]));
+            string semester = ((string)(inValues[1]));
+            return this.BeginLec_Sub_Single(code_lecturer, semester, callback, asyncState);
+        }
+        
+        private object[] OnEndLec_Sub_Single(System.IAsyncResult result) {
+            Client.GetMark_Service.Subject[] retVal = this.EndLec_Sub_Single(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnLec_Sub_SingleCompleted(object state) {
+            if ((this.Lec_Sub_SingleCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Lec_Sub_SingleCompleted(this, new Lec_Sub_SingleCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Lec_Sub_SingleAsync(string code_lecturer, string semester) {
+            this.Lec_Sub_SingleAsync(code_lecturer, semester, null);
+        }
+        
+        public void Lec_Sub_SingleAsync(string code_lecturer, string semester, object userState) {
+            if ((this.onBeginLec_Sub_SingleDelegate == null)) {
+                this.onBeginLec_Sub_SingleDelegate = new BeginOperationDelegate(this.OnBeginLec_Sub_Single);
+            }
+            if ((this.onEndLec_Sub_SingleDelegate == null)) {
+                this.onEndLec_Sub_SingleDelegate = new EndOperationDelegate(this.OnEndLec_Sub_Single);
+            }
+            if ((this.onLec_Sub_SingleCompletedDelegate == null)) {
+                this.onLec_Sub_SingleCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnLec_Sub_SingleCompleted);
+            }
+            base.InvokeAsync(this.onBeginLec_Sub_SingleDelegate, new object[] {
+                        code_lecturer,
+                        semester}, this.onEndLec_Sub_SingleDelegate, this.onLec_Sub_SingleCompletedDelegate, userState);
+        }
+        
+        public Client.GetMark_Service.List_Stu_Class[] List_Class(string code_lecturer, string code_subject, string semester) {
+            return base.Channel.List_Class(code_lecturer, code_subject, semester);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginList_Class(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginList_Class(code_lecturer, code_subject, semester, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public Client.GetMark_Service.List_Stu_Class[] EndList_Class(System.IAsyncResult result) {
+            return base.Channel.EndList_Class(result);
+        }
+        
+        private System.IAsyncResult OnBeginList_Class(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_lecturer = ((string)(inValues[0]));
+            string code_subject = ((string)(inValues[1]));
+            string semester = ((string)(inValues[2]));
+            return this.BeginList_Class(code_lecturer, code_subject, semester, callback, asyncState);
+        }
+        
+        private object[] OnEndList_Class(System.IAsyncResult result) {
+            Client.GetMark_Service.List_Stu_Class[] retVal = this.EndList_Class(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnList_ClassCompleted(object state) {
+            if ((this.List_ClassCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.List_ClassCompleted(this, new List_ClassCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void List_ClassAsync(string code_lecturer, string code_subject, string semester) {
+            this.List_ClassAsync(code_lecturer, code_subject, semester, null);
+        }
+        
+        public void List_ClassAsync(string code_lecturer, string code_subject, string semester, object userState) {
+            if ((this.onBeginList_ClassDelegate == null)) {
+                this.onBeginList_ClassDelegate = new BeginOperationDelegate(this.OnBeginList_Class);
+            }
+            if ((this.onEndList_ClassDelegate == null)) {
+                this.onEndList_ClassDelegate = new EndOperationDelegate(this.OnEndList_Class);
+            }
+            if ((this.onList_ClassCompletedDelegate == null)) {
+                this.onList_ClassCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnList_ClassCompleted);
+            }
+            base.InvokeAsync(this.onBeginList_ClassDelegate, new object[] {
+                        code_lecturer,
+                        code_subject,
+                        semester}, this.onEndList_ClassDelegate, this.onList_ClassCompletedDelegate, userState);
+        }
+        
+        public float Get_Min_Mark(string code_lecturer, string code_subject, string semester) {
+            return base.Channel.Get_Min_Mark(code_lecturer, code_subject, semester);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGet_Min_Mark(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGet_Min_Mark(code_lecturer, code_subject, semester, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public float EndGet_Min_Mark(System.IAsyncResult result) {
+            return base.Channel.EndGet_Min_Mark(result);
+        }
+        
+        private System.IAsyncResult OnBeginGet_Min_Mark(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_lecturer = ((string)(inValues[0]));
+            string code_subject = ((string)(inValues[1]));
+            string semester = ((string)(inValues[2]));
+            return this.BeginGet_Min_Mark(code_lecturer, code_subject, semester, callback, asyncState);
+        }
+        
+        private object[] OnEndGet_Min_Mark(System.IAsyncResult result) {
+            float retVal = this.EndGet_Min_Mark(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGet_Min_MarkCompleted(object state) {
+            if ((this.Get_Min_MarkCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Get_Min_MarkCompleted(this, new Get_Min_MarkCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Get_Min_MarkAsync(string code_lecturer, string code_subject, string semester) {
+            this.Get_Min_MarkAsync(code_lecturer, code_subject, semester, null);
+        }
+        
+        public void Get_Min_MarkAsync(string code_lecturer, string code_subject, string semester, object userState) {
+            if ((this.onBeginGet_Min_MarkDelegate == null)) {
+                this.onBeginGet_Min_MarkDelegate = new BeginOperationDelegate(this.OnBeginGet_Min_Mark);
+            }
+            if ((this.onEndGet_Min_MarkDelegate == null)) {
+                this.onEndGet_Min_MarkDelegate = new EndOperationDelegate(this.OnEndGet_Min_Mark);
+            }
+            if ((this.onGet_Min_MarkCompletedDelegate == null)) {
+                this.onGet_Min_MarkCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGet_Min_MarkCompleted);
+            }
+            base.InvokeAsync(this.onBeginGet_Min_MarkDelegate, new object[] {
+                        code_lecturer,
+                        code_subject,
+                        semester}, this.onEndGet_Min_MarkDelegate, this.onGet_Min_MarkCompletedDelegate, userState);
+        }
+        
+        public float Get_Max_Mark(string code_lecturer, string code_subject, string semester) {
+            return base.Channel.Get_Max_Mark(code_lecturer, code_subject, semester);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGet_Max_Mark(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGet_Max_Mark(code_lecturer, code_subject, semester, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public float EndGet_Max_Mark(System.IAsyncResult result) {
+            return base.Channel.EndGet_Max_Mark(result);
+        }
+        
+        private System.IAsyncResult OnBeginGet_Max_Mark(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_lecturer = ((string)(inValues[0]));
+            string code_subject = ((string)(inValues[1]));
+            string semester = ((string)(inValues[2]));
+            return this.BeginGet_Max_Mark(code_lecturer, code_subject, semester, callback, asyncState);
+        }
+        
+        private object[] OnEndGet_Max_Mark(System.IAsyncResult result) {
+            float retVal = this.EndGet_Max_Mark(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGet_Max_MarkCompleted(object state) {
+            if ((this.Get_Max_MarkCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Get_Max_MarkCompleted(this, new Get_Max_MarkCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Get_Max_MarkAsync(string code_lecturer, string code_subject, string semester) {
+            this.Get_Max_MarkAsync(code_lecturer, code_subject, semester, null);
+        }
+        
+        public void Get_Max_MarkAsync(string code_lecturer, string code_subject, string semester, object userState) {
+            if ((this.onBeginGet_Max_MarkDelegate == null)) {
+                this.onBeginGet_Max_MarkDelegate = new BeginOperationDelegate(this.OnBeginGet_Max_Mark);
+            }
+            if ((this.onEndGet_Max_MarkDelegate == null)) {
+                this.onEndGet_Max_MarkDelegate = new EndOperationDelegate(this.OnEndGet_Max_Mark);
+            }
+            if ((this.onGet_Max_MarkCompletedDelegate == null)) {
+                this.onGet_Max_MarkCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGet_Max_MarkCompleted);
+            }
+            base.InvokeAsync(this.onBeginGet_Max_MarkDelegate, new object[] {
+                        code_lecturer,
+                        code_subject,
+                        semester}, this.onEndGet_Max_MarkDelegate, this.onGet_Max_MarkCompletedDelegate, userState);
+        }
+        
+        public float Get_Avg_Mark(string code_lecturer, string code_subject, string semester) {
+            return base.Channel.Get_Avg_Mark(code_lecturer, code_subject, semester);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGet_Avg_Mark(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGet_Avg_Mark(code_lecturer, code_subject, semester, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public float EndGet_Avg_Mark(System.IAsyncResult result) {
+            return base.Channel.EndGet_Avg_Mark(result);
+        }
+        
+        private System.IAsyncResult OnBeginGet_Avg_Mark(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_lecturer = ((string)(inValues[0]));
+            string code_subject = ((string)(inValues[1]));
+            string semester = ((string)(inValues[2]));
+            return this.BeginGet_Avg_Mark(code_lecturer, code_subject, semester, callback, asyncState);
+        }
+        
+        private object[] OnEndGet_Avg_Mark(System.IAsyncResult result) {
+            float retVal = this.EndGet_Avg_Mark(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGet_Avg_MarkCompleted(object state) {
+            if ((this.Get_Avg_MarkCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Get_Avg_MarkCompleted(this, new Get_Avg_MarkCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Get_Avg_MarkAsync(string code_lecturer, string code_subject, string semester) {
+            this.Get_Avg_MarkAsync(code_lecturer, code_subject, semester, null);
+        }
+        
+        public void Get_Avg_MarkAsync(string code_lecturer, string code_subject, string semester, object userState) {
+            if ((this.onBeginGet_Avg_MarkDelegate == null)) {
+                this.onBeginGet_Avg_MarkDelegate = new BeginOperationDelegate(this.OnBeginGet_Avg_Mark);
+            }
+            if ((this.onEndGet_Avg_MarkDelegate == null)) {
+                this.onEndGet_Avg_MarkDelegate = new EndOperationDelegate(this.OnEndGet_Avg_Mark);
+            }
+            if ((this.onGet_Avg_MarkCompletedDelegate == null)) {
+                this.onGet_Avg_MarkCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGet_Avg_MarkCompleted);
+            }
+            base.InvokeAsync(this.onBeginGet_Avg_MarkDelegate, new object[] {
+                        code_lecturer,
+                        code_subject,
+                        semester}, this.onEndGet_Avg_MarkDelegate, this.onGet_Avg_MarkCompletedDelegate, userState);
+        }
+        
+        public int Class_Stu_Total(string code_lecturer, string code_subject, string semester) {
+            return base.Channel.Class_Stu_Total(code_lecturer, code_subject, semester);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginClass_Stu_Total(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginClass_Stu_Total(code_lecturer, code_subject, semester, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public int EndClass_Stu_Total(System.IAsyncResult result) {
+            return base.Channel.EndClass_Stu_Total(result);
+        }
+        
+        private System.IAsyncResult OnBeginClass_Stu_Total(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_lecturer = ((string)(inValues[0]));
+            string code_subject = ((string)(inValues[1]));
+            string semester = ((string)(inValues[2]));
+            return this.BeginClass_Stu_Total(code_lecturer, code_subject, semester, callback, asyncState);
+        }
+        
+        private object[] OnEndClass_Stu_Total(System.IAsyncResult result) {
+            int retVal = this.EndClass_Stu_Total(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnClass_Stu_TotalCompleted(object state) {
+            if ((this.Class_Stu_TotalCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Class_Stu_TotalCompleted(this, new Class_Stu_TotalCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Class_Stu_TotalAsync(string code_lecturer, string code_subject, string semester) {
+            this.Class_Stu_TotalAsync(code_lecturer, code_subject, semester, null);
+        }
+        
+        public void Class_Stu_TotalAsync(string code_lecturer, string code_subject, string semester, object userState) {
+            if ((this.onBeginClass_Stu_TotalDelegate == null)) {
+                this.onBeginClass_Stu_TotalDelegate = new BeginOperationDelegate(this.OnBeginClass_Stu_Total);
+            }
+            if ((this.onEndClass_Stu_TotalDelegate == null)) {
+                this.onEndClass_Stu_TotalDelegate = new EndOperationDelegate(this.OnEndClass_Stu_Total);
+            }
+            if ((this.onClass_Stu_TotalCompletedDelegate == null)) {
+                this.onClass_Stu_TotalCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnClass_Stu_TotalCompleted);
+            }
+            base.InvokeAsync(this.onBeginClass_Stu_TotalDelegate, new object[] {
+                        code_lecturer,
+                        code_subject,
+                        semester}, this.onEndClass_Stu_TotalDelegate, this.onClass_Stu_TotalCompletedDelegate, userState);
+        }
+        
+        public int Statistic_Mark_Equal(string code_lecturer, string code_subject, string semester, float mark) {
+            return base.Channel.Statistic_Mark_Equal(code_lecturer, code_subject, semester, mark);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginStatistic_Mark_Equal(string code_lecturer, string code_subject, string semester, float mark, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginStatistic_Mark_Equal(code_lecturer, code_subject, semester, mark, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public int EndStatistic_Mark_Equal(System.IAsyncResult result) {
+            return base.Channel.EndStatistic_Mark_Equal(result);
+        }
+        
+        private System.IAsyncResult OnBeginStatistic_Mark_Equal(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_lecturer = ((string)(inValues[0]));
+            string code_subject = ((string)(inValues[1]));
+            string semester = ((string)(inValues[2]));
+            float mark = ((float)(inValues[3]));
+            return this.BeginStatistic_Mark_Equal(code_lecturer, code_subject, semester, mark, callback, asyncState);
+        }
+        
+        private object[] OnEndStatistic_Mark_Equal(System.IAsyncResult result) {
+            int retVal = this.EndStatistic_Mark_Equal(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnStatistic_Mark_EqualCompleted(object state) {
+            if ((this.Statistic_Mark_EqualCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Statistic_Mark_EqualCompleted(this, new Statistic_Mark_EqualCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Statistic_Mark_EqualAsync(string code_lecturer, string code_subject, string semester, float mark) {
+            this.Statistic_Mark_EqualAsync(code_lecturer, code_subject, semester, mark, null);
+        }
+        
+        public void Statistic_Mark_EqualAsync(string code_lecturer, string code_subject, string semester, float mark, object userState) {
+            if ((this.onBeginStatistic_Mark_EqualDelegate == null)) {
+                this.onBeginStatistic_Mark_EqualDelegate = new BeginOperationDelegate(this.OnBeginStatistic_Mark_Equal);
+            }
+            if ((this.onEndStatistic_Mark_EqualDelegate == null)) {
+                this.onEndStatistic_Mark_EqualDelegate = new EndOperationDelegate(this.OnEndStatistic_Mark_Equal);
+            }
+            if ((this.onStatistic_Mark_EqualCompletedDelegate == null)) {
+                this.onStatistic_Mark_EqualCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnStatistic_Mark_EqualCompleted);
+            }
+            base.InvokeAsync(this.onBeginStatistic_Mark_EqualDelegate, new object[] {
+                        code_lecturer,
+                        code_subject,
+                        semester,
+                        mark}, this.onEndStatistic_Mark_EqualDelegate, this.onStatistic_Mark_EqualCompletedDelegate, userState);
+        }
+        
+        public int Statistic_Mark_Distance(string code_lecturer, string code_subject, string semester, float from, float to) {
+            return base.Channel.Statistic_Mark_Distance(code_lecturer, code_subject, semester, from, to);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginStatistic_Mark_Distance(string code_lecturer, string code_subject, string semester, float from, float to, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginStatistic_Mark_Distance(code_lecturer, code_subject, semester, from, to, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public int EndStatistic_Mark_Distance(System.IAsyncResult result) {
+            return base.Channel.EndStatistic_Mark_Distance(result);
+        }
+        
+        private System.IAsyncResult OnBeginStatistic_Mark_Distance(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_lecturer = ((string)(inValues[0]));
+            string code_subject = ((string)(inValues[1]));
+            string semester = ((string)(inValues[2]));
+            float from = ((float)(inValues[3]));
+            float to = ((float)(inValues[4]));
+            return this.BeginStatistic_Mark_Distance(code_lecturer, code_subject, semester, from, to, callback, asyncState);
+        }
+        
+        private object[] OnEndStatistic_Mark_Distance(System.IAsyncResult result) {
+            int retVal = this.EndStatistic_Mark_Distance(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnStatistic_Mark_DistanceCompleted(object state) {
+            if ((this.Statistic_Mark_DistanceCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Statistic_Mark_DistanceCompleted(this, new Statistic_Mark_DistanceCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Statistic_Mark_DistanceAsync(string code_lecturer, string code_subject, string semester, float from, float to) {
+            this.Statistic_Mark_DistanceAsync(code_lecturer, code_subject, semester, from, to, null);
+        }
+        
+        public void Statistic_Mark_DistanceAsync(string code_lecturer, string code_subject, string semester, float from, float to, object userState) {
+            if ((this.onBeginStatistic_Mark_DistanceDelegate == null)) {
+                this.onBeginStatistic_Mark_DistanceDelegate = new BeginOperationDelegate(this.OnBeginStatistic_Mark_Distance);
+            }
+            if ((this.onEndStatistic_Mark_DistanceDelegate == null)) {
+                this.onEndStatistic_Mark_DistanceDelegate = new EndOperationDelegate(this.OnEndStatistic_Mark_Distance);
+            }
+            if ((this.onStatistic_Mark_DistanceCompletedDelegate == null)) {
+                this.onStatistic_Mark_DistanceCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnStatistic_Mark_DistanceCompleted);
+            }
+            base.InvokeAsync(this.onBeginStatistic_Mark_DistanceDelegate, new object[] {
+                        code_lecturer,
+                        code_subject,
+                        semester,
+                        from,
+                        to}, this.onEndStatistic_Mark_DistanceDelegate, this.onStatistic_Mark_DistanceCompletedDelegate, userState);
         }
     }
 }

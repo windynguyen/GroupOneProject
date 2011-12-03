@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceLibrary", "ServiceLi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceHost_Form", "ServiceHost_Form\ServiceHost_Form.csproj", "{934989AE-861A-42FB-B1E0-AC5838031B4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{3BB0E5C7-2887-402A-89F7-561B5E73C787}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client_GMS", "Client\Client_GMS.csproj", "{3BB0E5C7-2887-402A-89F7-561B5E73C787}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

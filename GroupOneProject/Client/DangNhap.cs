@@ -18,35 +18,60 @@ namespace Client
             InitializeComponent();
             txt_username.Focus();
         }
-        private EndpointAddress address;
-        private IService proxy;
+        private IService proxy = Proxy.New_Proxy_NetNamedPipeBinding();
+        private int mode;
         private int mode_SV = 0;
-        private int mode_GD = 1;
+        private int mode_PH = 1;
+        private int mode_GV = 2;
         private bool result_login;
 
         private void but_Login_Click(object sender, EventArgs e)
         {
-            address = new EndpointAddress("http://localhost:3000/GetMark_Service");
-            WSHttpBinding binding = new WSHttpBinding();
-
-            proxy = ChannelFactory<IService>.CreateChannel(binding, address);
             try
             {
-                if (chb_mode.Checked)
+                if (rdo_sinhvien.Checked)
                 {
-                    result_login = proxy.CheckLogin(txt_username.Text, txt_pass.Text, mode_GD);
+                    mode = mode_SV;
+                    result_login = proxy.CheckLogin(txt_username.Text, txt_pass.Text, mode_SV);
+                }
+                else if (rdo_phuhuynh.Checked)
+                {
+                    mode =mode_PH;
+                    result_login = proxy.CheckLogin(txt_username.Text, txt_pass.Text, mode_PH);
                 }
                 else
                 {
-                    result_login = proxy.CheckLogin(txt_username.Text, txt_pass.Text, mode_SV);
+                    mode = mode_GV;
+                    result_login = proxy.CheckLogin(txt_username.Text, txt_pass.Text, mode_GV);
                 }
                 if (result_login)
                 {
-                    //MessageBox.Show("Đăng nhập thành công","Thông báo");
                     this.Hide();
-                    GlobalVariable.Mssv = txt_username.Text;
-                    Main frmMain = new Main();
-                    frmMain.Show();
+                    GlobalVariable.Username = txt_username.Text;
+                    GlobalVariable.Mode = mode;
+                    switch (mode)
+                    {
+                        case 0:
+                            {
+                                SV_Main frmMain = new SV_Main();
+                                frmMain.Show();
+                                break;
+                            }
+                        case 1:
+                            {
+                                SV_Main frmMain = new SV_Main();
+                                frmMain.Show();
+                                break;
+                            }
+                        case 2:
+                            {
+                                GV_Main frmMain = new GV_Main();
+                                frmMain.Show();
+                                break;
+                            }
+
+                    }
+                    
                 }
                 else
                     MessageBox.Show("Đăng nhập thất bại", "Thông báo");

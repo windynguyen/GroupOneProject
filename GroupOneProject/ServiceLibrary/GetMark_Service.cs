@@ -43,12 +43,349 @@ namespace ServiceLibrary
         //    adap.Fill(dt);
         //    return dt;
         //}
-
-        public SinhVien GetInfoSV(string MSSV)
+        
+        public bool ChangePassword(string username, string old_password, string new_password, int mode)
         {
-            SinhVien SV = new SinhVien();
+                bool kt_pass_old = CheckLogin(username, old_password, mode);
+                if (kt_pass_old)
+                {
+                    connect.Open_Connect();
+                    string query = "Update tbl_SinhVien " +
+                                    "Set MatKhau = '" + new_password + "' " +
+                                    "Where MSSV = '" + username + "'";
+                    SqlCommand cmd = new SqlCommand(query, connect.con);
+                    int roweff = cmd.ExecuteNonQuery();
+                    connect.Close_Connect();
+                    if (roweff != 0)
+                    {
+                        return true;
+                    }
+                    else
+                        return false;
+                }
+                else
+                    throw new FaultException("Old password is incorrect");
+                
+            
+        }
+
+
+        public Mark Get_Mark(string code_student, string code_subject)
+        {
+            Mark mark = new Mark();
+            return mark;
+        }
+        public Mark[] Get_Mark(string code_student)
+        {
+            List<Mark> mark = new List<Mark>();
+            return mark.ToArray();
+
+        }
+        public Student_Semester[] Info_Semester(string code_student)
+        {
+            List<Student_Semester> lst = new List<Student_Semester>();
+            return lst.ToArray();
+        }
+        public float Get_Avg_Semester(string code_student, string semester)
+        {
+            return 1;
+        }
+        public float Get_Avg_Cumulative(string code_student, string semester)
+        {
+            return 1;
+        }
+        public Lecturer Get_Info_Lec(string code_lecturer)
+        {
+            return new Lecturer();
+        }
+        public bool Update_Info_Lec(Lecturer lec)
+        {
+            return true;
+        }
+        public Subject[] Lec_Sub(string code_lecturer)
+        {
+            List<Subject> lst_sub = new List<Subject>();
+            SqlDataReader sdr = null;
+            Subject sub;
+            string query = "Select Distinct KQ.HocKy,  MH.* From tbl_KetQua KQ, tbl_MonHoc MH Where MSGV = '"+code_lecturer+"'	And KQ.MaMonHoc = MH.MaMonHoc";
+            try
+            {
+                connect.Open_Connect();
+                SqlCommand cmd = new SqlCommand(query, connect.con);
+                sdr = cmd.ExecuteReader();
+                while (sdr.Read())
+                {
+                    sub = new Subject();
+                    sub.Semester = sdr[0].ToString();
+                    sub.Code_sub = sdr[1].ToString();
+                    sub.Name_sub = sdr[2].ToString();
+                    sub.SoTC = (int)sdr[3];
+                    sub.Sotiet = (int)sdr[4];
+                    lst_sub.Add(sub);
+                }
+            }
+            catch
+            {
+                lst_sub = null;
+            }
+            finally
+            {
+                if (sdr != null)
+                {
+                    sdr.Close();
+                }
+                if (connect.con != null)
+                {
+                    connect.Close_Connect();
+                }
+
+            }
+            return lst_sub.ToArray();
+        }
+        public Subject[] Lec_Sub(string code_lecturer, string semester)
+        {
+            List<Subject> lst_sub = new List<Subject>();
+            SqlDataReader sdr = null;
+            Subject sub;
+            string query = "Select Distinct KQ.HocKy,  MH.* From tbl_KetQua KQ, tbl_MonHoc MH Where MSGV = '"+code_lecturer+"' And KQ.HocKy = '"+semester+"' And KQ.MaMonHoc = MH.MaMonHoc";
+            try
+            {
+                connect.Open_Connect();
+                SqlCommand cmd = new SqlCommand(query, connect.con);
+                sdr = cmd.ExecuteReader();
+                while (sdr.Read())
+                {
+                    sub = new Subject();
+                    sub.Semester = sdr[0].ToString();
+                    sub.Code_sub = sdr[1].ToString();
+                    sub.Name_sub = sdr[2].ToString();
+                    sub.SoTC = (int)sdr[3];
+                    sub.Sotiet = (int)sdr[4];
+                    lst_sub.Add(sub);
+                }
+            }
+            catch
+            {
+                lst_sub = null;
+            }
+            finally
+            {
+                if (sdr != null)
+                {
+                    sdr.Close();
+                }
+                if (connect.con != null)
+                {
+                    connect.Close_Connect();
+                }
+
+            }
+            return lst_sub.ToArray();
+        }
+        public List_Stu_Class[] List_Class(string code_lecturer, string code_subject, string semester)
+        {
+            List<List_Stu_Class> lst_stu = new List<List_Stu_Class>();
+            SqlDataReader sdr = null;
+            List_Stu_Class stu;
+            string query = "Select SV.MSSV, SV.HoTen, KQ.DiemKiemTra, KQ.DiemThi, KQ.DTB_h10, KQ.DTB_hchu, KQ.DTB_h4, KQ.TinhTrang, KQ.Loai "+
+                            "From tbl_KetQua KQ, tbl_SinhVien SV "+
+                            "Where KQ.MSGV = '"+code_lecturer+"' "+
+							                "And KQ.MaMonHoc ='"+code_subject+"' " +
+							                "And KQ.HocKy = '"+semester+"' " +
+							                "And KQ.MSSV = SV.MSSV";
+            try
+            {
+                connect.Open_Connect();
+                SqlCommand cmd = new SqlCommand(query, connect.con);
+                sdr = cmd.ExecuteReader();
+                while (sdr.Read())
+                {
+                    stu = new List_Stu_Class();
+                    stu.Mssv = sdr[0].ToString();
+                    stu.Hoten = sdr[1].ToString();
+                    stu.DiemKT = float.Parse(sdr[2].ToString());
+                    stu.DiemThi = float.Parse(sdr[3].ToString());
+                    stu.DTB_h10 = float.Parse(sdr[4].ToString());
+                    stu.DTB_hchu = sdr[5].ToString();
+                    stu.DTB_h4 = float.Parse(sdr[6].ToString());
+                    stu.Tinhtrang = (bool)sdr[7];
+                    stu.Loai = sdr[8].ToString();
+                    lst_stu.Add(stu);
+                }
+            }
+            catch
+            {
+                lst_stu = null;
+            }
+            finally
+            {
+                if (sdr != null)
+                {
+                    sdr.Close();
+                }
+                if (connect.con != null)
+                {
+                    connect.Close_Connect();
+                }
+
+            }
+            return lst_stu.ToArray();
+        }
+        //--------------------
+        public float Get_Min_Mark(string code_lecturer, string code_subject, string semester)
+        {
+            string query = "Select MIN(DiemThi) From tbl_KetQua Where MSGV = '" + code_lecturer + "' " +
+                                                            "And MaMonHoc ='" + code_subject + "' " +
+                                                            "And HocKy = '" + semester + "'";
+            connect.Open_Connect();
+            SqlCommand cmd = new SqlCommand(query, connect.con);
+            float result = float.Parse(cmd.ExecuteScalar().ToString());
+            connect.Close_Connect();
+            return result;
+        }
+        public float Get_Max_Mark(string code_lecturer, string code_subject, string semester)
+        {
+            string query = "Select MAX(DiemThi) From tbl_KetQua Where MSGV = '" + code_lecturer + "' " +
+                                                            "And MaMonHoc ='" + code_subject + "' " +
+                                                            "And HocKy = '" + semester + "'";
+            connect.Open_Connect();
+            SqlCommand cmd = new SqlCommand(query, connect.con);
+            float result = float.Parse(cmd.ExecuteScalar().ToString());
+            connect.Close_Connect();
+            return result;
+        }
+        public float Get_Avg_Mark(string code_lecturer, string code_subject, string semester)
+        {
+            string query = "Select ROUND(AVG(DiemThi),1) From tbl_KetQua Where MSGV = '" + code_lecturer + "' " +
+                                                            "And MaMonHoc ='" + code_subject + "' " +
+                                                            "And HocKy = '" + semester + "'";
+            connect.Open_Connect();
+            SqlCommand cmd = new SqlCommand(query, connect.con);
+            float result = float.Parse(cmd.ExecuteScalar().ToString());
+            connect.Close_Connect();
+            return result;
+        }
+        public int Class_Stu_Total(string code_lecturer, string code_subject, string semester) //thống kê sỉ số lớp MH
+        {
+            string query = "Select COUNT(*) From tbl_KetQua Where MSGV = '"+code_lecturer+"' "+ 
+							                                "And MaMonHoc ='"+code_subject+"' "+
+							                                "And HocKy = '"+semester+"'";
+            connect.Open_Connect();
+            SqlCommand cmd = new SqlCommand(query, connect.con);
+            int result = (int)cmd.ExecuteScalar();
+            connect.Close_Connect();
+            return result;
+        }
+        public int Statistic_Mark_Equal(string code_lecturer, string code_subject, string semester, float mark) //thống kê điểm của 1 môn học, =
+        {
+            return 1;
+        }
+        public int Statistic_Mark_Distance(string code_lecturer, string code_subject, string semester, float from, float to) //thống kê điểm của 1 môn học, []
+        {
+            string query = "Select COUNT(*) From tbl_KetQua Where MSGV = '"+code_lecturer+"' "+
+							"And MaMonHoc ='"+code_subject+"' "+
+							"And HocKy = '"+semester+"' "+
+							"And DiemThi >= "+from+" and DiemThi < "+to+"";
+
+            connect.Open_Connect();
+            SqlCommand cmd = new SqlCommand(query, connect.con);
+            int result = (int)cmd.ExecuteScalar();
+            connect.Close_Connect();
+            return result;
+        }
+        public int Statistic_Mark_Less(string code_lecturer, string code_subject, string semester, float mark) //thống kê điểm của 1 môn học, <
+        {
+            string query = "Select COUNT(*) From tbl_KetQua Where MSGV = '" + code_lecturer + "' " +
+                            "And MaMonHoc ='" + code_subject + "' " +
+                            "And HocKy = '" + semester + "' " +
+                            "And DiemThi < "+mark+"";
+            connect.Open_Connect();
+            SqlCommand cmd = new SqlCommand(query, connect.con);
+            int result = (int)cmd.ExecuteScalar();
+            connect.Close_Connect();
+            return result;
+        }
+        public int Statistic_Mark_Greater(string code_lecturer, string code_subject, string semester, float mark) //thống kê điểm của 1 môn học, >
+        {
+            string query = "Select COUNT(*) From tbl_KetQua Where MSGV = '" + code_lecturer + "' " +
+                            "And MaMonHoc ='" + code_subject + "' " +
+                            "And HocKy = '" + semester + "' " +
+                            "And DiemThi > " + mark + "";
+            connect.Open_Connect();
+            SqlCommand cmd = new SqlCommand(query, connect.con);
+            int result = (int)cmd.ExecuteScalar();
+            connect.Close_Connect();
+            return result;
+        }
+        public Statistic_Mark Statistic_Mark_General(string code_lecturer, string code_subject, string semester) //thống kê điểm của 1 môn học, >
+        {
+            Statistic_Mark sta_mark = new Statistic_Mark();
+            sta_mark.Total = Class_Stu_Total(code_lecturer, code_subject, semester);
+            sta_mark.Less_than_5 = Statistic_Mark_Less(code_lecturer, code_subject, semester, 5);
+            sta_mark.Distance_5_8 = Statistic_Mark_Distance(code_lecturer, code_subject, semester, 5, 8);
+            sta_mark.Distance_8_10 = Statistic_Mark_Distance(code_lecturer, code_subject, semester, 8, 11);
+            sta_mark.Max_mark = Get_Max_Mark(code_lecturer, code_subject, semester);
+            sta_mark.Min_mark = Get_Min_Mark(code_lecturer, code_subject, semester);
+            sta_mark.Avg_mark = Get_Avg_Mark(code_lecturer, code_subject, semester);
+            return sta_mark;
+        }
+
+        //Get thông tin SV có điểm thi min, max
+        public Student Get_Student_Min_Mark(string code_lecturer, string code_subject, string semester) //Get thông tin SV có điểm thi MIN
+        {
+            return new Student();
+        }
+        public Student Get_Student_Max_Mark(string code_lecturer, string code_subject, string semester)//Get thông tin SV có điểm thi MAX
+        {
+            return new Student();
+        }
+        
+        //Get thông tin SV có điểm trung bình  min, max
+        public Student Get_Student_Min_Avg(string code_lecturer, string code_subject, string semester) //Get thông tin SV có điểm trung bình  MIN
+        {
+            return new Student();
+        }
+        public Student Get_Student_Max_Avg(string code_lecturer, string code_subject, string semester)//Get thông tin SV có điểm trung bình  MAX
+        {
+            return new Student();
+        }
+        
+        //Thống kê trung bình môn:  max, min, avg
+        public float Get_Max_Avg(string code_lecturer, string code_subject, string semester) //trung bình môn thấp nhất của 1 môn học trong hk
+        {
+            return 1;
+        }
+        public float Get_Min_Avg(string code_lecturer, string code_subject, string semester)//trung bình môn cao nhất của 1 môn học trong hk
+        {
+            return 1;
+        }
+        public float Get_Avg_Avg(string code_lecturer, string code_subject, string semester) //trung bình môn trung bình của 1 môn học trong hk
+        {
+            return 1;
+        }
+        
+        //Thống kê trung bình môn theo ý muốn: =, >, <, []
+        public int Statistic_Avg_Equal(string code_lecturer, string code_subject, string semester, float mark) //thống kê trung bình môn của 1 môn học, =
+        {
+            return 1;
+        }
+        public int Statistic_Avg_Distance(string code_lecturer, string code_subject, string semester, float from, float to) //thống kê trung bình môn của 1 môn học, []
+        {
+            return 1;
+        }
+        public int Statistic_Avg_Less(string code_lecturer, string code_subject, string semester, float mark) //thống kê trung bình môn của 1 môn học, <
+        {
+            return 1;
+        }
+        public int Statistic_Avg_Greater(string code_lecturer, string code_subject, string semester, float mark) //thống kê trung bình môn của 1 môn học, >
+        {
+            return 1;
+        }
+        public Student Get_Info_Stu(string code_student)
+        {
+            Student SV = new Student();
             DataTable dt = new DataTable();
-            string query = "Select * From tbl_SinhVien Where MSSV = '" + MSSV + "'";
+            string query = "Select * From tbl_SinhVien Where MSSV = '" + code_student + "'";
             connect.Open_Connect();
             SqlDataAdapter adap = new SqlDataAdapter(query, connect.con);
             adap.Fill(dt);
@@ -78,13 +415,13 @@ namespace ServiceLibrary
             connect.Close_Connect();
             return SV;
         }
-        public bool UpdateInfoSV(SinhVien SV)
+        public bool Update_Info_Stu(Student Stu)
         {
             connect.Open_Connect();
             string query = "Update tbl_SinhVien"+
-                " Set DiaChi = N'" + SV.Diachi + "', DienThoai = '" + SV.Dienthoai + "', Email = '" + SV.Email + "', QuocTich = N'" + SV.Quoctich +
-                "', TonGiao = N'" + SV.Tongiao + "', DanToc = N'" + SV.Dantoc + "',HoTenCha = N'" + SV.Hotencha + "', NgheNghiepCha = N'" + SV.Nghenghiepcha + "', HoTenMe = N'" + SV.Hotenme + "', NghenghiepMe = N'" + SV.Nghenghiepme + "'" +
-                           " Where MSSV = '"+SV.Mssv+"'";
+                " Set DiaChi = N'" + Stu.Diachi + "', DienThoai = '" + Stu.Dienthoai + "', Email = '" + Stu.Email + "', QuocTich = N'" + Stu.Quoctich +
+                "', TonGiao = N'" + Stu.Tongiao + "', DanToc = N'" + Stu.Dantoc + "',HoTenCha = N'" + Stu.Hotencha + "', NgheNghiepCha = N'" + Stu.Nghenghiepcha + "', HoTenMe = N'" + Stu.Hotenme + "', NghenghiepMe = N'" + Stu.Nghenghiepme + "'" +
+                           " Where MSSV = '" + Stu.Mssv + "'";
             SqlCommand cmd = new SqlCommand(query, connect.con);
             int roweff = cmd.ExecuteNonQuery();
             connect.Close_Connect();
@@ -96,14 +433,14 @@ namespace ServiceLibrary
                 return false;
             
         }
-        public KetQua[] KetQua_HK(string MSSV, string HK)
+        public Mark[] Get_Mark_Semester(string code_student, string semester) ////xem kết quả các môn học trong học kỳ - bảng điểm
         {
-            List<KetQua> lstKetQua = new List<KetQua>();
+            List<Mark> lstKetQua = new List<Mark>();
             SqlDataReader sdr = null;
-            //string query = "select MH.MaMonHoc, MH.TenMonHoc,MH.SoTinChi, MH.SoTiet, KQ.DiemKiemTra, KQ.DiemThi, KQ.DTB_h10, KQ.DTB_hchu, KQ.DTB_h4, KQ.TinhTrang, KQ.Loai  from tbl_KetQua KQ, tbl_MonHoc MH where KQ.MaMonHoc = MH.MaMonHoc And KQ.MSSV = '070707' And KQ.HocKy = '08.1'";
-            string query = "Select MH.MaMonHoc, MH.TenMonHoc,MH.SoTinChi, MH.SoTiet, KQ.DiemKiemTra, KQ.DiemThi, KQ.DTB_h10, KQ.DTB_hchu, KQ.DTB_h4, KQ.TinhTrang, KQ.Loai "+
-                           "From tbl_KetQua KQ, tbl_MonHoc MH "+
-                           "Where KQ.MaMonHoc = MH.MaMonHoc And KQ.MSSV = '"+ MSSV +"' And KQ.HocKy = '"+ HK +"'";
+            string query = "Select MH.MaMonHoc, MH.TenMonHoc As 'Tên môn học',MH.SoTinChi, MH.SoTiet, KQ.DiemKiemTra, KQ.DiemThi, KQ.DTB_h10, KQ.DTB_hchu, KQ.DTB_h4, KQ.TinhTrang, KQ.Loai, KQ.HocKy, GV.HoTen " +
+                           "From tbl_KetQua KQ, tbl_MonHoc MH, tbl_GiangVien GV " +
+                           "Where KQ.MaMonHoc = MH.MaMonHoc And KQ.MSGV = GV.MSGV And KQ.MSSV = '" + code_student + "' And KQ.HocKy = '" + semester + "'";
+            //Select MH.MaMonHoc, MH.TenMonHoc,MH.SoTinChi, MH.SoTiet, KQ.DiemKiemTra, KQ.DiemThi, KQ.DTB_h10, KQ.DTB_hchu, KQ.DTB_h4, KQ.TinhTrang, KQ.Loai,KQ.HocKy, GV.HoTen As 'Giảng viên' From tbl_KetQua KQ, tbl_MonHoc MH, tbl_GiangVien GV Where KQ.MaMonHoc = MH.MaMonHoc And KQ.MSSV = '070707' And KQ.HocKy = '08.1' And KQ.MSGV = GV.MSGV
             try
             {
                 connect.Open_Connect();
@@ -111,7 +448,7 @@ namespace ServiceLibrary
                 sdr = cmd.ExecuteReader();
                 while (sdr.Read())
                 {
-                    KetQua kq = new KetQua();
+                    Mark kq = new Mark();
                     kq.MaMH = sdr[0].ToString();
                     kq.TenMH = sdr[1].ToString();
                     kq.SoTC = (int)sdr[2];
@@ -123,6 +460,8 @@ namespace ServiceLibrary
                     kq.DTB_h4 = float.Parse(sdr[8].ToString());
                     kq.Tinhtrang = (bool)sdr[9];
                     kq.Loai = sdr[10].ToString();
+                    kq.Hocky = sdr[11].ToString();
+                    kq.Giangvien = sdr[12].ToString();
                     lstKetQua.Add(kq);
                 }
             }
@@ -144,9 +483,9 @@ namespace ServiceLibrary
             }
             return lstKetQua.ToArray();
         }
-        public SV_HK InfoSV_HK(string MSSV, string HK)
+        public Student_Semester Info_Semester(string MSSV, string HK) ////thông tin kết quả một học kỳ
         {
-            SV_HK Sv_HK = new SV_HK();
+            Student_Semester Sv_HK = new Student_Semester();
             DataTable dt = new DataTable();
             string query = "Select * From tbl_SV_HK Where MSSV = '"+MSSV+"' And HocKy = '"+HK+"'";
             connect.Open_Connect();
@@ -166,16 +505,16 @@ namespace ServiceLibrary
             connect.Close_Connect();
             return Sv_HK;
         }
-        public Statistic Info_Statistic(string MSSV)
+        public Statistic_Student Info_Statistic_Stu_General(string code_student) //thống kê tổng quát sinh viên
         {
-            Statistic infoSta = new Statistic();
+            Statistic_Student infoSta = new Statistic_Student();
             SqlCommand cmd;
             SqlDataAdapter adap;
             DataTable dt;
-            string query_TongMH = "Select COUNT(distinct MaMonHoc) From tbl_KetQua Where MSSV = '" + MSSV + "'";
-            string query_TongMH_no = "Select COUNT(distinct MaMonHoc) From tbl_KetQua Where MSSV = '" + MSSV + "' and TinhTrang = 0";
-            string query_TinChi_TB = "Select SUM(SoTC_DangKy_HK) As 'Số tín chỉ đăng ký', SUM(SoTC_Dat_HK) As 'Số tín chỉ đạt được', ROUND(AVG(TBHK),2) As 'Trung bình tích lũy' From tbl_SV_HK Where MSSV = '" + MSSV + "'";
-            string query_ThongkeLoai = "Select Loai,COUNT(*) As 'Count' From tbl_KetQua Where MSSV = '" + MSSV + "' Group by Loai";
+            string query_TongMH = "Select COUNT(distinct MaMonHoc) From tbl_KetQua Where MSSV = '" + code_student + "'";
+            string query_TongMH_no = "Select COUNT(distinct MaMonHoc) From tbl_KetQua Where MSSV = '" + code_student + "' and TinhTrang = 0";
+            string query_TinChi_TB = "Select SUM(SoTC_DangKy_HK) As 'Số tín chỉ đăng ký', SUM(SoTC_Dat_HK) As 'Số tín chỉ đạt được', ROUND(AVG(TBHK),2) As 'Trung bình tích lũy' From tbl_SV_HK Where MSSV = '" + code_student + "'";
+            string query_ThongkeLoai = "Select Loai,COUNT(*) As 'Count' From tbl_KetQua Where MSSV = '" + code_student + "' Group by Loai";
             try
             {
                 connect.Open_Connect();
@@ -222,7 +561,7 @@ namespace ServiceLibrary
             
             return infoSta;
         }
-        public string[] List_HK()
+        public string[] List_Semester()
         {
             List<string> lst = new List<string>();
             SqlDataReader sdr = null;
@@ -242,7 +581,44 @@ namespace ServiceLibrary
                 connect.Close_Connect();
             }
             return lst.ToArray();
-            
+        }
+
+        public Subject[] List_Subject()
+        {
+            Subject sub;
+            List<Subject> lstSub = new List<Subject>();
+            SqlDataReader sdr = null;
+            string query = "Select * From tbl_MonHoc";
+            try
+            {
+                connect.Open_Connect();
+                SqlCommand cmd = new SqlCommand(query, connect.con);
+                sdr = cmd.ExecuteReader();
+                while (sdr.Read())
+                {
+                    sub = new Subject();
+                    sub.Code_sub = sdr[0].ToString();
+                    sub.Name_sub = sdr[1].ToString();
+                    lstSub.Add(sub);
+                }
+            }
+            catch
+            {
+                lstSub = null;
+            }
+            finally
+            {
+                if (sdr != null)
+                {
+                    sdr.Close();
+                }
+                if (connect.con != null)
+                {
+                    connect.Close_Connect();
+                }
+
+            }
+            return lstSub.ToArray();
         }
         public int Download(string path)
         {
@@ -292,7 +668,7 @@ namespace ServiceLibrary
                     }
                 case 1:
                     {
-                        string query = "Select * From tbl_MatKhauGD Where MSSV = '" + username + "' And MatKhau_GiaDinh = '" + password + "'";
+                        string query = "Select * From tbl_SinhVien Where MSSV = '"+username+"' And MatKhauGD = '"+password+"'";
                         try
                         {
                             connect.Open_Connect();
@@ -312,6 +688,29 @@ namespace ServiceLibrary
                             return false;
                         }
  
+                    }
+                case 2:
+                    {
+                        string query = "Select * From tbl_GiangVien Where MSGV = '"+username+"' And MatKhau = '"+password+"'";
+                        try
+                        {
+                            connect.Open_Connect();
+                            SqlDataAdapter adap = new SqlDataAdapter(query, connect.con);
+                            adap.Fill(ds);
+                            connect.Close_Connect();
+                            if (ds.Tables[0].Rows.Count != 0)
+                            {
+                                return true;
+                            }
+                            else
+                                return false;
+                        }
+                        catch (Exception)
+                        {
+
+                            return false;
+                        }
+
                     }
                 default: { return false; }
             }

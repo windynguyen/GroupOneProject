@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
-using System.ServiceModel;
 using System.Text;
 using System.Data;
 using System.Net.Security;
+using System.ServiceModel;
+using System.ServiceModel.Description;
 
 namespace ServiceLibrary
 {
@@ -19,26 +20,285 @@ namespace ServiceLibrary
         int Download(string path);
         [OperationContract]
         byte[] GetResource(string resName);
+        
+        //Hàm cơ bản
         [OperationContract]
-        bool CheckLogin(string username, string password, int mode);
+        bool CheckLogin(string username, string password, int mode); //kiểm tra đăng nhập
         [OperationContract]
-        SinhVien GetInfoSV(string MSSV);
-        //[OperationContract]
-        //DataTable GetInfoSV_New(string MSSV);
+        bool ChangePassword(string username, string old_password, string new_password, int mode); //đổi mật khẩu đăng nhập
         [OperationContract]
-        bool UpdateInfoSV(SinhVien SV);
+        string[] List_Semester();//xuất danh sách học kỳ cho client
         [OperationContract]
-        string[] List_HK();
+        Subject[] List_Subject();//xuất danh sách môn học cho client
+        //-------------------------------------------------------------------------------------------------------------
+        //Sinh Viên
         [OperationContract]
-        KetQua[] KetQua_HK(string MSSV, string HK);
+        Student Get_Info_Stu(string code_student); //lấy thông tin
         [OperationContract]
-        SV_HK InfoSV_HK(string MSSV, string HK);
+        bool Update_Info_Stu(Student Stu); //cập nhật profile
+        //Overloading
+
+        //Xem điểm môn học
+        [OperationContract(Name = "Mark_Subject_Single")]
+        Mark Get_Mark(string code_student, string code_subject); //xem kết quả 1 môn học của SV
+        [OperationContract(Name = "Mark_Subject_All")]
+        Mark[] Get_Mark(string code_student);//xem kết quả tất cả các môn đã học (trong tất các các học kỳ)
         [OperationContract]
-        Statistic Info_Statistic(string MSSV);
+        Mark[] Get_Mark_Semester(string code_student, string semester);//xem kết quả các môn học trong học kỳ - bảng điểm
+        
+        //kết quả học tập theo học kỳ của SV
+        [OperationContract(Name = "Info_Stu_Sem_Only")]
+        Student_Semester Info_Semester(string code_student, string semester); //thông tin kết quả một học kỳ
+        [OperationContract(Name = "Info_Stu_Sem_All")]
+        Student_Semester[] Info_Semester(string code_student); //thông tin kết quả tất cả các học kỳ
+        
+        [OperationContract]
+        float Get_Avg_Semester (string code_student, string semester);//get trung bình học kỳ
+        [OperationContract]
+        float Get_Avg_Cumulative (string code_student, string semester);//get trung bình tích lũy
+        [OperationContract]
+        Statistic_Student Info_Statistic_Stu_General(string code_student); //thống kê SV tổng quát
+        
+        //-----------------------------------------------------------------------------------------------------------------
+        //Giảng viên
+        [OperationContract]
+        Lecturer Get_Info_Lec(string code_lecturer); //lấy thông tin
+        [OperationContract]
+        bool Update_Info_Lec(Lecturer lec); //cập nhật profile
+        [OperationContract(Name = "Lec_Sub_All")]
+        Subject[] Lec_Sub(string code_lecturer); // danh sách tất cả các môn GV đã dạy
+        [OperationContract(Name = "Lec_Sub_Single")]
+        Subject[] Lec_Sub(string code_lecturer, string semester); // danh sách các môn GV đã dạy trong 1 học kỳ cụ thể
+        [OperationContract]
+        List_Stu_Class[] List_Class(string code_lecturer, string code_subject, string semester); // danh sách sinh viên và bảng điểm của 1 lớp môn học
+        
+        //WCF ko hỗ trợ override
+
+        //Thống kê điểm thi: max, min, avg
+        [OperationContract]
+        float Get_Min_Mark(string code_lecturer, string code_subject, string semester); //điểm thi thấp nhất của 1 môn học trong hk
+        [OperationContract]
+        float Get_Max_Mark(string code_lecturer, string code_subject, string semester);//điểm thi cao nhất của 1 môn học trong hk
+        [OperationContract]
+        float Get_Avg_Mark(string code_lecturer, string code_subject, string semester); //điểm thi trung bình của 1 môn học trong hk
+
+        //Thống kê điểm thi môn theo ý muốn: =, >, <, []
+        [OperationContract]
+        int Class_Stu_Total(string code_lecturer, string code_subject, string semester); //thống kê sỉ số lớp MH
+        [OperationContract]
+        int Statistic_Mark_Equal(string code_lecturer, string code_subject, string semester, float mark); //thống kê điểm của 1 môn học, =
+        [OperationContract]
+        int Statistic_Mark_Distance(string code_lecturer, string code_subject, string semester, float from, float to); //thống kê điểm của 1 môn học, []
+        [OperationContract]
+        int Statistic_Mark_Less(string code_lecturer, string code_subject, string semester, float mark); //thống kê điểm của 1 môn học, <
+        [OperationContract]
+        int Statistic_Mark_Greater(string code_lecturer, string code_subject, string semester, float mark); //thống kê điểm của 1 môn học, >
+
+        //Thống kê điểm thi tổng quát, là tập hợp các thống kê về điểm thi xây dựng ở trên: total, < 5, min, max, avg
+        [OperationContract]
+        Statistic_Mark Statistic_Mark_General(string code_lecturer, string code_subject, string semester); //thống kê điểm của 1 môn học, >
+
+
+        //Get thông tin SV có điểm thi min, max
+        [OperationContract]
+        Student Get_Student_Min_Mark(string code_lecturer, string code_subject, string semester); //Get thông tin SV có điểm thi MIN
+        [OperationContract]
+        Student Get_Student_Max_Mark(string code_lecturer, string code_subject, string semester);//Get thông tin SV có điểm thi MAX
+        
+        //Get thông tin SV có điểm trung bình  min, max
+        [OperationContract]
+        Student Get_Student_Min_Avg(string code_lecturer, string code_subject, string semester); //Get thông tin SV có điểm trung bình  MIN
+        [OperationContract]
+        Student Get_Student_Max_Avg(string code_lecturer, string code_subject, string semester);//Get thông tin SV có điểm trung bình  MAX
+
+        //Thống kê trung bình môn:  max, min, avg
+        [OperationContract]
+        float Get_Max_Avg(string code_lecturer, string code_subject, string semester); //trung bình môn thấp nhất của 1 môn học trong hk
+        [OperationContract]
+        float Get_Min_Avg(string code_lecturer, string code_subject, string semester);//trung bình môn cao nhất của 1 môn học trong hk
+        [OperationContract]
+        float Get_Avg_Avg(string code_lecturer, string code_subject, string semester); //trung bình môn trung bình của 1 môn học trong hk
+
+        //Thống kê trung bình môn theo ý muốn: =, >, <, []
+        [OperationContract]
+        int Statistic_Avg_Equal(string code_lecturer, string code_subject, string semester, float mark); //thống kê trung bình môn của 1 môn học, =
+        [OperationContract]
+        int Statistic_Avg_Distance(string code_lecturer, string code_subject, string semester, float from, float to); //thống kê trung bình môn của 1 môn học, []
+        [OperationContract]
+        int Statistic_Avg_Less(string code_lecturer, string code_subject, string semester, float mark); //thống kê trung bình môn của 1 môn học, <
+        [OperationContract]
+        int Statistic_Avg_Greater(string code_lecturer, string code_subject, string semester, float mark); //thống kê trung bình môn của 1 môn học, >
+
+                
     }
     /// <summary>
     /// ///DataContract
     /// </summary>
+    [DataContract]
+    public class Lecturer
+    { }
+    [DataContract]
+    public class Subject
+    {
+        private string semester;
+        private string code_sub;
+        private string name_sub;
+        private int soTC;
+        private int sotiet;
+        [DataMember]
+        public string Semester
+        {
+            get { return semester; }
+            set { semester = value; }
+        }
+        [DataMember]
+        public string Code_sub
+        {
+            get { return code_sub; }
+            set { code_sub = value; }
+        }
+        [DataMember]
+        public string Name_sub
+        {
+            get { return name_sub; }
+            set { name_sub = value; }
+        }
+        [DataMember]
+        public int SoTC
+        {
+            get { return soTC; }
+            set { soTC = value; }
+        }
+        [DataMember]
+        public int Sotiet
+        {
+            get { return sotiet; }
+            set { sotiet = value; }
+        }
+    }
+    [DataContract]
+    public class List_Stu_Class
+    {
+        private string mssv;
+        private string hoten;
+        private float diemKT;
+        private float diemThi;
+        private float TB_h10;
+        private string TB_hchu;
+        private float TB_h4;
+        private bool tinhtrang;
+        private string loai;
+        
+        [DataMember]
+        public string Mssv
+        {
+            get { return mssv; }
+            set { mssv = value; }
+        }
+        [DataMember]
+        public string Hoten
+        {
+            get { return hoten; }
+            set { hoten = value; }
+        }
+        [DataMember]
+        public float DiemKT
+        {
+            get { return diemKT; }
+            set { diemKT = value; }
+        }
+        [DataMember]
+        public float DiemThi
+        {
+            get { return diemThi; }
+            set { diemThi = value; }
+        }
+        [DataMember]
+        public float DTB_h10
+        {
+            get { return TB_h10; }
+            set { TB_h10 = value; }
+        }
+        [DataMember]
+        public string DTB_hchu
+        {
+            get { return TB_hchu; }
+            set { TB_hchu = value; }
+        }
+        [DataMember]
+        public float DTB_h4
+        {
+            get { return TB_h4; }
+            set { TB_h4 = value; }
+        }
+
+        [DataMember]
+        public bool Tinhtrang
+        {
+            get { return tinhtrang; }
+            set { tinhtrang = value; }
+        }
+        [DataMember]
+        public string Loai
+        {
+            get { return loai; }
+            set { loai = value; }
+        }
+    }
+    [DataContract]
+    public class Statistic_Mark
+    {
+        private int total;
+        private int less_than_5;
+        private int distance_5_8;
+        private int distance_8_10;
+        private float min_mark;
+        private float max_mark;
+        private float avg_mark;
+        
+        [DataMember]
+        public int Total
+        {
+            get { return total; }
+            set { total = value; }
+        }
+        [DataMember]
+        public int Less_than_5
+        {
+            get { return less_than_5; }
+            set { less_than_5 = value; }
+        }
+        [DataMember]
+        public int Distance_5_8
+        {
+            get { return distance_5_8; }
+            set { distance_5_8 = value; }
+        }
+        [DataMember]
+        public int Distance_8_10
+        {
+            get { return distance_8_10; }
+            set { distance_8_10 = value; }
+        }
+        [DataMember]
+        public float Min_mark
+        {
+            get { return min_mark; }
+            set { min_mark = value; }
+        }
+        [DataMember]
+        public float Max_mark
+        {
+            get { return max_mark; }
+            set { max_mark = value; }
+        }
+        [DataMember]
+        public float Avg_mark
+        {
+            get { return avg_mark; }
+            set { avg_mark = value; }
+        }
+    }
     [DataContract]
     public class Member
     {
@@ -74,7 +334,7 @@ namespace ServiceLibrary
     }
     //-------------------------------------------------------------------------------
     [DataContract]
-    public class SinhVien
+    public class Student
     {
         private string mssv;
         private string hoten;
@@ -227,7 +487,7 @@ namespace ServiceLibrary
     }
     //-----------------------------------------------------------------
     [DataContract]
-    public class KetQua
+    public class Mark
     {
         private string maMH;
         private string tenMH;
@@ -240,6 +500,8 @@ namespace ServiceLibrary
         private float TB_h4;
         private bool tinhtrang;
         private string loai;
+        private string hocky;
+        private string giangvien;
 
         [DataMember]
         public int SoTC
@@ -308,10 +570,22 @@ namespace ServiceLibrary
             get { return loai; }
             set { loai = value; }
         }
+        [DataMember]
+        public string Hocky
+        {
+            get { return hocky; }
+            set { hocky = value; }
+        }
+        [DataMember]
+        public string Giangvien
+        {
+            get { return giangvien; }
+            set { giangvien = value; }
+        }
     }
     //------------------------------------------------------
     [DataContract]
-    public class SV_HK
+    public class Student_Semester
     {
         private string mssv;
         private string hocky;
@@ -353,7 +627,7 @@ namespace ServiceLibrary
     }
     //-------------------------------------------------------------------------------
     [DataContract]
-    public class Statistic
+    public class Statistic_Student
     {
         private int tongMH;
         private int tongMH_no;
@@ -366,7 +640,7 @@ namespace ServiceLibrary
         private int tong_trungbinh;
         private int tong_kem;
 
-        public Statistic()
+        public Statistic_Student()
         {
             this.tongMH = 0;
             this.tongMH_no = 0;
