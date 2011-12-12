@@ -23,6 +23,7 @@ namespace ServiceLibrary
         
         //Hàm cơ bản
         [OperationContract]
+        [FaultContract(typeof(InfoFault))]
         bool CheckLogin(string username, string password, int mode); //kiểm tra đăng nhập
         [OperationContract]
         bool ChangePassword(string username, string old_password, string new_password, int mode); //đổi mật khẩu đăng nhập
@@ -30,17 +31,24 @@ namespace ServiceLibrary
         string[] List_Semester();//xuất danh sách học kỳ cho client
         [OperationContract]
         Subject[] List_Subject();//xuất danh sách môn học cho client
+        [OperationContract]
+        Subject[] Search_Subject(string keyword);
         //-------------------------------------------------------------------------------------------------------------
         //Sinh Viên
         [OperationContract]
         Student Get_Info_Stu(string code_student); //lấy thông tin
         [OperationContract]
+        [FaultContract(typeof(InfoFault[]))]
         bool Update_Info_Stu(Student Stu); //cập nhật profile
+        [OperationContract(IsOneWay = true)]
+        void Send_Feedback(string code_student, string subject, string content);
+        [OperationContract]
+        Feedback[] Load_Feedback(string code_student);
         //Overloading
 
         //Xem điểm môn học
         [OperationContract(Name = "Mark_Subject_Single")]
-        Mark Get_Mark(string code_student, string code_subject); //xem kết quả 1 môn học của SV
+        Mark[] Get_Mark(string code_student, string code_subject); //xem kết quả 1 môn học của SV
         [OperationContract(Name = "Mark_Subject_All")]
         Mark[] Get_Mark(string code_student);//xem kết quả tất cả các môn đã học (trong tất các các học kỳ)
         [OperationContract]
@@ -55,7 +63,7 @@ namespace ServiceLibrary
         [OperationContract]
         float Get_Avg_Semester (string code_student, string semester);//get trung bình học kỳ
         [OperationContract]
-        float Get_Avg_Cumulative (string code_student, string semester);//get trung bình tích lũy
+        float Get_Avg_Cumulative (string code_student);//get trung bình tích lũy
         [OperationContract]
         Statistic_Student Info_Statistic_Stu_General(string code_student); //thống kê SV tổng quát
         
@@ -714,4 +722,47 @@ namespace ServiceLibrary
             set { tong_kem = value; }
         }
     }
+    //------------------------------------------------------
+    [DataContract]
+    public class Feedback
+    {
+        private string thoigan;
+        private string tieude;
+        private string noidung;
+        private string traloi;
+        private bool trangthai;
+
+        [DataMember]
+        public string Thoigian
+        {
+            get { return thoigan; }
+            set { thoigan = value; }
+        }
+        [DataMember]
+        public string Tieude
+        {
+            get { return tieude; }
+            set { tieude = value; }
+        }
+        [DataMember]
+        public string Noidung
+        {
+            get { return noidung; }
+            set { noidung = value; }
+        }
+        [DataMember]
+        public string Traloi
+        {
+            get { return traloi; }
+            set { traloi = value; }
+        }
+        [DataMember]
+        public bool Trangthai
+        {
+            get { return trangthai; }
+            set { trangthai = value; }
+        }
+
+    }
+    //-------------------------------------------------------------------------------
 }

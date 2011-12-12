@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="connect.cs" />
+    <Compile Include="InfoFault.cs" />
     <Compile Include="IService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GetMark_Service.cs" />

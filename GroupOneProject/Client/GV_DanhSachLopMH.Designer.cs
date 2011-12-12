@@ -156,7 +156,7 @@
             this.groupBox1.Size = new System.Drawing.Size(422, 156);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thống kê";
+            this.groupBox1.Text = "Thống kê điểm thi";
             // 
             // txt_avg
             // 

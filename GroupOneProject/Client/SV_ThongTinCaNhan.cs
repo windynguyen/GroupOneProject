@@ -34,7 +34,6 @@ namespace Client
         public void BinDataToControl(Student SV)
         {
             groupBox.Text = "MSSV: "+SV.Mssv;
-            txt_nganh.Text = SV.Mssv;
             txt_hoten.Text = SV.Hoten;
             txt_ngaysinh.Text = SV.Ngaysinh;
             txt_noisinh.Text = SV.Noisinh;
@@ -113,9 +112,23 @@ namespace Client
                     Close();
                 }
             }
-            catch (Exception)
+            catch(FaultException<InfoFault[]> fe)
             {
-                MessageBox.Show("Service not response", "Error");
+                string mess, Mess = fe.Detail.Length + " FaultException" + "\n\n";
+                foreach (InfoFault inf in fe.Detail)
+                {
+                    mess = inf.Message;
+                    Mess += mess + "\n\n";
+                }
+                MessageBox.Show(Mess);
+            }
+            catch (FaultException x) //lỗi bất định
+            {
+                MessageBox.Show("An unknown exception was received. " + x.Message);
+            }
+            catch (CommunicationException commProblem) //lỗi giao tiếp với server
+            {
+                MessageBox.Show("There was a communication problem. " + commProblem.Message + commProblem.StackTrace);
             }
 
             

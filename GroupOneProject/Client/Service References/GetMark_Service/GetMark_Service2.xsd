@@ -52,6 +52,13 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Member" nillable="true" type="tns:Member" />
+  <xs:complexType name="InfoFault">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InfoFault" nillable="true" type="tns:InfoFault" />
   <xs:complexType name="ArrayOfSubject">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Subject" nillable="true" type="tns:Subject" />
@@ -68,6 +75,34 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Subject" nillable="true" type="tns:Subject" />
+  <xs:complexType name="ArrayOfInfoFault">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InfoFault" nillable="true" type="tns:InfoFault" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInfoFault" nillable="true" type="tns:ArrayOfInfoFault" />
+  <xs:complexType name="ArrayOfFeedback">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Feedback" nillable="true" type="tns:Feedback" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFeedback" nillable="true" type="tns:ArrayOfFeedback" />
+  <xs:complexType name="Feedback">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Noidung" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Thoigian" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tieude" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Traloi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Trangthai" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Feedback" nillable="true" type="tns:Feedback" />
+  <xs:complexType name="ArrayOfMark">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Mark" nillable="true" type="tns:Mark" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMark" nillable="true" type="tns:ArrayOfMark" />
   <xs:complexType name="Mark">
     <xs:sequence>
       <xs:element minOccurs="0" name="DTB_h10" type="xs:float" />
@@ -86,12 +121,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Mark" nillable="true" type="tns:Mark" />
-  <xs:complexType name="ArrayOfMark">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Mark" nillable="true" type="tns:Mark" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfMark" nillable="true" type="tns:ArrayOfMark" />
   <xs:complexType name="Student_Semester">
     <xs:sequence>
       <xs:element minOccurs="0" name="Hocky" nillable="true" type="xs:string" />

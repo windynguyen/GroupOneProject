@@ -133,6 +133,7 @@ namespace Client
                     if (result)
                     {
                         MessageBox.Show("Thay đổi mật khẩu thành công");
+                        gbb_pass.Visible = false;
                     }
                     else
                         MessageBox.Show("Thay đổi mật khẩu không thành công");
@@ -142,11 +143,22 @@ namespace Client
             {
                 MessageBox.Show(ex.Message);
             }
-            catch (Exception)
+            catch (CommunicationException commProblem) //lỗi giao tiếp với server
             {
-                MessageBox.Show("Service not response", "Error");
+                MessageBox.Show("There was a communication problem. " + commProblem.Message + commProblem.StackTrace);
             }
-            
+        }
+
+        private void but_phanhoi_Click(object sender, EventArgs e)
+        {
+            PhanHoi frm_PhanHoi = new PhanHoi();
+            frm_PhanHoi.Show();
+        }
+
+        private void but_TimKiem_Click(object sender, EventArgs e)
+        {
+            TimKiem frmTim = new TimKiem();
+            frmTim.Show();
         }
 
     }

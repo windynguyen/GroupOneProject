@@ -73,6 +73,12 @@
     <Compile Include="GV_Main.Designer.cs">
       <DependentUpon>GV_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="PhanHoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhanHoi.Designer.cs">
+      <DependentUpon>PhanHoi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proxy.cs" />
     <Compile Include="SV_Main.cs">
       <SubType>Form</SubType>
@@ -87,12 +93,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="StudentInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="StudentInfo.Designer.cs">
-      <DependentUpon>StudentInfo.cs</DependentUpon>
-    </Compile>
     <Compile Include="SV_ThongKe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +105,12 @@
     <Compile Include="SV_ThongTinCaNhan.Designer.cs">
       <DependentUpon>SV_ThongTinCaNhan.cs</DependentUpon>
     </Compile>
+    <Compile Include="TimKiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimKiem.Designer.cs">
+      <DependentUpon>TimKiem.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GV_Main.resx">
       <DependentUpon>GV_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhanHoi.resx">
+      <DependentUpon>PhanHoi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SV_Main.resx">
       <DependentUpon>SV_Main.cs</DependentUpon>
@@ -130,14 +139,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="StudentInfo.resx">
-      <DependentUpon>StudentInfo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="SV_ThongKe.resx">
       <DependentUpon>SV_ThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SV_ThongTinCaNhan.resx">
       <DependentUpon>SV_ThongTinCaNhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimKiem.resx">
+      <DependentUpon>TimKiem.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config">
       <SubType>Designer</SubType>
@@ -151,6 +160,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Service References\GetMark_Service\Client.GetMark_Service.Feedback.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\GetMark_Service\Client.GetMark_Service.Lecturer.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

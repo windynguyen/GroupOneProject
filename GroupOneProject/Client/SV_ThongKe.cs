@@ -38,9 +38,9 @@ namespace Client
                 DrawTCProgress(infoStat.TongTC_dk, infoStat.TongTC_dat);
                 
             }
-            catch (Exception)
+            catch (CommunicationException commProblem) //lỗi giao tiếp với server
             {
-                MessageBox.Show("Service not response", "Error");
+                MessageBox.Show("There was a communication problem. " + commProblem.Message + commProblem.StackTrace);
             }
         }
         private void DrawTCProgress(int tongTC, int datTC)

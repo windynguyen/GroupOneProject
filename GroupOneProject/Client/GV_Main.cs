@@ -37,9 +37,9 @@ namespace Client
                     cbo_hocky.Items.Add(item);
                 }
             }
-            catch (Exception)
+            catch (CommunicationException commProblem) //lỗi giao tiếp với server
             {
-                MessageBox.Show("Service not response", "Error");
+                MessageBox.Show("There was a communication problem. " + commProblem.Message + commProblem.StackTrace);
             }
         }
         private void but_xem_Click(object sender, EventArgs e)
@@ -55,9 +55,9 @@ namespace Client
                     lst_sub = proxy.Lec_Sub_Single(MaGV, cbo_hocky.Text);
                 grib_All_Subject.DataSource = lst_sub;
             }
-            catch (Exception)
+            catch (CommunicationException commProblem) //lỗi giao tiếp với server
             {
-                MessageBox.Show("Service not response", "Error");
+                MessageBox.Show("There was a communication problem. " + commProblem.Message + commProblem.StackTrace);
             }
             
         }
@@ -75,9 +75,9 @@ namespace Client
                     frmDS = new GV_DanhSachLopMH(MaGV, MaMH, TenMH, Hocky);
                     frmDS.Show();
                 }
-                catch (Exception)
+                catch (CommunicationException commProblem) //lỗi giao tiếp với server
                 {
-                    MessageBox.Show("Service not response", "Error");
+                    MessageBox.Show("There was a communication problem. " + commProblem.Message + commProblem.StackTrace);
                 }
             }
         }
@@ -88,6 +88,17 @@ namespace Client
             this.Hide();
             DangNhap frmDangNhap = new DangNhap();
             frmDangNhap.Show();
+        }
+
+        private void lbl_changpass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            gbb_pass.Visible = true;
+        }
+
+        private void but_phanhoi_Click(object sender, EventArgs e)
+        {
+            PhanHoi frm_PhanHoi = new PhanHoi();
+            frm_PhanHoi.Show();
         }
     }
 }

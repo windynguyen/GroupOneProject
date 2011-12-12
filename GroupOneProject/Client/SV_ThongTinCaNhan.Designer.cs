@@ -73,6 +73,10 @@
             this.but_submit = new System.Windows.Forms.Button();
             this.groupBox = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
             this.groupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -457,6 +461,10 @@
             // 
             // groupBox
             // 
+            this.groupBox.Controls.Add(this.label24);
+            this.groupBox.Controls.Add(this.label23);
+            this.groupBox.Controls.Add(this.label22);
+            this.groupBox.Controls.Add(this.label21);
             this.groupBox.Controls.Add(this.label1);
             this.groupBox.Controls.Add(this.label2);
             this.groupBox.Controls.Add(this.label3);
@@ -500,7 +508,7 @@
             this.groupBox.Controls.Add(this.txt_khoa);
             this.groupBox.Location = new System.Drawing.Point(35, 29);
             this.groupBox.Name = "groupBox";
-            this.groupBox.Size = new System.Drawing.Size(499, 403);
+            this.groupBox.Size = new System.Drawing.Size(509, 403);
             this.groupBox.TabIndex = 44;
             this.groupBox.TabStop = false;
             // 
@@ -512,6 +520,50 @@
             this.label1.Size = new System.Drawing.Size(39, 13);
             this.label1.TabIndex = 41;
             this.label1.Text = "Ngành";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.Red;
+            this.label21.Location = new System.Drawing.Point(478, 34);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(15, 20);
+            this.label21.TabIndex = 42;
+            this.label21.Text = "*";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.Red;
+            this.label22.Location = new System.Drawing.Point(478, 137);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(15, 20);
+            this.label22.TabIndex = 43;
+            this.label22.Text = "*";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.Red;
+            this.label23.Location = new System.Drawing.Point(478, 175);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(15, 20);
+            this.label23.TabIndex = 44;
+            this.label23.Text = "*";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.Red;
+            this.label24.Location = new System.Drawing.Point(478, 211);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(15, 20);
+            this.label24.TabIndex = 45;
+            this.label24.Text = "*";
             // 
             // ThongTinCN
             // 
@@ -578,5 +630,9 @@
         private System.Windows.Forms.Button but_submit;
         private System.Windows.Forms.GroupBox groupBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
     }
 }

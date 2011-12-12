@@ -27,23 +27,21 @@ namespace Client
 
         private void but_Login_Click(object sender, EventArgs e)
         {
+            if (rdo_sinhvien.Checked)
+            {
+                mode = mode_SV;
+            }
+            else if (rdo_phuhuynh.Checked)
+            {
+                mode = mode_PH;
+            }
+            else
+            {
+                mode = mode_GV;
+            }
             try
             {
-                if (rdo_sinhvien.Checked)
-                {
-                    mode = mode_SV;
-                    result_login = proxy.CheckLogin(txt_username.Text, txt_pass.Text, mode_SV);
-                }
-                else if (rdo_phuhuynh.Checked)
-                {
-                    mode =mode_PH;
-                    result_login = proxy.CheckLogin(txt_username.Text, txt_pass.Text, mode_PH);
-                }
-                else
-                {
-                    mode = mode_GV;
-                    result_login = proxy.CheckLogin(txt_username.Text, txt_pass.Text, mode_GV);
-                }
+                result_login = proxy.CheckLogin(txt_username.Text, txt_pass.Text, mode);
                 if (result_login)
                 {
                     this.Hide();
@@ -76,9 +74,17 @@ namespace Client
                 else
                     MessageBox.Show("Đăng nhập thất bại", "Thông báo");
             }
-            catch
+            catch (FaultException<InfoFault> ex)
             {
-                MessageBox.Show("Service not responding!", "Warning", MessageBoxButtons.OK);
+                MessageBox.Show(ex.Detail.Message, ex.Detail.Type);
+            }
+            catch (FaultException x) //lỗi bất định
+            {
+                MessageBox.Show("An unknown exception was received. " + x.Message);
+            }
+            catch (CommunicationException commProblem) //lỗi giao tiếp với server
+            {
+                MessageBox.Show("There was a communication problem. " + commProblem.Message + commProblem.StackTrace);
             }
         }
     }

@@ -58,9 +58,9 @@ namespace Client
                 lstMem = proxy.GetAuthors();
                 grid_WsHttp.DataSource = lstMem;
             }
-            catch
+            catch (CommunicationException commProblem) //lỗi giao tiếp với server
             {
-                MessageBox.Show("Service not responding!", "Warning", MessageBoxButtons.OK);
+                MessageBox.Show("There was a communication problem. " + commProblem.Message + commProblem.StackTrace);
             }
 
         }
@@ -75,9 +75,9 @@ namespace Client
                 lstMem = proxy.GetAuthors();
                 grid_WsHttp.DataSource = lstMem;
             }
-            catch
+            catch (CommunicationException commProblem) //lỗi giao tiếp với server
             {
-                MessageBox.Show("Service not responding!", "Warning", MessageBoxButtons.OK);
+                MessageBox.Show("There was a communication problem. " + commProblem.Message + commProblem.StackTrace);
             }
 
         }
@@ -94,9 +94,9 @@ namespace Client
                 lstMem = proxy.GetAuthors();
                 grid_netTcp.DataSource = lstMem;
             }
-            catch
+            catch (CommunicationException commProblem) //lỗi giao tiếp với server
             {
-                MessageBox.Show("Service not responding!", "Warning", MessageBoxButtons.OK);
+                MessageBox.Show("There was a communication problem. " + commProblem.Message + commProblem.StackTrace);
             }
 
         }

@@ -2,6 +2,57 @@
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:2000/GetMark_Service?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ServiceLibrary" />
   <xs:import schemaLocation="http://localhost:2000/GetMark_Service?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="Class_Stu_Total">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="code_lecturer" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="code_subject" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="semester" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Class_Stu_TotalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Class_Stu_TotalResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Statistic_Mark_Equal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="code_lecturer" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="code_subject" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="semester" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mark" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Statistic_Mark_EqualResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Statistic_Mark_EqualResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Statistic_Mark_Distance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="code_lecturer" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="code_subject" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="semester" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="from" type="xs:float" />
+        <xs:element minOccurs="0" name="to" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Statistic_Mark_DistanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Statistic_Mark_DistanceResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="Statistic_Mark_Less">
     <xs:complexType>
       <xs:sequence>
@@ -330,6 +381,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Search_Subject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="keyword" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Search_SubjectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/ServiceLibrary" minOccurs="0" name="Search_SubjectResult" nillable="true" type="q9:ArrayOfSubject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="Get_Info_Stu">
     <xs:complexType>
       <xs:sequence>
@@ -340,14 +405,14 @@
   <xs:element name="Get_Info_StuResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/ServiceLibrary" minOccurs="0" name="Get_Info_StuResult" nillable="true" type="q9:Student" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/ServiceLibrary" minOccurs="0" name="Get_Info_StuResult" nillable="true" type="q10:Student" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="Update_Info_Stu">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/ServiceLibrary" minOccurs="0" name="Stu" nillable="true" type="q10:Student" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/ServiceLibrary" minOccurs="0" name="Stu" nillable="true" type="q11:Student" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -355,6 +420,29 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="Update_Info_StuResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Send_Feedback">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="code_student" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="subject" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="content" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Load_Feedback">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="code_student" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Load_FeedbackResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/ServiceLibrary" minOccurs="0" name="Load_FeedbackResult" nillable="true" type="q12:ArrayOfFeedback" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -369,7 +457,7 @@
   <xs:element name="Mark_Subject_SingleResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/ServiceLibrary" minOccurs="0" name="Mark_Subject_SingleResult" nillable="true" type="q11:Mark" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/ServiceLibrary" minOccurs="0" name="Mark_Subject_SingleResult" nillable="true" type="q13:ArrayOfMark" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -383,7 +471,7 @@
   <xs:element name="Mark_Subject_AllResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/ServiceLibrary" minOccurs="0" name="Mark_Subject_AllResult" nillable="true" type="q12:ArrayOfMark" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/ServiceLibrary" minOccurs="0" name="Mark_Subject_AllResult" nillable="true" type="q14:ArrayOfMark" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -398,7 +486,7 @@
   <xs:element name="Get_Mark_SemesterResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/ServiceLibrary" minOccurs="0" name="Get_Mark_SemesterResult" nillable="true" type="q13:ArrayOfMark" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/ServiceLibrary" minOccurs="0" name="Get_Mark_SemesterResult" nillable="true" type="q15:ArrayOfMark" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -413,7 +501,7 @@
   <xs:element name="Info_Stu_Sem_OnlyResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/ServiceLibrary" minOccurs="0" name="Info_Stu_Sem_OnlyResult" nillable="true" type="q14:Student_Semester" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/ServiceLibrary" minOccurs="0" name="Info_Stu_Sem_OnlyResult" nillable="true" type="q16:Student_Semester" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -427,7 +515,7 @@
   <xs:element name="Info_Stu_Sem_AllResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/ServiceLibrary" minOccurs="0" name="Info_Stu_Sem_AllResult" nillable="true" type="q15:ArrayOfStudent_Semester" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/ServiceLibrary" minOccurs="0" name="Info_Stu_Sem_AllResult" nillable="true" type="q17:ArrayOfStudent_Semester" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -471,7 +559,7 @@
   <xs:element name="Info_Statistic_Stu_GeneralResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/ServiceLibrary" minOccurs="0" name="Info_Statistic_Stu_GeneralResult" nillable="true" type="q16:Statistic_Student" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/ServiceLibrary" minOccurs="0" name="Info_Statistic_Stu_GeneralResult" nillable="true" type="q18:Statistic_Student" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -485,14 +573,14 @@
   <xs:element name="Get_Info_LecResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/ServiceLibrary" minOccurs="0" name="Get_Info_LecResult" nillable="true" type="q17:Lecturer" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/ServiceLibrary" minOccurs="0" name="Get_Info_LecResult" nillable="true" type="q19:Lecturer" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="Update_Info_Lec">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/ServiceLibrary" minOccurs="0" name="lec" nillable="true" type="q18:Lecturer" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/ServiceLibrary" minOccurs="0" name="lec" nillable="true" type="q20:Lecturer" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -513,7 +601,7 @@
   <xs:element name="Lec_Sub_AllResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/ServiceLibrary" minOccurs="0" name="Lec_Sub_AllResult" nillable="true" type="q19:ArrayOfSubject" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/ServiceLibrary" minOccurs="0" name="Lec_Sub_AllResult" nillable="true" type="q21:ArrayOfSubject" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -528,7 +616,7 @@
   <xs:element name="Lec_Sub_SingleResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/ServiceLibrary" minOccurs="0" name="Lec_Sub_SingleResult" nillable="true" type="q20:ArrayOfSubject" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/ServiceLibrary" minOccurs="0" name="Lec_Sub_SingleResult" nillable="true" type="q22:ArrayOfSubject" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -544,7 +632,7 @@
   <xs:element name="List_ClassResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/ServiceLibrary" minOccurs="0" name="List_ClassResult" nillable="true" type="q21:ArrayOfList_Stu_Class" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/ServiceLibrary" minOccurs="0" name="List_ClassResult" nillable="true" type="q23:ArrayOfList_Stu_Class" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -593,57 +681,6 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="Get_Avg_MarkResult" type="xs:float" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Class_Stu_Total">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="code_lecturer" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="code_subject" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="semester" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Class_Stu_TotalResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="Class_Stu_TotalResult" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Statistic_Mark_Equal">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="code_lecturer" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="code_subject" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="semester" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="mark" type="xs:float" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Statistic_Mark_EqualResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="Statistic_Mark_EqualResult" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Statistic_Mark_Distance">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="code_lecturer" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="code_subject" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="semester" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="from" type="xs:float" />
-        <xs:element minOccurs="0" name="to" type="xs:float" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Statistic_Mark_DistanceResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="Statistic_Mark_DistanceResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

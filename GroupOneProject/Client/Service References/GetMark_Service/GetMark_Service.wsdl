@@ -12,6 +12,33 @@
   <wsdl:binding name="MetadataExchangeHttpBinding_IService" type="i0:IService">
     <wsp:PolicyReference URI="#MetadataExchangeHttpBinding_IService_policy" />
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Class_Stu_Total">
+      <soap12:operation soapAction="http://tempuri.org/IService/Class_Stu_Total" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Statistic_Mark_Equal">
+      <soap12:operation soapAction="http://tempuri.org/IService/Statistic_Mark_Equal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Statistic_Mark_Distance">
+      <soap12:operation soapAction="http://tempuri.org/IService/Statistic_Mark_Distance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Statistic_Mark_Less">
       <soap12:operation soapAction="http://tempuri.org/IService/Statistic_Mark_Less" style="document" />
       <wsdl:input>
@@ -173,6 +200,9 @@
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="InfoFaultFault">
+        <soap12:fault use="literal" name="InfoFaultFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="ChangePassword">
       <soap12:operation soapAction="http://tempuri.org/IService/ChangePassword" style="document" />
@@ -201,6 +231,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Search_Subject">
+      <soap12:operation soapAction="http://tempuri.org/IService/Search_Subject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Get_Info_Stu">
       <soap12:operation soapAction="http://tempuri.org/IService/Get_Info_Stu" style="document" />
       <wsdl:input>
@@ -212,6 +251,24 @@
     </wsdl:operation>
     <wsdl:operation name="Update_Info_Stu">
       <soap12:operation soapAction="http://tempuri.org/IService/Update_Info_Stu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ArrayOfInfoFaultFault">
+        <soap12:fault use="literal" name="ArrayOfInfoFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Send_Feedback">
+      <soap12:operation soapAction="http://tempuri.org/IService/Send_Feedback" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="Load_Feedback">
+      <soap12:operation soapAction="http://tempuri.org/IService/Load_Feedback" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -356,33 +413,6 @@
     </wsdl:operation>
     <wsdl:operation name="Get_Avg_Mark">
       <soap12:operation soapAction="http://tempuri.org/IService/Get_Avg_Mark" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Class_Stu_Total">
-      <soap12:operation soapAction="http://tempuri.org/IService/Class_Stu_Total" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Statistic_Mark_Equal">
-      <soap12:operation soapAction="http://tempuri.org/IService/Statistic_Mark_Equal" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Statistic_Mark_Distance">
-      <soap12:operation soapAction="http://tempuri.org/IService/Statistic_Mark_Distance" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

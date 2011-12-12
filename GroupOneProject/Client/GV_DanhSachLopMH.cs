@@ -40,9 +40,9 @@ namespace Client
                 lst = proxy.List_Class(code_lecturer, code_subject, semester);
                 grid_danhsachlop.DataSource = lst;
             }
-            catch (Exception)
+            catch (CommunicationException commProblem) //lỗi giao tiếp với server
             {
-                MessageBox.Show("Service not response", "Error");
+                MessageBox.Show("There was a communication problem. " + commProblem.Message + commProblem.StackTrace);
             }
         }
         public void Load_ThongKe()
@@ -58,10 +58,10 @@ namespace Client
                 txt_min.Text = Sta.Min_mark.ToString();
                 txt_avg.Text = Sta.Avg_mark.ToString();
 	        }
-	        catch (Exception)
-	        {
-                MessageBox.Show("Service not response", "Error");
-	        }
+            catch (CommunicationException commProblem) //lỗi giao tiếp với server
+            {
+                MessageBox.Show("There was a communication problem. " + commProblem.Message + commProblem.StackTrace);
+            }
         }
     }
 }
