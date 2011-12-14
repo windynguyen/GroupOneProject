@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.ServiceModel;
 using Client.GetMark_Service;
+using System.IO;
 
 namespace Client
 {
@@ -63,5 +64,80 @@ namespace Client
                 MessageBox.Show("There was a communication problem. " + commProblem.Message + commProblem.StackTrace);
             }
         }
+
+        private void LoadResource()
+        {
+            List<string> lstResource = this.proxy.GetResourcesList().ToList<string>();
+            for (int i = 0; i < lstResource.Count; i++)
+            {
+                string x = lstResource.GetRange(i, 1).FirstOrDefault();
+                if (!x.StartsWith(GlobalVariable.Username))
+                    lstResource.RemoveAt(i);
+            }
+                
+            lsbDocument.DataSource = lstResource;
+        }
+        private void lnkGetList_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LoadResource();
+        }
+        private string FileNameSelected = "";
+        private void lnkDownload_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.FileNameSelected = lsbDocument.SelectedItem.ToString();
+            ptbSendResultWait.Visible = true;
+
+            GetMark_Service.ServiceClient service =
+                new GetMark_Service.ServiceClient("WSHttpBinding_IService");
+            // cac binding khac ko dung duoc
+            service.DownloadResourceCompleted +=
+                new EventHandler<GetMark_Service.DownloadResourceCompletedEventArgs>(GetResource_CallBack);
+            service.DownloadResourceAsync(FileNameSelected);
+        }
+        //Nhận phản hồi từ DownloadResource
+        void GetResource_CallBack(Object sender, GetMark_Service.DownloadResourceCompletedEventArgs e)
+        {
+            ptbSendResultWait.Visible = false;
+            byte[] data = e.Result;
+            dlgSaveDownload.FileName = FileNameSelected;
+            if (dlgSaveDownload.ShowDialog() == DialogResult.OK)
+            {
+                File.WriteAllBytes(dlgSaveDownload.FileName, e.Result);
+            }
+        }
+        private void lsbDocument_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!lnkDownload.Enabled) lnkDownload.Enabled = true;
+        }
+
+        private void lnkUpload_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (dlgOpenUpload.ShowDialog() == DialogResult.OK)
+            {
+                GetMark_Service.ServiceClient service = new GetMark_Service.ServiceClient("WSHttpBinding_IService");
+                service.UploadResourceCompleted += new EventHandler<GetMark_Service.UploadResourceCompletedEventArgs>(UploadResource_CallBack);
+
+                FileInfo fi = new FileInfo(dlgOpenUpload.FileName);
+                FileStream fs = File.OpenRead(dlgOpenUpload.FileName);
+                byte[] bytes = new byte[fs.Length];
+                fs.Read(bytes, 0, Convert.ToInt32(fs.Length));
+                fs.Close();
+                service.UploadResourceAsync(GlobalVariable.Username + "-" + fi.Name, bytes);
+            }
+        }
+        void UploadResource_CallBack(Object sender, GetMark_Service.UploadResourceCompletedEventArgs e)
+        {
+            ptbSendResultWait.Visible = false;
+            if (e.Result)
+            {
+                LoadResource();
+                MessageBox.Show("Upload " + this.FileNameSelected + " thành công!", "Hoàn tất");
+            }
+            else
+                MessageBox.Show("Upload " + this.FileNameSelected + " hỏng!\nXin thử lại!", "Không hoàn tất");
+
+
+        }
+
     }
 }

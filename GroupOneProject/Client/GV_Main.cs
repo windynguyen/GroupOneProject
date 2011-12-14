@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.ServiceModel;
 using Client.GetMark_Service;
+using System.IO;
 
 namespace Client
 {
@@ -24,7 +25,7 @@ namespace Client
         private void GV_Main_Load(object sender, EventArgs e)
         {
             Load_List_HK();
-            llbl_Username.Text = GlobalVariable.Username;
+            lnkUsername.Text = GlobalVariable.Username;
         }
         public void Load_List_HK()
         {
@@ -44,13 +45,15 @@ namespace Client
         }
         private void but_xem_Click(object sender, EventArgs e)
         {
-            Subject[] lst_sub;
+            Subject[] lst_sub =new Subject[100];
             try
             {
                 if (cbo_hocky.Text == "Tất cả")
                 {
                     lst_sub = proxy.Lec_Sub_All(MaGV);
                 }
+                else if (cbo_hocky.Text == "")
+                    MessageBox.Show("Vui lòng chọn 'học kì' cần xem!", "Lỗi chọn!");
                 else
                     lst_sub = proxy.Lec_Sub_Single(MaGV, cbo_hocky.Text);
                 grib_All_Subject.DataSource = lst_sub;
@@ -100,5 +103,7 @@ namespace Client
             PhanHoi frm_PhanHoi = new PhanHoi();
             frm_PhanHoi.Show();
         }
+
+       
     }
 }

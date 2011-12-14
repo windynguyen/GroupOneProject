@@ -15,6 +15,179 @@ namespace Client.GetMark_Service {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="List_Stu_Class", Namespace="http://schemas.datacontract.org/2004/07/ServiceLibrary")]
+    [System.SerializableAttribute()]
+    public partial class List_Stu_Class : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private float DTB_h10Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private float DTB_h4Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DTB_hchuField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private float DiemKTField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private float DiemThiField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HotenField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LoaiField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MssvField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool TinhtrangField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public float DTB_h10 {
+            get {
+                return this.DTB_h10Field;
+            }
+            set {
+                if ((this.DTB_h10Field.Equals(value) != true)) {
+                    this.DTB_h10Field = value;
+                    this.RaisePropertyChanged("DTB_h10");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public float DTB_h4 {
+            get {
+                return this.DTB_h4Field;
+            }
+            set {
+                if ((this.DTB_h4Field.Equals(value) != true)) {
+                    this.DTB_h4Field = value;
+                    this.RaisePropertyChanged("DTB_h4");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DTB_hchu {
+            get {
+                return this.DTB_hchuField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DTB_hchuField, value) != true)) {
+                    this.DTB_hchuField = value;
+                    this.RaisePropertyChanged("DTB_hchu");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public float DiemKT {
+            get {
+                return this.DiemKTField;
+            }
+            set {
+                if ((this.DiemKTField.Equals(value) != true)) {
+                    this.DiemKTField = value;
+                    this.RaisePropertyChanged("DiemKT");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public float DiemThi {
+            get {
+                return this.DiemThiField;
+            }
+            set {
+                if ((this.DiemThiField.Equals(value) != true)) {
+                    this.DiemThiField = value;
+                    this.RaisePropertyChanged("DiemThi");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Hoten {
+            get {
+                return this.HotenField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HotenField, value) != true)) {
+                    this.HotenField = value;
+                    this.RaisePropertyChanged("Hoten");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Loai {
+            get {
+                return this.LoaiField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LoaiField, value) != true)) {
+                    this.LoaiField = value;
+                    this.RaisePropertyChanged("Loai");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Mssv {
+            get {
+                return this.MssvField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MssvField, value) != true)) {
+                    this.MssvField = value;
+                    this.RaisePropertyChanged("Mssv");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Tinhtrang {
+            get {
+                return this.TinhtrangField;
+            }
+            set {
+                if ((this.TinhtrangField.Equals(value) != true)) {
+                    this.TinhtrangField = value;
+                    this.RaisePropertyChanged("Tinhtrang");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Statistic_Mark", Namespace="http://schemas.datacontract.org/2004/07/ServiceLibrary")]
     [System.SerializableAttribute()]
     public partial class Statistic_Mark : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -1439,182 +1612,41 @@ namespace Client.GetMark_Service {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="List_Stu_Class", Namespace="http://schemas.datacontract.org/2004/07/ServiceLibrary")]
-    [System.SerializableAttribute()]
-    public partial class List_Stu_Class : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private float DTB_h10Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private float DTB_h4Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DTB_hchuField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private float DiemKTField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private float DiemThiField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string HotenField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LoaiField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MssvField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool TinhtrangField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public float DTB_h10 {
-            get {
-                return this.DTB_h10Field;
-            }
-            set {
-                if ((this.DTB_h10Field.Equals(value) != true)) {
-                    this.DTB_h10Field = value;
-                    this.RaisePropertyChanged("DTB_h10");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public float DTB_h4 {
-            get {
-                return this.DTB_h4Field;
-            }
-            set {
-                if ((this.DTB_h4Field.Equals(value) != true)) {
-                    this.DTB_h4Field = value;
-                    this.RaisePropertyChanged("DTB_h4");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DTB_hchu {
-            get {
-                return this.DTB_hchuField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DTB_hchuField, value) != true)) {
-                    this.DTB_hchuField = value;
-                    this.RaisePropertyChanged("DTB_hchu");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public float DiemKT {
-            get {
-                return this.DiemKTField;
-            }
-            set {
-                if ((this.DiemKTField.Equals(value) != true)) {
-                    this.DiemKTField = value;
-                    this.RaisePropertyChanged("DiemKT");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public float DiemThi {
-            get {
-                return this.DiemThiField;
-            }
-            set {
-                if ((this.DiemThiField.Equals(value) != true)) {
-                    this.DiemThiField = value;
-                    this.RaisePropertyChanged("DiemThi");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Hoten {
-            get {
-                return this.HotenField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.HotenField, value) != true)) {
-                    this.HotenField = value;
-                    this.RaisePropertyChanged("Hoten");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Loai {
-            get {
-                return this.LoaiField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LoaiField, value) != true)) {
-                    this.LoaiField = value;
-                    this.RaisePropertyChanged("Loai");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Mssv {
-            get {
-                return this.MssvField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MssvField, value) != true)) {
-                    this.MssvField = value;
-                    this.RaisePropertyChanged("Mssv");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool Tinhtrang {
-            get {
-                return this.TinhtrangField;
-            }
-            set {
-                if ((this.TinhtrangField.Equals(value) != true)) {
-                    this.TinhtrangField = value;
-                    this.RaisePropertyChanged("Tinhtrang");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="GetMark_Service.IService")]
     public interface IService {
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/List_Class", ReplyAction="http://tempuri.org/IService/List_ClassResponse")]
+        Client.GetMark_Service.List_Stu_Class[] List_Class(string code_lecturer, string code_subject, string semester);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/List_Class", ReplyAction="http://tempuri.org/IService/List_ClassResponse")]
+        System.IAsyncResult BeginList_Class(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState);
+        
+        Client.GetMark_Service.List_Stu_Class[] EndList_Class(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Min_Mark", ReplyAction="http://tempuri.org/IService/Get_Min_MarkResponse")]
+        float Get_Min_Mark(string code_lecturer, string code_subject, string semester);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Min_Mark", ReplyAction="http://tempuri.org/IService/Get_Min_MarkResponse")]
+        System.IAsyncResult BeginGet_Min_Mark(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState);
+        
+        float EndGet_Min_Mark(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Max_Mark", ReplyAction="http://tempuri.org/IService/Get_Max_MarkResponse")]
+        float Get_Max_Mark(string code_lecturer, string code_subject, string semester);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Max_Mark", ReplyAction="http://tempuri.org/IService/Get_Max_MarkResponse")]
+        System.IAsyncResult BeginGet_Max_Mark(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState);
+        
+        float EndGet_Max_Mark(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Avg_Mark", ReplyAction="http://tempuri.org/IService/Get_Avg_MarkResponse")]
+        float Get_Avg_Mark(string code_lecturer, string code_subject, string semester);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Avg_Mark", ReplyAction="http://tempuri.org/IService/Get_Avg_MarkResponse")]
+        System.IAsyncResult BeginGet_Avg_Mark(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState);
+        
+        float EndGet_Avg_Mark(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Class_Stu_Total", ReplyAction="http://tempuri.org/IService/Class_Stu_TotalResponse")]
         int Class_Stu_Total(string code_lecturer, string code_subject, string semester);
@@ -1760,21 +1792,29 @@ namespace Client.GetMark_Service {
         
         Client.GetMark_Service.Member[] EndGetAuthors(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Download", ReplyAction="http://tempuri.org/IService/DownloadResponse")]
-        int Download(string path);
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/GetResourcesList", ReplyAction="http://tempuri.org/IService/GetResourcesListResponse")]
+        string[] GetResourcesList();
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Download", ReplyAction="http://tempuri.org/IService/DownloadResponse")]
-        System.IAsyncResult BeginDownload(string path, System.AsyncCallback callback, object asyncState);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/GetResourcesList", ReplyAction="http://tempuri.org/IService/GetResourcesListResponse")]
+        System.IAsyncResult BeginGetResourcesList(System.AsyncCallback callback, object asyncState);
         
-        int EndDownload(System.IAsyncResult result);
+        string[] EndGetResourcesList(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/GetResource", ReplyAction="http://tempuri.org/IService/GetResourceResponse")]
-        byte[] GetResource(string resName);
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/DownloadResource", ReplyAction="http://tempuri.org/IService/DownloadResourceResponse")]
+        byte[] DownloadResource(string resName);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/GetResource", ReplyAction="http://tempuri.org/IService/GetResourceResponse")]
-        System.IAsyncResult BeginGetResource(string resName, System.AsyncCallback callback, object asyncState);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/DownloadResource", ReplyAction="http://tempuri.org/IService/DownloadResourceResponse")]
+        System.IAsyncResult BeginDownloadResource(string resName, System.AsyncCallback callback, object asyncState);
         
-        byte[] EndGetResource(System.IAsyncResult result);
+        byte[] EndDownloadResource(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/UploadResource", ReplyAction="http://tempuri.org/IService/UploadResourceResponse")]
+        bool UploadResource(string resName, byte[] data);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/UploadResource", ReplyAction="http://tempuri.org/IService/UploadResourceResponse")]
+        System.IAsyncResult BeginUploadResource(string resName, byte[] data, System.AsyncCallback callback, object asyncState);
+        
+        bool EndUploadResource(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/CheckLogin", ReplyAction="http://tempuri.org/IService/CheckLoginResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(Client.GetMark_Service.InfoFault), Action="http://tempuri.org/IService/CheckLoginInfoFaultFault", ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Name="InfoFault", Namespace="http://schemas.datacontract.org/2004/07/ServiceLibrary")]
@@ -1899,10 +1939,10 @@ namespace Client.GetMark_Service {
         float EndGet_Avg_Semester(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Avg_Cumulative", ReplyAction="http://tempuri.org/IService/Get_Avg_CumulativeResponse")]
-        float Get_Avg_Cumulative(string code_student, string semester);
+        float Get_Avg_Cumulative(string code_student);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Avg_Cumulative", ReplyAction="http://tempuri.org/IService/Get_Avg_CumulativeResponse")]
-        System.IAsyncResult BeginGet_Avg_Cumulative(string code_student, string semester, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginGet_Avg_Cumulative(string code_student, System.AsyncCallback callback, object asyncState);
         
         float EndGet_Avg_Cumulative(System.IAsyncResult result);
         
@@ -1945,42 +1985,86 @@ namespace Client.GetMark_Service {
         System.IAsyncResult BeginLec_Sub_Single(string code_lecturer, string semester, System.AsyncCallback callback, object asyncState);
         
         Client.GetMark_Service.Subject[] EndLec_Sub_Single(System.IAsyncResult result);
-        
-        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/List_Class", ReplyAction="http://tempuri.org/IService/List_ClassResponse")]
-        Client.GetMark_Service.List_Stu_Class[] List_Class(string code_lecturer, string code_subject, string semester);
-        
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/List_Class", ReplyAction="http://tempuri.org/IService/List_ClassResponse")]
-        System.IAsyncResult BeginList_Class(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState);
-        
-        Client.GetMark_Service.List_Stu_Class[] EndList_Class(System.IAsyncResult result);
-        
-        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Min_Mark", ReplyAction="http://tempuri.org/IService/Get_Min_MarkResponse")]
-        float Get_Min_Mark(string code_lecturer, string code_subject, string semester);
-        
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Min_Mark", ReplyAction="http://tempuri.org/IService/Get_Min_MarkResponse")]
-        System.IAsyncResult BeginGet_Min_Mark(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState);
-        
-        float EndGet_Min_Mark(System.IAsyncResult result);
-        
-        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Max_Mark", ReplyAction="http://tempuri.org/IService/Get_Max_MarkResponse")]
-        float Get_Max_Mark(string code_lecturer, string code_subject, string semester);
-        
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Max_Mark", ReplyAction="http://tempuri.org/IService/Get_Max_MarkResponse")]
-        System.IAsyncResult BeginGet_Max_Mark(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState);
-        
-        float EndGet_Max_Mark(System.IAsyncResult result);
-        
-        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Avg_Mark", ReplyAction="http://tempuri.org/IService/Get_Avg_MarkResponse")]
-        float Get_Avg_Mark(string code_lecturer, string code_subject, string semester);
-        
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, ProtectionLevel=System.Net.Security.ProtectionLevel.EncryptAndSign, Action="http://tempuri.org/IService/Get_Avg_Mark", ReplyAction="http://tempuri.org/IService/Get_Avg_MarkResponse")]
-        System.IAsyncResult BeginGet_Avg_Mark(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState);
-        
-        float EndGet_Avg_Mark(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IServiceChannel : Client.GetMark_Service.IService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class List_ClassCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public List_ClassCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Client.GetMark_Service.List_Stu_Class[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Client.GetMark_Service.List_Stu_Class[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Get_Min_MarkCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Get_Min_MarkCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public float Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((float)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Get_Max_MarkCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Get_Max_MarkCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public float Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((float)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class Get_Avg_MarkCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public Get_Avg_MarkCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public float Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((float)(this.results[0]));
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2327,30 +2411,30 @@ namespace Client.GetMark_Service {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class DownloadCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class GetResourcesListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        public DownloadCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        public GetResourcesListCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
         
-        public int Result {
+        public string[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
+                return ((string[])(this.results[0]));
             }
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class GetResourceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class DownloadResourceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        public GetResourceCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        public DownloadResourceCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -2359,6 +2443,25 @@ namespace Client.GetMark_Service {
             get {
                 base.RaiseExceptionIfNecessary();
                 return ((byte[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class UploadResourceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public UploadResourceCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
             }
         }
     }
@@ -2745,83 +2848,31 @@ namespace Client.GetMark_Service {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class List_ClassCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public List_ClassCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public Client.GetMark_Service.List_Stu_Class[] Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((Client.GetMark_Service.List_Stu_Class[])(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class Get_Min_MarkCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public Get_Min_MarkCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public float Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((float)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class Get_Max_MarkCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public Get_Max_MarkCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public float Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((float)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class Get_Avg_MarkCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public Get_Avg_MarkCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public float Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((float)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class ServiceClient : System.ServiceModel.ClientBase<Client.GetMark_Service.IService>, Client.GetMark_Service.IService {
+        
+        private BeginOperationDelegate onBeginList_ClassDelegate;
+        
+        private EndOperationDelegate onEndList_ClassDelegate;
+        
+        private System.Threading.SendOrPostCallback onList_ClassCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGet_Min_MarkDelegate;
+        
+        private EndOperationDelegate onEndGet_Min_MarkDelegate;
+        
+        private System.Threading.SendOrPostCallback onGet_Min_MarkCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGet_Max_MarkDelegate;
+        
+        private EndOperationDelegate onEndGet_Max_MarkDelegate;
+        
+        private System.Threading.SendOrPostCallback onGet_Max_MarkCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGet_Avg_MarkDelegate;
+        
+        private EndOperationDelegate onEndGet_Avg_MarkDelegate;
+        
+        private System.Threading.SendOrPostCallback onGet_Avg_MarkCompletedDelegate;
         
         private BeginOperationDelegate onBeginClass_Stu_TotalDelegate;
         
@@ -2931,17 +2982,23 @@ namespace Client.GetMark_Service {
         
         private System.Threading.SendOrPostCallback onGetAuthorsCompletedDelegate;
         
-        private BeginOperationDelegate onBeginDownloadDelegate;
+        private BeginOperationDelegate onBeginGetResourcesListDelegate;
         
-        private EndOperationDelegate onEndDownloadDelegate;
+        private EndOperationDelegate onEndGetResourcesListDelegate;
         
-        private System.Threading.SendOrPostCallback onDownloadCompletedDelegate;
+        private System.Threading.SendOrPostCallback onGetResourcesListCompletedDelegate;
         
-        private BeginOperationDelegate onBeginGetResourceDelegate;
+        private BeginOperationDelegate onBeginDownloadResourceDelegate;
         
-        private EndOperationDelegate onEndGetResourceDelegate;
+        private EndOperationDelegate onEndDownloadResourceDelegate;
         
-        private System.Threading.SendOrPostCallback onGetResourceCompletedDelegate;
+        private System.Threading.SendOrPostCallback onDownloadResourceCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginUploadResourceDelegate;
+        
+        private EndOperationDelegate onEndUploadResourceDelegate;
+        
+        private System.Threading.SendOrPostCallback onUploadResourceCompletedDelegate;
         
         private BeginOperationDelegate onBeginCheckLoginDelegate;
         
@@ -3069,30 +3126,6 @@ namespace Client.GetMark_Service {
         
         private System.Threading.SendOrPostCallback onLec_Sub_SingleCompletedDelegate;
         
-        private BeginOperationDelegate onBeginList_ClassDelegate;
-        
-        private EndOperationDelegate onEndList_ClassDelegate;
-        
-        private System.Threading.SendOrPostCallback onList_ClassCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginGet_Min_MarkDelegate;
-        
-        private EndOperationDelegate onEndGet_Min_MarkDelegate;
-        
-        private System.Threading.SendOrPostCallback onGet_Min_MarkCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginGet_Max_MarkDelegate;
-        
-        private EndOperationDelegate onEndGet_Max_MarkDelegate;
-        
-        private System.Threading.SendOrPostCallback onGet_Max_MarkCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginGet_Avg_MarkDelegate;
-        
-        private EndOperationDelegate onEndGet_Avg_MarkDelegate;
-        
-        private System.Threading.SendOrPostCallback onGet_Avg_MarkCompletedDelegate;
-        
         public ServiceClient() {
         }
         
@@ -3111,6 +3144,14 @@ namespace Client.GetMark_Service {
         public ServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
+        
+        public event System.EventHandler<List_ClassCompletedEventArgs> List_ClassCompleted;
+        
+        public event System.EventHandler<Get_Min_MarkCompletedEventArgs> Get_Min_MarkCompleted;
+        
+        public event System.EventHandler<Get_Max_MarkCompletedEventArgs> Get_Max_MarkCompleted;
+        
+        public event System.EventHandler<Get_Avg_MarkCompletedEventArgs> Get_Avg_MarkCompleted;
         
         public event System.EventHandler<Class_Stu_TotalCompletedEventArgs> Class_Stu_TotalCompleted;
         
@@ -3148,9 +3189,11 @@ namespace Client.GetMark_Service {
         
         public event System.EventHandler<GetAuthorsCompletedEventArgs> GetAuthorsCompleted;
         
-        public event System.EventHandler<DownloadCompletedEventArgs> DownloadCompleted;
+        public event System.EventHandler<GetResourcesListCompletedEventArgs> GetResourcesListCompleted;
         
-        public event System.EventHandler<GetResourceCompletedEventArgs> GetResourceCompleted;
+        public event System.EventHandler<DownloadResourceCompletedEventArgs> DownloadResourceCompleted;
+        
+        public event System.EventHandler<UploadResourceCompletedEventArgs> UploadResourceCompleted;
         
         public event System.EventHandler<CheckLoginCompletedEventArgs> CheckLoginCompleted;
         
@@ -3194,13 +3237,221 @@ namespace Client.GetMark_Service {
         
         public event System.EventHandler<Lec_Sub_SingleCompletedEventArgs> Lec_Sub_SingleCompleted;
         
-        public event System.EventHandler<List_ClassCompletedEventArgs> List_ClassCompleted;
+        public Client.GetMark_Service.List_Stu_Class[] List_Class(string code_lecturer, string code_subject, string semester) {
+            return base.Channel.List_Class(code_lecturer, code_subject, semester);
+        }
         
-        public event System.EventHandler<Get_Min_MarkCompletedEventArgs> Get_Min_MarkCompleted;
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginList_Class(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginList_Class(code_lecturer, code_subject, semester, callback, asyncState);
+        }
         
-        public event System.EventHandler<Get_Max_MarkCompletedEventArgs> Get_Max_MarkCompleted;
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public Client.GetMark_Service.List_Stu_Class[] EndList_Class(System.IAsyncResult result) {
+            return base.Channel.EndList_Class(result);
+        }
         
-        public event System.EventHandler<Get_Avg_MarkCompletedEventArgs> Get_Avg_MarkCompleted;
+        private System.IAsyncResult OnBeginList_Class(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_lecturer = ((string)(inValues[0]));
+            string code_subject = ((string)(inValues[1]));
+            string semester = ((string)(inValues[2]));
+            return this.BeginList_Class(code_lecturer, code_subject, semester, callback, asyncState);
+        }
+        
+        private object[] OnEndList_Class(System.IAsyncResult result) {
+            Client.GetMark_Service.List_Stu_Class[] retVal = this.EndList_Class(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnList_ClassCompleted(object state) {
+            if ((this.List_ClassCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.List_ClassCompleted(this, new List_ClassCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void List_ClassAsync(string code_lecturer, string code_subject, string semester) {
+            this.List_ClassAsync(code_lecturer, code_subject, semester, null);
+        }
+        
+        public void List_ClassAsync(string code_lecturer, string code_subject, string semester, object userState) {
+            if ((this.onBeginList_ClassDelegate == null)) {
+                this.onBeginList_ClassDelegate = new BeginOperationDelegate(this.OnBeginList_Class);
+            }
+            if ((this.onEndList_ClassDelegate == null)) {
+                this.onEndList_ClassDelegate = new EndOperationDelegate(this.OnEndList_Class);
+            }
+            if ((this.onList_ClassCompletedDelegate == null)) {
+                this.onList_ClassCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnList_ClassCompleted);
+            }
+            base.InvokeAsync(this.onBeginList_ClassDelegate, new object[] {
+                        code_lecturer,
+                        code_subject,
+                        semester}, this.onEndList_ClassDelegate, this.onList_ClassCompletedDelegate, userState);
+        }
+        
+        public float Get_Min_Mark(string code_lecturer, string code_subject, string semester) {
+            return base.Channel.Get_Min_Mark(code_lecturer, code_subject, semester);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGet_Min_Mark(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGet_Min_Mark(code_lecturer, code_subject, semester, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public float EndGet_Min_Mark(System.IAsyncResult result) {
+            return base.Channel.EndGet_Min_Mark(result);
+        }
+        
+        private System.IAsyncResult OnBeginGet_Min_Mark(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_lecturer = ((string)(inValues[0]));
+            string code_subject = ((string)(inValues[1]));
+            string semester = ((string)(inValues[2]));
+            return this.BeginGet_Min_Mark(code_lecturer, code_subject, semester, callback, asyncState);
+        }
+        
+        private object[] OnEndGet_Min_Mark(System.IAsyncResult result) {
+            float retVal = this.EndGet_Min_Mark(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGet_Min_MarkCompleted(object state) {
+            if ((this.Get_Min_MarkCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Get_Min_MarkCompleted(this, new Get_Min_MarkCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Get_Min_MarkAsync(string code_lecturer, string code_subject, string semester) {
+            this.Get_Min_MarkAsync(code_lecturer, code_subject, semester, null);
+        }
+        
+        public void Get_Min_MarkAsync(string code_lecturer, string code_subject, string semester, object userState) {
+            if ((this.onBeginGet_Min_MarkDelegate == null)) {
+                this.onBeginGet_Min_MarkDelegate = new BeginOperationDelegate(this.OnBeginGet_Min_Mark);
+            }
+            if ((this.onEndGet_Min_MarkDelegate == null)) {
+                this.onEndGet_Min_MarkDelegate = new EndOperationDelegate(this.OnEndGet_Min_Mark);
+            }
+            if ((this.onGet_Min_MarkCompletedDelegate == null)) {
+                this.onGet_Min_MarkCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGet_Min_MarkCompleted);
+            }
+            base.InvokeAsync(this.onBeginGet_Min_MarkDelegate, new object[] {
+                        code_lecturer,
+                        code_subject,
+                        semester}, this.onEndGet_Min_MarkDelegate, this.onGet_Min_MarkCompletedDelegate, userState);
+        }
+        
+        public float Get_Max_Mark(string code_lecturer, string code_subject, string semester) {
+            return base.Channel.Get_Max_Mark(code_lecturer, code_subject, semester);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGet_Max_Mark(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGet_Max_Mark(code_lecturer, code_subject, semester, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public float EndGet_Max_Mark(System.IAsyncResult result) {
+            return base.Channel.EndGet_Max_Mark(result);
+        }
+        
+        private System.IAsyncResult OnBeginGet_Max_Mark(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_lecturer = ((string)(inValues[0]));
+            string code_subject = ((string)(inValues[1]));
+            string semester = ((string)(inValues[2]));
+            return this.BeginGet_Max_Mark(code_lecturer, code_subject, semester, callback, asyncState);
+        }
+        
+        private object[] OnEndGet_Max_Mark(System.IAsyncResult result) {
+            float retVal = this.EndGet_Max_Mark(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGet_Max_MarkCompleted(object state) {
+            if ((this.Get_Max_MarkCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Get_Max_MarkCompleted(this, new Get_Max_MarkCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Get_Max_MarkAsync(string code_lecturer, string code_subject, string semester) {
+            this.Get_Max_MarkAsync(code_lecturer, code_subject, semester, null);
+        }
+        
+        public void Get_Max_MarkAsync(string code_lecturer, string code_subject, string semester, object userState) {
+            if ((this.onBeginGet_Max_MarkDelegate == null)) {
+                this.onBeginGet_Max_MarkDelegate = new BeginOperationDelegate(this.OnBeginGet_Max_Mark);
+            }
+            if ((this.onEndGet_Max_MarkDelegate == null)) {
+                this.onEndGet_Max_MarkDelegate = new EndOperationDelegate(this.OnEndGet_Max_Mark);
+            }
+            if ((this.onGet_Max_MarkCompletedDelegate == null)) {
+                this.onGet_Max_MarkCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGet_Max_MarkCompleted);
+            }
+            base.InvokeAsync(this.onBeginGet_Max_MarkDelegate, new object[] {
+                        code_lecturer,
+                        code_subject,
+                        semester}, this.onEndGet_Max_MarkDelegate, this.onGet_Max_MarkCompletedDelegate, userState);
+        }
+        
+        public float Get_Avg_Mark(string code_lecturer, string code_subject, string semester) {
+            return base.Channel.Get_Avg_Mark(code_lecturer, code_subject, semester);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGet_Avg_Mark(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGet_Avg_Mark(code_lecturer, code_subject, semester, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public float EndGet_Avg_Mark(System.IAsyncResult result) {
+            return base.Channel.EndGet_Avg_Mark(result);
+        }
+        
+        private System.IAsyncResult OnBeginGet_Avg_Mark(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code_lecturer = ((string)(inValues[0]));
+            string code_subject = ((string)(inValues[1]));
+            string semester = ((string)(inValues[2]));
+            return this.BeginGet_Avg_Mark(code_lecturer, code_subject, semester, callback, asyncState);
+        }
+        
+        private object[] OnEndGet_Avg_Mark(System.IAsyncResult result) {
+            float retVal = this.EndGet_Avg_Mark(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGet_Avg_MarkCompleted(object state) {
+            if ((this.Get_Avg_MarkCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.Get_Avg_MarkCompleted(this, new Get_Avg_MarkCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void Get_Avg_MarkAsync(string code_lecturer, string code_subject, string semester) {
+            this.Get_Avg_MarkAsync(code_lecturer, code_subject, semester, null);
+        }
+        
+        public void Get_Avg_MarkAsync(string code_lecturer, string code_subject, string semester, object userState) {
+            if ((this.onBeginGet_Avg_MarkDelegate == null)) {
+                this.onBeginGet_Avg_MarkDelegate = new BeginOperationDelegate(this.OnBeginGet_Avg_Mark);
+            }
+            if ((this.onEndGet_Avg_MarkDelegate == null)) {
+                this.onEndGet_Avg_MarkDelegate = new EndOperationDelegate(this.OnEndGet_Avg_Mark);
+            }
+            if ((this.onGet_Avg_MarkCompletedDelegate == null)) {
+                this.onGet_Avg_MarkCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGet_Avg_MarkCompleted);
+            }
+            base.InvokeAsync(this.onBeginGet_Avg_MarkDelegate, new object[] {
+                        code_lecturer,
+                        code_subject,
+                        semester}, this.onEndGet_Avg_MarkDelegate, this.onGet_Avg_MarkCompletedDelegate, userState);
+        }
         
         public int Class_Stu_Total(string code_lecturer, string code_subject, string semester) {
             return base.Channel.Class_Stu_Total(code_lecturer, code_subject, semester);
@@ -4188,104 +4439,154 @@ namespace Client.GetMark_Service {
             base.InvokeAsync(this.onBeginGetAuthorsDelegate, null, this.onEndGetAuthorsDelegate, this.onGetAuthorsCompletedDelegate, userState);
         }
         
-        public int Download(string path) {
-            return base.Channel.Download(path);
+        public string[] GetResourcesList() {
+            return base.Channel.GetResourcesList();
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginDownload(string path, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginDownload(path, callback, asyncState);
+        public System.IAsyncResult BeginGetResourcesList(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetResourcesList(callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public int EndDownload(System.IAsyncResult result) {
-            return base.Channel.EndDownload(result);
+        public string[] EndGetResourcesList(System.IAsyncResult result) {
+            return base.Channel.EndGetResourcesList(result);
         }
         
-        private System.IAsyncResult OnBeginDownload(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            string path = ((string)(inValues[0]));
-            return this.BeginDownload(path, callback, asyncState);
+        private System.IAsyncResult OnBeginGetResourcesList(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGetResourcesList(callback, asyncState);
         }
         
-        private object[] OnEndDownload(System.IAsyncResult result) {
-            int retVal = this.EndDownload(result);
+        private object[] OnEndGetResourcesList(System.IAsyncResult result) {
+            string[] retVal = this.EndGetResourcesList(result);
             return new object[] {
                     retVal};
         }
         
-        private void OnDownloadCompleted(object state) {
-            if ((this.DownloadCompleted != null)) {
+        private void OnGetResourcesListCompleted(object state) {
+            if ((this.GetResourcesListCompleted != null)) {
                 InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.DownloadCompleted(this, new DownloadCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+                this.GetResourcesListCompleted(this, new GetResourcesListCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
             }
         }
         
-        public void DownloadAsync(string path) {
-            this.DownloadAsync(path, null);
+        public void GetResourcesListAsync() {
+            this.GetResourcesListAsync(null);
         }
         
-        public void DownloadAsync(string path, object userState) {
-            if ((this.onBeginDownloadDelegate == null)) {
-                this.onBeginDownloadDelegate = new BeginOperationDelegate(this.OnBeginDownload);
+        public void GetResourcesListAsync(object userState) {
+            if ((this.onBeginGetResourcesListDelegate == null)) {
+                this.onBeginGetResourcesListDelegate = new BeginOperationDelegate(this.OnBeginGetResourcesList);
             }
-            if ((this.onEndDownloadDelegate == null)) {
-                this.onEndDownloadDelegate = new EndOperationDelegate(this.OnEndDownload);
+            if ((this.onEndGetResourcesListDelegate == null)) {
+                this.onEndGetResourcesListDelegate = new EndOperationDelegate(this.OnEndGetResourcesList);
             }
-            if ((this.onDownloadCompletedDelegate == null)) {
-                this.onDownloadCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnDownloadCompleted);
+            if ((this.onGetResourcesListCompletedDelegate == null)) {
+                this.onGetResourcesListCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetResourcesListCompleted);
             }
-            base.InvokeAsync(this.onBeginDownloadDelegate, new object[] {
-                        path}, this.onEndDownloadDelegate, this.onDownloadCompletedDelegate, userState);
+            base.InvokeAsync(this.onBeginGetResourcesListDelegate, null, this.onEndGetResourcesListDelegate, this.onGetResourcesListCompletedDelegate, userState);
         }
         
-        public byte[] GetResource(string resName) {
-            return base.Channel.GetResource(resName);
+        public byte[] DownloadResource(string resName) {
+            return base.Channel.DownloadResource(resName);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGetResource(string resName, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetResource(resName, callback, asyncState);
+        public System.IAsyncResult BeginDownloadResource(string resName, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginDownloadResource(resName, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public byte[] EndGetResource(System.IAsyncResult result) {
-            return base.Channel.EndGetResource(result);
+        public byte[] EndDownloadResource(System.IAsyncResult result) {
+            return base.Channel.EndDownloadResource(result);
         }
         
-        private System.IAsyncResult OnBeginGetResource(object[] inValues, System.AsyncCallback callback, object asyncState) {
+        private System.IAsyncResult OnBeginDownloadResource(object[] inValues, System.AsyncCallback callback, object asyncState) {
             string resName = ((string)(inValues[0]));
-            return this.BeginGetResource(resName, callback, asyncState);
+            return this.BeginDownloadResource(resName, callback, asyncState);
         }
         
-        private object[] OnEndGetResource(System.IAsyncResult result) {
-            byte[] retVal = this.EndGetResource(result);
+        private object[] OnEndDownloadResource(System.IAsyncResult result) {
+            byte[] retVal = this.EndDownloadResource(result);
             return new object[] {
                     retVal};
         }
         
-        private void OnGetResourceCompleted(object state) {
-            if ((this.GetResourceCompleted != null)) {
+        private void OnDownloadResourceCompleted(object state) {
+            if ((this.DownloadResourceCompleted != null)) {
                 InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.GetResourceCompleted(this, new GetResourceCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+                this.DownloadResourceCompleted(this, new DownloadResourceCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
             }
         }
         
-        public void GetResourceAsync(string resName) {
-            this.GetResourceAsync(resName, null);
+        public void DownloadResourceAsync(string resName) {
+            this.DownloadResourceAsync(resName, null);
         }
         
-        public void GetResourceAsync(string resName, object userState) {
-            if ((this.onBeginGetResourceDelegate == null)) {
-                this.onBeginGetResourceDelegate = new BeginOperationDelegate(this.OnBeginGetResource);
+        public void DownloadResourceAsync(string resName, object userState) {
+            if ((this.onBeginDownloadResourceDelegate == null)) {
+                this.onBeginDownloadResourceDelegate = new BeginOperationDelegate(this.OnBeginDownloadResource);
             }
-            if ((this.onEndGetResourceDelegate == null)) {
-                this.onEndGetResourceDelegate = new EndOperationDelegate(this.OnEndGetResource);
+            if ((this.onEndDownloadResourceDelegate == null)) {
+                this.onEndDownloadResourceDelegate = new EndOperationDelegate(this.OnEndDownloadResource);
             }
-            if ((this.onGetResourceCompletedDelegate == null)) {
-                this.onGetResourceCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetResourceCompleted);
+            if ((this.onDownloadResourceCompletedDelegate == null)) {
+                this.onDownloadResourceCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnDownloadResourceCompleted);
             }
-            base.InvokeAsync(this.onBeginGetResourceDelegate, new object[] {
-                        resName}, this.onEndGetResourceDelegate, this.onGetResourceCompletedDelegate, userState);
+            base.InvokeAsync(this.onBeginDownloadResourceDelegate, new object[] {
+                        resName}, this.onEndDownloadResourceDelegate, this.onDownloadResourceCompletedDelegate, userState);
+        }
+        
+        public bool UploadResource(string resName, byte[] data) {
+            return base.Channel.UploadResource(resName, data);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginUploadResource(string resName, byte[] data, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginUploadResource(resName, data, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndUploadResource(System.IAsyncResult result) {
+            return base.Channel.EndUploadResource(result);
+        }
+        
+        private System.IAsyncResult OnBeginUploadResource(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string resName = ((string)(inValues[0]));
+            byte[] data = ((byte[])(inValues[1]));
+            return this.BeginUploadResource(resName, data, callback, asyncState);
+        }
+        
+        private object[] OnEndUploadResource(System.IAsyncResult result) {
+            bool retVal = this.EndUploadResource(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnUploadResourceCompleted(object state) {
+            if ((this.UploadResourceCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.UploadResourceCompleted(this, new UploadResourceCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void UploadResourceAsync(string resName, byte[] data) {
+            this.UploadResourceAsync(resName, data, null);
+        }
+        
+        public void UploadResourceAsync(string resName, byte[] data, object userState) {
+            if ((this.onBeginUploadResourceDelegate == null)) {
+                this.onBeginUploadResourceDelegate = new BeginOperationDelegate(this.OnBeginUploadResource);
+            }
+            if ((this.onEndUploadResourceDelegate == null)) {
+                this.onEndUploadResourceDelegate = new EndOperationDelegate(this.OnEndUploadResource);
+            }
+            if ((this.onUploadResourceCompletedDelegate == null)) {
+                this.onUploadResourceCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnUploadResourceCompleted);
+            }
+            base.InvokeAsync(this.onBeginUploadResourceDelegate, new object[] {
+                        resName,
+                        data}, this.onEndUploadResourceDelegate, this.onUploadResourceCompletedDelegate, userState);
         }
         
         public bool CheckLogin(string username, string password, int mode) {
@@ -5055,13 +5356,13 @@ namespace Client.GetMark_Service {
                         semester}, this.onEndGet_Avg_SemesterDelegate, this.onGet_Avg_SemesterCompletedDelegate, userState);
         }
         
-        public float Get_Avg_Cumulative(string code_student, string semester) {
-            return base.Channel.Get_Avg_Cumulative(code_student, semester);
+        public float Get_Avg_Cumulative(string code_student) {
+            return base.Channel.Get_Avg_Cumulative(code_student);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGet_Avg_Cumulative(string code_student, string semester, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGet_Avg_Cumulative(code_student, semester, callback, asyncState);
+        public System.IAsyncResult BeginGet_Avg_Cumulative(string code_student, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGet_Avg_Cumulative(code_student, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -5071,8 +5372,7 @@ namespace Client.GetMark_Service {
         
         private System.IAsyncResult OnBeginGet_Avg_Cumulative(object[] inValues, System.AsyncCallback callback, object asyncState) {
             string code_student = ((string)(inValues[0]));
-            string semester = ((string)(inValues[1]));
-            return this.BeginGet_Avg_Cumulative(code_student, semester, callback, asyncState);
+            return this.BeginGet_Avg_Cumulative(code_student, callback, asyncState);
         }
         
         private object[] OnEndGet_Avg_Cumulative(System.IAsyncResult result) {
@@ -5088,11 +5388,11 @@ namespace Client.GetMark_Service {
             }
         }
         
-        public void Get_Avg_CumulativeAsync(string code_student, string semester) {
-            this.Get_Avg_CumulativeAsync(code_student, semester, null);
+        public void Get_Avg_CumulativeAsync(string code_student) {
+            this.Get_Avg_CumulativeAsync(code_student, null);
         }
         
-        public void Get_Avg_CumulativeAsync(string code_student, string semester, object userState) {
+        public void Get_Avg_CumulativeAsync(string code_student, object userState) {
             if ((this.onBeginGet_Avg_CumulativeDelegate == null)) {
                 this.onBeginGet_Avg_CumulativeDelegate = new BeginOperationDelegate(this.OnBeginGet_Avg_Cumulative);
             }
@@ -5103,8 +5403,7 @@ namespace Client.GetMark_Service {
                 this.onGet_Avg_CumulativeCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGet_Avg_CumulativeCompleted);
             }
             base.InvokeAsync(this.onBeginGet_Avg_CumulativeDelegate, new object[] {
-                        code_student,
-                        semester}, this.onEndGet_Avg_CumulativeDelegate, this.onGet_Avg_CumulativeCompletedDelegate, userState);
+                        code_student}, this.onEndGet_Avg_CumulativeDelegate, this.onGet_Avg_CumulativeCompletedDelegate, userState);
         }
         
         public Client.GetMark_Service.Statistic_Student Info_Statistic_Stu_General(string code_student) {
@@ -5357,222 +5656,6 @@ namespace Client.GetMark_Service {
             base.InvokeAsync(this.onBeginLec_Sub_SingleDelegate, new object[] {
                         code_lecturer,
                         semester}, this.onEndLec_Sub_SingleDelegate, this.onLec_Sub_SingleCompletedDelegate, userState);
-        }
-        
-        public Client.GetMark_Service.List_Stu_Class[] List_Class(string code_lecturer, string code_subject, string semester) {
-            return base.Channel.List_Class(code_lecturer, code_subject, semester);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginList_Class(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginList_Class(code_lecturer, code_subject, semester, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public Client.GetMark_Service.List_Stu_Class[] EndList_Class(System.IAsyncResult result) {
-            return base.Channel.EndList_Class(result);
-        }
-        
-        private System.IAsyncResult OnBeginList_Class(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            string code_lecturer = ((string)(inValues[0]));
-            string code_subject = ((string)(inValues[1]));
-            string semester = ((string)(inValues[2]));
-            return this.BeginList_Class(code_lecturer, code_subject, semester, callback, asyncState);
-        }
-        
-        private object[] OnEndList_Class(System.IAsyncResult result) {
-            Client.GetMark_Service.List_Stu_Class[] retVal = this.EndList_Class(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnList_ClassCompleted(object state) {
-            if ((this.List_ClassCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.List_ClassCompleted(this, new List_ClassCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void List_ClassAsync(string code_lecturer, string code_subject, string semester) {
-            this.List_ClassAsync(code_lecturer, code_subject, semester, null);
-        }
-        
-        public void List_ClassAsync(string code_lecturer, string code_subject, string semester, object userState) {
-            if ((this.onBeginList_ClassDelegate == null)) {
-                this.onBeginList_ClassDelegate = new BeginOperationDelegate(this.OnBeginList_Class);
-            }
-            if ((this.onEndList_ClassDelegate == null)) {
-                this.onEndList_ClassDelegate = new EndOperationDelegate(this.OnEndList_Class);
-            }
-            if ((this.onList_ClassCompletedDelegate == null)) {
-                this.onList_ClassCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnList_ClassCompleted);
-            }
-            base.InvokeAsync(this.onBeginList_ClassDelegate, new object[] {
-                        code_lecturer,
-                        code_subject,
-                        semester}, this.onEndList_ClassDelegate, this.onList_ClassCompletedDelegate, userState);
-        }
-        
-        public float Get_Min_Mark(string code_lecturer, string code_subject, string semester) {
-            return base.Channel.Get_Min_Mark(code_lecturer, code_subject, semester);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGet_Min_Mark(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGet_Min_Mark(code_lecturer, code_subject, semester, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public float EndGet_Min_Mark(System.IAsyncResult result) {
-            return base.Channel.EndGet_Min_Mark(result);
-        }
-        
-        private System.IAsyncResult OnBeginGet_Min_Mark(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            string code_lecturer = ((string)(inValues[0]));
-            string code_subject = ((string)(inValues[1]));
-            string semester = ((string)(inValues[2]));
-            return this.BeginGet_Min_Mark(code_lecturer, code_subject, semester, callback, asyncState);
-        }
-        
-        private object[] OnEndGet_Min_Mark(System.IAsyncResult result) {
-            float retVal = this.EndGet_Min_Mark(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnGet_Min_MarkCompleted(object state) {
-            if ((this.Get_Min_MarkCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.Get_Min_MarkCompleted(this, new Get_Min_MarkCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void Get_Min_MarkAsync(string code_lecturer, string code_subject, string semester) {
-            this.Get_Min_MarkAsync(code_lecturer, code_subject, semester, null);
-        }
-        
-        public void Get_Min_MarkAsync(string code_lecturer, string code_subject, string semester, object userState) {
-            if ((this.onBeginGet_Min_MarkDelegate == null)) {
-                this.onBeginGet_Min_MarkDelegate = new BeginOperationDelegate(this.OnBeginGet_Min_Mark);
-            }
-            if ((this.onEndGet_Min_MarkDelegate == null)) {
-                this.onEndGet_Min_MarkDelegate = new EndOperationDelegate(this.OnEndGet_Min_Mark);
-            }
-            if ((this.onGet_Min_MarkCompletedDelegate == null)) {
-                this.onGet_Min_MarkCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGet_Min_MarkCompleted);
-            }
-            base.InvokeAsync(this.onBeginGet_Min_MarkDelegate, new object[] {
-                        code_lecturer,
-                        code_subject,
-                        semester}, this.onEndGet_Min_MarkDelegate, this.onGet_Min_MarkCompletedDelegate, userState);
-        }
-        
-        public float Get_Max_Mark(string code_lecturer, string code_subject, string semester) {
-            return base.Channel.Get_Max_Mark(code_lecturer, code_subject, semester);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGet_Max_Mark(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGet_Max_Mark(code_lecturer, code_subject, semester, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public float EndGet_Max_Mark(System.IAsyncResult result) {
-            return base.Channel.EndGet_Max_Mark(result);
-        }
-        
-        private System.IAsyncResult OnBeginGet_Max_Mark(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            string code_lecturer = ((string)(inValues[0]));
-            string code_subject = ((string)(inValues[1]));
-            string semester = ((string)(inValues[2]));
-            return this.BeginGet_Max_Mark(code_lecturer, code_subject, semester, callback, asyncState);
-        }
-        
-        private object[] OnEndGet_Max_Mark(System.IAsyncResult result) {
-            float retVal = this.EndGet_Max_Mark(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnGet_Max_MarkCompleted(object state) {
-            if ((this.Get_Max_MarkCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.Get_Max_MarkCompleted(this, new Get_Max_MarkCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void Get_Max_MarkAsync(string code_lecturer, string code_subject, string semester) {
-            this.Get_Max_MarkAsync(code_lecturer, code_subject, semester, null);
-        }
-        
-        public void Get_Max_MarkAsync(string code_lecturer, string code_subject, string semester, object userState) {
-            if ((this.onBeginGet_Max_MarkDelegate == null)) {
-                this.onBeginGet_Max_MarkDelegate = new BeginOperationDelegate(this.OnBeginGet_Max_Mark);
-            }
-            if ((this.onEndGet_Max_MarkDelegate == null)) {
-                this.onEndGet_Max_MarkDelegate = new EndOperationDelegate(this.OnEndGet_Max_Mark);
-            }
-            if ((this.onGet_Max_MarkCompletedDelegate == null)) {
-                this.onGet_Max_MarkCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGet_Max_MarkCompleted);
-            }
-            base.InvokeAsync(this.onBeginGet_Max_MarkDelegate, new object[] {
-                        code_lecturer,
-                        code_subject,
-                        semester}, this.onEndGet_Max_MarkDelegate, this.onGet_Max_MarkCompletedDelegate, userState);
-        }
-        
-        public float Get_Avg_Mark(string code_lecturer, string code_subject, string semester) {
-            return base.Channel.Get_Avg_Mark(code_lecturer, code_subject, semester);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGet_Avg_Mark(string code_lecturer, string code_subject, string semester, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGet_Avg_Mark(code_lecturer, code_subject, semester, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public float EndGet_Avg_Mark(System.IAsyncResult result) {
-            return base.Channel.EndGet_Avg_Mark(result);
-        }
-        
-        private System.IAsyncResult OnBeginGet_Avg_Mark(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            string code_lecturer = ((string)(inValues[0]));
-            string code_subject = ((string)(inValues[1]));
-            string semester = ((string)(inValues[2]));
-            return this.BeginGet_Avg_Mark(code_lecturer, code_subject, semester, callback, asyncState);
-        }
-        
-        private object[] OnEndGet_Avg_Mark(System.IAsyncResult result) {
-            float retVal = this.EndGet_Avg_Mark(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnGet_Avg_MarkCompleted(object state) {
-            if ((this.Get_Avg_MarkCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.Get_Avg_MarkCompleted(this, new Get_Avg_MarkCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void Get_Avg_MarkAsync(string code_lecturer, string code_subject, string semester) {
-            this.Get_Avg_MarkAsync(code_lecturer, code_subject, semester, null);
-        }
-        
-        public void Get_Avg_MarkAsync(string code_lecturer, string code_subject, string semester, object userState) {
-            if ((this.onBeginGet_Avg_MarkDelegate == null)) {
-                this.onBeginGet_Avg_MarkDelegate = new BeginOperationDelegate(this.OnBeginGet_Avg_Mark);
-            }
-            if ((this.onEndGet_Avg_MarkDelegate == null)) {
-                this.onEndGet_Avg_MarkDelegate = new EndOperationDelegate(this.OnEndGet_Avg_Mark);
-            }
-            if ((this.onGet_Avg_MarkCompletedDelegate == null)) {
-                this.onGet_Avg_MarkCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGet_Avg_MarkCompleted);
-            }
-            base.InvokeAsync(this.onBeginGet_Avg_MarkDelegate, new object[] {
-                        code_lecturer,
-                        code_subject,
-                        semester}, this.onEndGet_Avg_MarkDelegate, this.onGet_Avg_MarkCompletedDelegate, userState);
         }
     }
 }

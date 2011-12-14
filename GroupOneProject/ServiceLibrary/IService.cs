@@ -16,11 +16,15 @@ namespace ServiceLibrary
     {
         [OperationContract]
         List<Member> GetAuthors();
+        //[OperationContract]
+        //int Download(string path);
         [OperationContract]
-        int Download(string path);
+        List<string> GetResourcesList();
         [OperationContract]
-        byte[] GetResource(string resName);
-        
+        byte[] DownloadResource(string resName);
+        [OperationContract]
+        bool UploadResource(string resName, byte[] data);
+
         //Hàm cơ bản
         [OperationContract]
         [FaultContract(typeof(InfoFault))]

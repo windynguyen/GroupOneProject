@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ServiceLibrary" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ServiceLibrary" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfList_Stu_Class">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="List_Stu_Class" nillable="true" type="tns:List_Stu_Class" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfList_Stu_Class" nillable="true" type="tns:ArrayOfList_Stu_Class" />
+  <xs:complexType name="List_Stu_Class">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DTB_h10" type="xs:float" />
+      <xs:element minOccurs="0" name="DTB_h4" type="xs:float" />
+      <xs:element minOccurs="0" name="DTB_hchu" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DiemKT" type="xs:float" />
+      <xs:element minOccurs="0" name="DiemThi" type="xs:float" />
+      <xs:element minOccurs="0" name="Hoten" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Loai" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mssv" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tinhtrang" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="List_Stu_Class" nillable="true" type="tns:List_Stu_Class" />
   <xs:complexType name="Statistic_Mark">
     <xs:sequence>
       <xs:element minOccurs="0" name="Avg_mark" type="xs:float" />
@@ -156,24 +176,4 @@
     <xs:sequence />
   </xs:complexType>
   <xs:element name="Lecturer" nillable="true" type="tns:Lecturer" />
-  <xs:complexType name="ArrayOfList_Stu_Class">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="List_Stu_Class" nillable="true" type="tns:List_Stu_Class" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfList_Stu_Class" nillable="true" type="tns:ArrayOfList_Stu_Class" />
-  <xs:complexType name="List_Stu_Class">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="DTB_h10" type="xs:float" />
-      <xs:element minOccurs="0" name="DTB_h4" type="xs:float" />
-      <xs:element minOccurs="0" name="DTB_hchu" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="DiemKT" type="xs:float" />
-      <xs:element minOccurs="0" name="DiemThi" type="xs:float" />
-      <xs:element minOccurs="0" name="Hoten" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Loai" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Mssv" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Tinhtrang" type="xs:boolean" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="List_Stu_Class" nillable="true" type="tns:List_Stu_Class" />
 </xs:schema>

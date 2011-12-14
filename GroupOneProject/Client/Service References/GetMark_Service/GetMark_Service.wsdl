@@ -12,6 +12,42 @@
   <wsdl:binding name="MetadataExchangeHttpBinding_IService" type="i0:IService">
     <wsp:PolicyReference URI="#MetadataExchangeHttpBinding_IService_policy" />
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="List_Class">
+      <soap12:operation soapAction="http://tempuri.org/IService/List_Class" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Min_Mark">
+      <soap12:operation soapAction="http://tempuri.org/IService/Get_Min_Mark" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Max_Mark">
+      <soap12:operation soapAction="http://tempuri.org/IService/Get_Max_Mark" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Avg_Mark">
+      <soap12:operation soapAction="http://tempuri.org/IService/Get_Avg_Mark" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Class_Stu_Total">
       <soap12:operation soapAction="http://tempuri.org/IService/Class_Stu_Total" style="document" />
       <wsdl:input>
@@ -174,8 +210,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Download">
-      <soap12:operation soapAction="http://tempuri.org/IService/Download" style="document" />
+    <wsdl:operation name="GetResourcesList">
+      <soap12:operation soapAction="http://tempuri.org/IService/GetResourcesList" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -183,8 +219,17 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetResource">
-      <soap12:operation soapAction="http://tempuri.org/IService/GetResource" style="document" />
+    <wsdl:operation name="DownloadResource">
+      <soap12:operation soapAction="http://tempuri.org/IService/DownloadResource" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadResource">
+      <soap12:operation soapAction="http://tempuri.org/IService/UploadResource" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -377,42 +422,6 @@
     </wsdl:operation>
     <wsdl:operation name="Lec_Sub_Single">
       <soap12:operation soapAction="http://tempuri.org/IService/Lec_Sub_Single" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="List_Class">
-      <soap12:operation soapAction="http://tempuri.org/IService/List_Class" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Get_Min_Mark">
-      <soap12:operation soapAction="http://tempuri.org/IService/Get_Min_Mark" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Get_Max_Mark">
-      <soap12:operation soapAction="http://tempuri.org/IService/Get_Max_Mark" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Get_Avg_Mark">
-      <soap12:operation soapAction="http://tempuri.org/IService/Get_Avg_Mark" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

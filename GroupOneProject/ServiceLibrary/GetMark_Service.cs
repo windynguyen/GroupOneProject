@@ -886,25 +886,50 @@ namespace ServiceLibrary
             }
             return lstSub.ToArray();
         }
-        public int Download(string path)
+        
+        public List<string> GetResourcesList()
         {
-            /*FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read);
-            byte[] buffer = new byte[fs.Length];
-            fs.Read(buffer, 0, (int)fs.Length);
-            Thread.Sleep(100000);*/
-
-            return 1;
+            List<string> result = new List<string>();
+            string filePath = HostPath + @"Sources";
+            DirectoryInfo dirDocument = new DirectoryInfo(filePath);
+            if (dirDocument.Exists)
+            {
+                foreach (FileInfo fItem in dirDocument.GetFiles())
+                    result.Add(fItem.Name);
+            }
+            return result;
         }
-        public byte[] GetResource(string resName)
+        public byte[] DownloadResource(string resName)
         {
-            //Ca 1 nghe thuat^^
-            string filepath = HostPath + @"Sources\" + resName;
-            FileStream fs = File.OpenRead(filepath);
+            string filePath = HostPath + @"Sources\" + resName;
+            FileStream fs = File.OpenRead(filePath);
             byte[] bytes = new byte[fs.Length];
             fs.Read(bytes, 0, Convert.ToInt32(fs.Length));
             fs.Close();
             return bytes;
         }
+        public bool UploadResource(string resName, byte[] data)
+        {
+            bool result = false;
+            try
+            {
+                string filePath = HostPath + @"Sources\" + resName;
+                FileStream fs = new FileStream(filePath, FileMode.Create, FileAccess.Write);
+                fs.Write(data, 0, data.Length);
+                fs.Close();
+            }
+            catch (Exception e)
+            {
+                result = false;
+            }
+            finally
+            {
+                result = true;
+            }
+            return result;
+
+        } 
+
         public bool CheckLogin(string username, string password, int mode)
         {
 

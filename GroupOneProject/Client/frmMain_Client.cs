@@ -155,17 +155,8 @@ namespace Client
             }
 
         }
-        void Download_CallBack(Object sender, GetMark_Service.DownloadCompletedEventArgs e)
-        {
-            //txtLLocaBasHttp.Text = "fd";
-            int a = e.Result;
-            //FileStream fs = new FileStream(pathClient, FileMode.Create, FileAccess.Write);
-            //fs.Write(data, 0, (int)data.Length);
-            //fs.Close();
-            SetInitComplete();
-            MessageBox.Show("ok "+ a.ToString());
-        }
-        void GetResource_CallBack(Object sender, GetMark_Service.GetResourceCompletedEventArgs e)
+      
+        void GetResource_CallBack(Object sender, GetMark_Service.DownloadResourceCompletedEventArgs e)
         {
             SetInitComplete();
             byte[] data = e.Result;
@@ -181,9 +172,9 @@ namespace Client
             SetInitBegin();
             GetMark_Service.ServiceClient service =
                 new GetMark_Service.ServiceClient("WSHttpBinding_IService");// cac binding khac ko dung duoc
-            service.GetResourceCompleted +=
-                new EventHandler<GetMark_Service.GetResourceCompletedEventArgs>(GetResource_CallBack);
-            service.GetResourceAsync(FILE_NAME);//Hinh trong ServiceHost_Form/Sources
+            service.DownloadResourceCompleted +=
+                new EventHandler<GetMark_Service.DownloadResourceCompletedEventArgs>(GetResource_CallBack);
+            service.DownloadResourceAsync(FILE_NAME);//Hinh trong ServiceHost_Form/Sources
         }
     }
 }

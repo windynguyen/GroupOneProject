@@ -51,8 +51,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lblBackGround1 = new System.Windows.Forms.Label();
             this.lblTinChiProgress = new System.Windows.Forms.Label();
+            this.lblBackGround1 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -105,47 +106,52 @@
             // lbl_TB_tichluy
             // 
             this.lbl_TB_tichluy.AutoSize = true;
+            this.lbl_TB_tichluy.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_TB_tichluy.Location = new System.Drawing.Point(122, 149);
             this.lbl_TB_tichluy.Name = "lbl_TB_tichluy";
-            this.lbl_TB_tichluy.Size = new System.Drawing.Size(104, 13);
+            this.lbl_TB_tichluy.Size = new System.Drawing.Size(43, 13);
             this.lbl_TB_tichluy.TabIndex = 9;
-            this.lbl_TB_tichluy.Text = "Trung bình tích lũy";
+            this.lbl_TB_tichluy.Text = "[value]";
             // 
             // lbl_TC_dat
             // 
             this.lbl_TC_dat.AutoSize = true;
+            this.lbl_TC_dat.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_TC_dat.Location = new System.Drawing.Point(122, 66);
             this.lbl_TC_dat.Name = "lbl_TC_dat";
-            this.lbl_TC_dat.Size = new System.Drawing.Size(104, 13);
+            this.lbl_TC_dat.Size = new System.Drawing.Size(43, 13);
             this.lbl_TC_dat.TabIndex = 8;
-            this.lbl_TC_dat.Text = "Số tín chỉ đạt được";
+            this.lbl_TC_dat.Text = "[value]";
             // 
             // lbl_TC_dk
             // 
             this.lbl_TC_dk.AutoSize = true;
+            this.lbl_TC_dk.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_TC_dk.Location = new System.Drawing.Point(122, 27);
             this.lbl_TC_dk.Name = "lbl_TC_dk";
-            this.lbl_TC_dk.Size = new System.Drawing.Size(99, 13);
+            this.lbl_TC_dk.Size = new System.Drawing.Size(43, 13);
             this.lbl_TC_dk.TabIndex = 7;
-            this.lbl_TC_dk.Text = "Số tín chỉ đăng ký";
+            this.lbl_TC_dk.Text = "[value]";
             // 
             // lbl_TongMH_no
             // 
             this.lbl_TongMH_no.AutoSize = true;
+            this.lbl_TongMH_no.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_TongMH_no.Location = new System.Drawing.Point(118, 55);
             this.lbl_TongMH_no.Name = "lbl_TongMH_no";
-            this.lbl_TongMH_no.Size = new System.Drawing.Size(88, 13);
+            this.lbl_TongMH_no.Size = new System.Drawing.Size(43, 13);
             this.lbl_TongMH_no.TabIndex = 6;
-            this.lbl_TongMH_no.Text = "Số môn còn nợ:";
+            this.lbl_TongMH_no.Text = "[value]";
             // 
             // lbl_TongMH
             // 
             this.lbl_TongMH.AutoSize = true;
+            this.lbl_TongMH.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_TongMH.Location = new System.Drawing.Point(118, 28);
             this.lbl_TongMH.Name = "lbl_TongMH";
-            this.lbl_TongMH.Size = new System.Drawing.Size(112, 13);
+            this.lbl_TongMH.Size = new System.Drawing.Size(43, 13);
             this.lbl_TongMH.TabIndex = 5;
-            this.lbl_TongMH.Text = "Tổng số môn đã học";
+            this.lbl_TongMH.Text = "[value]";
             // 
             // groupBox1
             // 
@@ -167,7 +173,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.lbl_TongMH);
             this.groupBox1.Controls.Add(this.lbl_TongMH_no);
-            this.groupBox1.Location = new System.Drawing.Point(12, 23);
+            this.groupBox1.Location = new System.Drawing.Point(12, 48);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(264, 225);
             this.groupBox1.TabIndex = 10;
@@ -177,47 +183,52 @@
             // lbl_kem
             // 
             this.lbl_kem.AutoSize = true;
+            this.lbl_kem.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_kem.Location = new System.Drawing.Point(108, 195);
             this.lbl_kem.Name = "lbl_kem";
-            this.lbl_kem.Size = new System.Drawing.Size(28, 13);
+            this.lbl_kem.Size = new System.Drawing.Size(43, 13);
             this.lbl_kem.TabIndex = 17;
-            this.lbl_kem.Text = "Kém";
+            this.lbl_kem.Text = "[value]";
             // 
             // lbl_trungbinh
             // 
             this.lbl_trungbinh.AutoSize = true;
+            this.lbl_trungbinh.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_trungbinh.Location = new System.Drawing.Point(108, 172);
             this.lbl_trungbinh.Name = "lbl_trungbinh";
-            this.lbl_trungbinh.Size = new System.Drawing.Size(64, 13);
+            this.lbl_trungbinh.Size = new System.Drawing.Size(43, 13);
             this.lbl_trungbinh.TabIndex = 16;
-            this.lbl_trungbinh.Text = "Trung bình";
+            this.lbl_trungbinh.Text = "[value]";
             // 
             // lbl_kha
             // 
             this.lbl_kha.AutoSize = true;
+            this.lbl_kha.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_kha.Location = new System.Drawing.Point(108, 149);
             this.lbl_kha.Name = "lbl_kha";
-            this.lbl_kha.Size = new System.Drawing.Size(26, 13);
+            this.lbl_kha.Size = new System.Drawing.Size(43, 13);
             this.lbl_kha.TabIndex = 15;
-            this.lbl_kha.Text = "Khá";
+            this.lbl_kha.Text = "[value]";
             // 
             // lbl_gioi
             // 
             this.lbl_gioi.AutoSize = true;
+            this.lbl_gioi.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_gioi.Location = new System.Drawing.Point(108, 126);
             this.lbl_gioi.Name = "lbl_gioi";
-            this.lbl_gioi.Size = new System.Drawing.Size(28, 13);
+            this.lbl_gioi.Size = new System.Drawing.Size(43, 13);
             this.lbl_gioi.TabIndex = 14;
-            this.lbl_gioi.Text = "Giỏi";
+            this.lbl_gioi.Text = "[value]";
             // 
             // lbl_xuatsac
             // 
             this.lbl_xuatsac.AutoSize = true;
+            this.lbl_xuatsac.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_xuatsac.Location = new System.Drawing.Point(108, 103);
             this.lbl_xuatsac.Name = "lbl_xuatsac";
-            this.lbl_xuatsac.Size = new System.Drawing.Size(49, 13);
+            this.lbl_xuatsac.Size = new System.Drawing.Size(43, 13);
             this.lbl_xuatsac.TabIndex = 13;
-            this.lbl_xuatsac.Text = "Xuất sắc";
+            this.lbl_xuatsac.Text = "[value]";
             // 
             // label11
             // 
@@ -285,20 +296,12 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.lbl_TC_dat);
             this.groupBox2.Controls.Add(this.lbl_TC_dk);
-            this.groupBox2.Location = new System.Drawing.Point(282, 23);
+            this.groupBox2.Location = new System.Drawing.Point(282, 48);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(272, 225);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tín chỉ & TB";
-            // 
-            // lblBackGround1
-            // 
-            this.lblBackGround1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.lblBackGround1.Location = new System.Drawing.Point(13, 103);
-            this.lblBackGround1.Name = "lblBackGround1";
-            this.lblBackGround1.Size = new System.Drawing.Size(208, 13);
-            this.lblBackGround1.TabIndex = 10;
             // 
             // lblTinChiProgress
             // 
@@ -310,16 +313,36 @@
             this.lblTinChiProgress.TabIndex = 11;
             this.lblTinChiProgress.Text = "0%";
             // 
-            // ThongKe
+            // lblBackGround1
+            // 
+            this.lblBackGround1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.lblBackGround1.Location = new System.Drawing.Point(13, 103);
+            this.lblBackGround1.Name = "lblBackGround1";
+            this.lblBackGround1.Size = new System.Drawing.Size(208, 13);
+            this.lblBackGround1.TabIndex = 10;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label12.Location = new System.Drawing.Point(12, 9);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(121, 32);
+            this.label12.TabIndex = 28;
+            this.label12.Text = "Thống kê";
+            // 
+            // SV_ThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(566, 285);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MinimumSize = new System.Drawing.Size(582, 323);
-            this.Name = "ThongKe";
+            this.Name = "SV_ThongKe";
             this.Text = "Thống kê";
             this.Load += new System.EventHandler(this.ThongKe_Load);
             this.groupBox1.ResumeLayout(false);
@@ -327,6 +350,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -357,6 +381,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblTinChiProgress;
         private System.Windows.Forms.Label lblBackGround1;
+        private System.Windows.Forms.Label label12;
 
     }
 }
